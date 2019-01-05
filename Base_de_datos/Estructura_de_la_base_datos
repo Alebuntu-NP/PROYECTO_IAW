@@ -1,0 +1,168 @@
+TABLA
+
+usuarios
+
+CAMPOS
+
+cod_usuario int primary key
+nombre varchar 20
+apellido varchar 40
+edad int
+id varchar 15
+contraseña varchar 20
+fecha_alta date
+
+CREATE TABLE `alebuntu`.`usuarios` (
+  `cod_usuario` INT NOT NULL,
+  `nombre` VARCHAR(20) NOT NULL,
+  `apellido` VARCHAR(40) NOT NULL,
+  `edad` INT NOT NULL,
+  `id` VARCHAR(10) NOT NULL,
+  `contraseña` VARCHAR(20) NOT NULL,
+  `fecha_alta` DATE NOT NULL,
+  PRIMARY KEY (`cod_usuario`));
+
+
+
+TABLA
+
+manuales
+
+CAMPOS
+
+cod_manual int primary key
+nombre varchar 20
+fecha_publicacion date
+fecha_revisado date
+n_pag int
+dificultad varchar 15
+
+CREATE TABLE `alebuntu`.`manuales` (
+  `cod_manual` INT NOT NULL,
+  `nombre` VARCHAR(20) NOT NULL,
+  `fecha_publicacion` DATE NOT NULL,
+  `fecha_revisado` DATE NULL,
+  `n_pag` INT NULL,
+  `dificultad` VARCHAR(15) NULL,
+  PRIMARY KEY (`cod_manual`));
+
+
+TABLA
+
+comentarios
+
+CAMPOS
+
+cod_comentario int primary key
+comentario varchar 200
+fecha_publicacion date
+cod_usuario int foreing key
+cod_manual int foreing key
+
+CREATE TABLE `alebuntu`.`comentarios` (
+  `cod_comentario` INT NOT NULL,
+  `comentario` VARCHAR(200) NOT NULL,
+  `fecha_publicacion` DATE NOT NULL,
+  `cod_usuario` INT NOT NULL,
+  `cod_manual` INT NOT NULL,
+  PRIMARY KEY (`cod_comentario`),
+  INDEX `fk_comentarios_1_idx` (`cod_usuario` ASC),
+  INDEX `fk_comentarios_2_idx` (`cod_manual` ASC),
+  CONSTRAINT `fk_comentarios_1`
+    FOREIGN KEY (`cod_usuario`)
+    REFERENCES `alebuntu`.`usuarios` (`cod_usuario`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_comentarios_2`
+    FOREIGN KEY (`cod_manual`)
+    REFERENCES `alebuntu`.`manuales` (`cod_manual`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+
+TABLA
+
+so
+
+CAMPOS
+
+cod_so int primary key
+nombre varchar 30
+version decimal (2,2)
+año_version year
+
+
+CREATE TABLE `alebuntu`.`so` (
+  `cod_so` INT NOT NULL,
+  `nombre` VARCHAR(30) NOT NULL,
+  `version` DECIMAL(2,2)  NULL,
+  `año_de_lanzamiento` YEAR NULL,
+  PRIMARY KEY (`cod_so`));
+
+TABLA
+
+para
+
+CAMPOS
+
+cod_so int primary key
+
+cod_manual int primary key
+
+CREATE TABLE `alebuntu`.`para` (
+  `cod_so` INT NOT NULL,
+  `cod_manual` INT NOT NULL,
+  PRIMARY KEY (`cod_so`, `cod_manual`),
+  INDEX `fk_para_1_idx` (`cod_manual` ASC),
+  CONSTRAINT `fk_para_1`
+    FOREIGN KEY (`cod_manual`)
+    REFERENCES `alebuntu`.`manuales` (`cod_manual`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_para_2`
+    FOREIGN KEY (`cod_so`)
+    REFERENCES `alebuntu`.`so` (`cod_so`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+
+TABLA
+
+valora
+
+CAMPOS
+
+cod_usuario int primary key
+
+cod_manual int primary key
+
+fecha_valoracion date
+
+valoracion varchar 10
+
+
+CREATE TABLE `alebuntu`.`valora` (
+  `cod_usuario` INT NOT NULL,
+  `cod_manual` INT NOT NULL,
+  `fecha_valoracion` DATE NOT NULL,
+  `valoracion` VARCHAR(10) NOT NULL,
+  PRIMARY KEY (`cod_usuario`, `cod_manual`),
+  INDEX `fk_valora_2_idx` (`cod_manual` ASC),
+  CONSTRAINT `fk_valora_1`
+    FOREIGN KEY (`cod_usuario`)
+    REFERENCES `alebuntu`.`usuarios` (`cod_usuario`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_valora_2`
+    FOREIGN KEY (`cod_manual`)
+    REFERENCES `alebuntu`.`manuales` (`cod_manual`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+
+
+
+
+
+
+

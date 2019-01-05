@@ -1,0 +1,22 @@
+mysql -u root -pAdmin2015
+grant all on *.* to 'root'@'localhost' identified by '2asirtriana';
+grant all on *.* to 'root'@'%' identified by '2asirtriana';
+grant all on *.* to 'root'@'127.0.0.1' identified by '2asirtriana';
+flush privileges;
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'secret1234';
+CREATE USER 'admin'@'127.0.0.1' IDENTIFIED BY 'secret1234';
+CREATE USER 'admin'@'%' IDENTIFIED BY 'secret1234';
+exit;
+mysql -u admin -psecret1234
+create database alebuntu;
+exit;
+mysql -u root -p2asirtriana
+grant all on alebuntu.* to 'root'@'localhost' identified by '2asirtriana';
+grant all on alebuntu.* to 'root'@'%' identified by '2asirtriana';
+grant all on alebuntu.* to 'root'@'127.0.0.1' identified by '2asirtriana';
+flush privileges;
+grant all on alebuntu.* to 'admin'@'localhost' identified by 'secret1234';
+grant all on alebuntu.* to 'admin'@'%' identified by 'secret1234';
+grant all on alebuntu.* to 'admin'@'127.0.0.1' identified by 'secret1234';
+flush privileges;
+exit;
