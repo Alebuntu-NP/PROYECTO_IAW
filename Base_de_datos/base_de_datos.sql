@@ -14,7 +14,8 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
+CREATE DATABASE alebuntu;
+USE alebuntu;
 --
 -- Table structure for table `comentarios`
 --
@@ -23,7 +24,7 @@ DROP TABLE IF EXISTS `comentarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comentarios` (
-  `cod_comentario` int(11) NOT NULL,
+  `cod_comentario` int(11) NOT NULL AUTO_INCREMENT,
   `comentario` varchar(200) NOT NULL,
   `fecha_publicacion` date NOT NULL,
   `cod_usuario` int(11) NOT NULL,
@@ -53,7 +54,7 @@ DROP TABLE IF EXISTS `manuales`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `manuales` (
-  `cod_manual` int(11) NOT NULL,
+  `cod_manual` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) NOT NULL,
   `fecha_publicacion` date NOT NULL,
   `fecha_revisado` date DEFAULT NULL,
@@ -106,7 +107,7 @@ DROP TABLE IF EXISTS `so`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `so` (
-  `cod_so` int(11) NOT NULL,
+  `cod_so` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) NOT NULL,
   `version` decimal(2,2) DEFAULT NULL,
   `año_de_lanzamiento` year(4) DEFAULT NULL,
@@ -131,12 +132,12 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuarios` (
-  `cod_usuario` int(11) NOT NULL,
+  `cod_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) NOT NULL,
   `apellido` varchar(40) NOT NULL,
   `edad` int(11) NOT NULL,
   `id` varchar(10) NOT NULL,
-  `contraseña` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
   `fecha_alta` date NOT NULL,
   PRIMARY KEY (`cod_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

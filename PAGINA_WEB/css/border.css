@@ -1,0 +1,10 @@
+input {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+body {
+
+background-image: url("fondo.jpg");
+}
