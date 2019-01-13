@@ -6,7 +6,7 @@
   if (isset($_SESSION["user"])) {
 
   if ($_SESSION["user"]=='admin007') {
-    $_SESSION['user'] = $_SESSION['user'];
+    
   
     header("Location: ./administrador/admin.php");
 

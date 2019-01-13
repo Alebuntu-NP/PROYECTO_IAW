@@ -1,0 +1,11 @@
+INSERT INTO so (nombre,version,año_de_lanzamiento)
+VALUES ('ubuntu',16.04,2005);
+INSERT INTO so (nombre,version,año_de_lanzamiento)
+VALUES ('debian',9,2017);
+INSERT INTO so (nombre,año_de_lanzamiento)
+VALUES ('window 10 pro',2015);
+INSERT INTO so (nombre,año_de_lanzamiento)
+VALUES ('window 2008',2008);
+INSERT INTO so (nombre,año_de_lanzamiento)
+VALUES ('window 2012',2012);
+

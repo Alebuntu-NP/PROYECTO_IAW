@@ -7,7 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina principal</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/border.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/fondo_mas_input.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/login.css" />
+
     
   </head>
   <body>
@@ -17,7 +19,7 @@
         if (isset($_POST["user"])) {
 
           //CREATING THE CONNECTION
-          $connection = new mysqli("localhost", "root", "2asirtriana", "alebuntu");
+          $connection = new mysqli("localhost", "admin", "secret1234", "alebuntu");
 
           //TESTING IF THE CONNECTION WAS RIGHT
           if ($connection->connect_errno) {
@@ -42,6 +44,7 @@
                 //VALID LOGIN. SETTING SESSION VARS
                 $_SESSION["user"]=$_POST["user"];
                 $_SESSION["language"]="es";
+                $_SESSION["password"]="$_POST[password]";
 
                 header("Location: ./index.php");
               }
@@ -54,8 +57,8 @@
 
     <form action="login.php" method="post">
 
-      <p><input name="user" required></p>
-      <p><input name="password" type="password" required></p>
+      <p>ID: <input name="user" required></p>
+      <p>CONTRASEÑA: <input name="password" type="password" required></p>
       <p><input type="submit" value="Entrar"></p>
 
     </form>
@@ -66,6 +69,6 @@
 
     </form>
 
-
+<div><h1>MANUALES ALEBUNTU</h1></div>
   </body>
 </html>

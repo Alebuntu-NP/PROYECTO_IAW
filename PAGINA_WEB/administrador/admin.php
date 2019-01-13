@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pagina de bienvenida</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/border.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/fondo_mas_input.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/ventanas_duracion_corta.css" />
+
 
 </head>
 <body>

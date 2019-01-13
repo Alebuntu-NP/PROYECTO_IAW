@@ -1,0 +1,51 @@
+.menu ,#salir{
+    
+ 
+    width:20%;
+    height:5%;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    
+
+
+}
+
+#datos_admin {
+
+    width:30%;
+    height: 50%;
+    background-image: url("./fondos/fondo.jpg");
+    color: black;
+    border-radius: 10px;
+}
+
+input {
+
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    font-size: 120%;
+
+}
+.submenu {
+    
+    
+    
+    width:50%;
+    height: 50%;
+    background-image: url("./fondos/fondo.jpg");
+    color: black;
+    border-radius: 10px;
+    
+
+
+}
+
+img {
+    
+    margin-left: 20px;
+    background-color:whitesmoke;
+    height:200px;
+    width: 200px;
+}

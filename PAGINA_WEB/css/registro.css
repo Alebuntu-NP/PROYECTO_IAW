@@ -1,0 +1,29 @@
+form {
+    background-color: grey;
+    width: 70%;
+    border-radius: 10%;
+
+}
+
+.campo {
+width: 40%;
+font-size: 80%;
+
+}
+input {
+    margin-top: 2%;
+}
+h3 {
+    
+    font-size: 120%;
+    margin-left: 10%;
+
+}
+#enviar {
+
+width: 80%;
+height: 50%;
+border-radius: 100%;
+font-family: 'Times New Roman', Times, serif;
+font-size: 120%;
+}
