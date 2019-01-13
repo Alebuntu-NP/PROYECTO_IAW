@@ -1,5 +1,4 @@
 
-
 input {
     background-color: black;
     color: white;
@@ -10,7 +9,7 @@ body {
 background-attachment: fixed;
 background-position: center center;
 background-size: cover;
-background-image: url("./fondos/fondo_madera.jpg");
+background-image: url("./fondos/fondo_ubuntu.jpg");
 background-repeat: no-repeat;
 -moz-background-size: cover;
 -webkit-background-size: cover;

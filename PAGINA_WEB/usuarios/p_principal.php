@@ -21,12 +21,12 @@
     </div>
     <div id="manuales" class="menu"><input type="button" value="MANUALES"></div>
     <div id="manual" class="submenu">
-    <img src="../css/iconos/icono_debian.png" alt="">
-    <img src="../css/iconos/ubuntu_icono.png" alt="">
-    <img src="../css/iconos/window_10.jpg" alt="">
-    <img src="../css/iconos/window_server_2008.jpg" alt="">
-    <img src="../css/iconos/window_server2012.png" alt="">
-    <img src="../css/iconos/citrix.png" alt="">
+    <a href="../pag_sistema_operativo/debian.php"><img src="../css/iconos/icono_debian.png" alt=""></a>
+    <a href="../pag_sistema_operativo/ubuntu.php"><img src="../css/iconos/ubuntu_icono.png" alt=""></a>
+    <a href="../pag_sistema_operativo/window_10.php"><img src="../css/iconos/window_10.png" alt=""></a>
+    <a href="../pag_sistema_operativo/window_server_2008.php"><img src="../css/iconos/window_server_2008.jpg" alt=""></a>
+    <a href="../pag_sistema_operativo/window_server_2012.php"><img src="../css/iconos/window_server2012.png" alt=""></a>
+    <a href="../pag_sistema_operativo/citrix.php"><img src="../css/iconos/citrix.png" alt=""></a>
 
 
     </div>

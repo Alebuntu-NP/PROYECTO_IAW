@@ -57,8 +57,8 @@
 
     <form action="login.php" method="post">
 
-      <p>ID: <input name="user" required></p>
-      <p>CONTRASEÑA: <input name="password" type="password" required></p>
+      <p>ID: <input name="user" required maxlength="10"></p>
+      <p>CONTRASEÑA: <input name="password" type="password" required maxlength="40"></p>
       <p><input type="submit" value="Entrar"></p>
 
     </form>

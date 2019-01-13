@@ -1,0 +1,9 @@
+//Para crear un contenedor
+
+docker run -it -d --name piaw -v /home/alejandro/Escritorio/Repo
+sitorios/PROYECTO_IAW_ROMAN_CABALLERO/:/var/www/html/ -p 8081:80 -p 3326:3306 iestriana/lamp
+
+sudo dpkg-reconfigure tzdata
+/etc/init.d/mysql restart
+
+
