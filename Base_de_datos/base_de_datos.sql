@@ -137,7 +137,7 @@ CREATE TABLE `usuarios` (
   `apellido` varchar(40) NOT NULL,
   `edad` int(11) NOT NULL,
   `id` varchar(10) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(40) NOT NULL,
   `fecha_alta` date NOT NULL,
   PRIMARY KEY (`cod_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

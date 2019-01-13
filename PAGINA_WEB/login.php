@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Pagina principal</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/border.css" />
     
   </head>
@@ -17,7 +17,7 @@
         if (isset($_POST["user"])) {
 
           //CREATING THE CONNECTION
-          $connection = new mysqli("localhost", "tf", "123456", "tf");
+          $connection = new mysqli("localhost", "root", "2asirtriana", "alebuntu");
 
           //TESTING IF THE CONNECTION WAS RIGHT
           if ($connection->connect_errno) {
@@ -27,8 +27,8 @@
 
           //MAKING A SELECT QUERY
           //Password coded with md5 at the database. Look for better options
-          $consulta="select * from usuario where
-          username='".$_POST["user"]."' and password=md5('".$_POST["password"]."');";
+          $consulta="select * from usuarios where
+          id='".$_POST["user"]."' and password=md5('".$_POST["password"]."');";
 
           //Test if the query was correct
           //SQL Injection Possible
@@ -43,7 +43,7 @@
                 $_SESSION["user"]=$_POST["user"];
                 $_SESSION["language"]="es";
 
-                header("Location: index.php");
+                header("Location: ./index.php");
               }
 
           } else {
