@@ -8,5 +8,6 @@ input {
 
 body {
 
-background-image: url("fondo.jpg");
+background-image: url("./fondos/fondo.jpg");
+
 }
