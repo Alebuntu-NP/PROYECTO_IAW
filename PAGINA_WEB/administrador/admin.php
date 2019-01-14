@@ -11,10 +11,23 @@
 
 </head>
 <body>
-    <?php
+<?php
     session_start();
+
+if (isset($_SESSION["user"])) {
+
+  
+
     echo "<h1>Bienvenido administrador</h1>";
     header("refresh:3;url=p_principal.php");
+
+} else {
+  session_destroy();
+  header("Location: ../login.php");
+}
+
+    
+    
     ?>
 </body>
 </html>

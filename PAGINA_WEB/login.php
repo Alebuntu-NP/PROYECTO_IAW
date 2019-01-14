@@ -54,12 +54,12 @@
           }
       }
     ?>
+<div id='formularios'>
+    <form action="login.php" method="post" id='form1'>
 
-    <form action="login.php" method="post">
-
-      <p>ID: <input name="user" required maxlength="10"></p>
+      <p>USUARIO: <input name="user" required maxlength="10"></p>
       <p>CONTRASEÑA: <input name="password" type="password" required maxlength="40"></p>
-      <p><input type="submit" value="Entrar"></p>
+      <input type="submit" value="Entrar">
 
     </form>
     <form action="registro.php" method="post">
@@ -68,7 +68,10 @@
       <p><input type="submit" value="Registrarse"></p>
 
     </form>
+  </div>
 
-<div><h1>MANUALES ALEBUNTU</h1></div>
+<div id='portada'>
+  <h1>MANUALES ALEBUNTU</h1>
+</div>
   </body>
 </html>

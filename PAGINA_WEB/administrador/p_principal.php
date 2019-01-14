@@ -12,16 +12,21 @@
 </head>
 
 <body>
+    
+    
+    
     <?php
 session_start();
+if (isset($_SESSION["user"])) {
+
 ?>
     <div id="mis_datos" class="menu"><input type="button" value="MIS DATOS"></div>
     <div id="datos_admin" class="submenu">
-        <?php include '../php/datos_del_usuario.php'; ?>
+        <?php include_once '../php/datos_del_usuario.php'; ?>
     </div>
     <div id="usuarios" class="menu"><input type="button" value="USUARIOS"></div>
     <div class="submenu">
-    <?php include '../php/todos_usuarios.php'; ?>
+    <?php include_once '../php/todos_usuarios.php'; ?>
     </div>
     <div id="mis_manuales" class="menu"><input type="button" value="MIS MANUALES"></div>
     <div class="submenu" id="manual">
@@ -32,13 +37,7 @@ session_start();
     <a href="../pag_sistema_operativo/window_server_2012.php"><img src="../css/iconos/window_server2012.png" alt=""></a>
     <a href="../pag_sistema_operativo/citrix.php"><img src="../css/iconos/citrix.png" alt=""></a>
     </div>
-
-
-
-    <?php include '../php/salir_sesion.php'; ?>
-
-
-
+    <?php include_once '../php/salir_sesion.php'; ?>
     <script language="JavaScript" type="text/javascript">
         //Function executed when the HTML document is Ready (full loaded)
         $(function () {
@@ -56,6 +55,22 @@ session_start();
         });
     </script>
 
+    <?php
+
+
+
+
+
+
+} else {
+  session_destroy();
+  header("Location: ../login.php");
+}
+
+
+?>
+
+   
 </body>
 
 </html>

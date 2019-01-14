@@ -10,6 +10,18 @@
 
 </head>
 <body>
+
+<?php session_start();
+
+if (isset($_SESSION["user"])) { ?>
 <a href="javascript:history.back()"><img src="../css/iconos/atras.png" alt=""></a>
+
+
+<?php
+} else {
+  session_destroy();
+  header("Location: ../login.php");
+}
+?>
 </body>
 </html>

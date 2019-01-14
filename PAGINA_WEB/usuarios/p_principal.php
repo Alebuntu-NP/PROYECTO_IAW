@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php session_start();?>
+
 
 <head>
     <meta charset="utf-8" />
@@ -14,10 +14,17 @@
 </head>
 
 <body>
-    <?php $_SESSION ?>
+<?php 
+//Open the session
+session_start();
+
+if (isset($_SESSION["user"])) {
+
+
+?>
     <div id="mis_datos" class="menu"><input type="button" value="MIS DATOS"></div>
     <div class="submenu">
-        <?php include '../php/datos_del_usuario.php'; ?>
+        <?php include_once '../php/datos_del_usuario.php'; ?>
     </div>
     <div id="manuales" class="menu"><input type="button" value="MANUALES"></div>
     <div id="manual" class="submenu">
@@ -31,7 +38,7 @@
 
     </div>
 
-    <?php include '../php/salir_sesion.php'; ?>
+    <?php include_once '../php/salir_sesion.php'; ?>
 
 
 
@@ -55,6 +62,18 @@
 
         });
     </script>
+<?php
+
+
+
+
+} else {
+  session_destroy();
+  header("Location: ../login.php");
+}
+
+
+?>
 
 
 </body>
