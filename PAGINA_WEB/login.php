@@ -43,7 +43,10 @@
 
               //No rows returned
                 if ($result->num_rows===0) {
-                    echo "LOGIN INVALIDO";
+                  echo'<script type="text/javascript">
+                  alert("LOGIN INCORRECTO");
+                  window.location.href="index.php";
+                  </script>';
                 } else {
                     //VALID LOGIN. SETTING SESSION VARS
                     $_SESSION["user"]=$_POST["user"];
