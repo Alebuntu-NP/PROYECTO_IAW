@@ -3,7 +3,7 @@
   //Open the session
   session_start();
 
-  if (isset($_SESSION["user"])) {
+  if (isset($_SESSION["user"]) && isset($_SESSION["password"]) ) {
 
   if ($_SESSION["user"]=='admin') {
     

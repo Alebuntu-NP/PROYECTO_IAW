@@ -1,7 +1,8 @@
 
 <?php
-session_start();
  $user = $_SESSION['user'];
+             
+
 //CREATING THE CONNECTION
 $connection = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
 $connection->set_charset("utf8");

@@ -1,9 +1,9 @@
 
 <?php
-session_start();
  $user = $_SESSION['user'];
+
 //CREATING THE CONNECTION
-$connection = new mysqli("localhost", "admin", "secret1234", "alebuntu");
+$connection = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
 $connection->set_charset("utf8");
 
 //TESTING IF THE CONNECTION WAS RIGHT

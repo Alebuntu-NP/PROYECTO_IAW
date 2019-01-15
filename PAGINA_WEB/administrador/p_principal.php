@@ -17,7 +17,7 @@
     
     <?php
 session_start();
-if (isset($_SESSION["user"])) {
+if (isset($_SESSION["user"]) && isset($_SESSION["password"]) ) {
 
 ?>
     <div id="mis_datos" class="menu"><input type="button" value="MIS DATOS"></div>

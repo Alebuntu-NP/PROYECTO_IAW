@@ -1,2 +1,3 @@
 INSERT INTO usuarios ( nombre , apellido, edad, id , password,fecha_alta)
-VALUES ( 'Alejandro' , 'Roman Caballero', 23, 'admin','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+VALUES ( 'Alejandro' , 'Román Caballero', 23, 'admin','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+    
