@@ -14,12 +14,11 @@
 <?php
     session_start();
 
-if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
-
+    if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["user"]=='admin') {
   
 
     echo "<h1>Bienvenido administrador</h1>";
-    header("refresh:3;url=pagina_menu.php");
+    header("refresh:3;url=./principal.php");
 
 } else {
   session_destroy();

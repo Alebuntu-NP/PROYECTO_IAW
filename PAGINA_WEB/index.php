@@ -8,11 +8,13 @@
   if ($_SESSION["user"]=='admin') {
     
   
-    header("Location: ./administrador/admin.php");
+    echo "<script>location.href='./administrador/p1_admin.php';</script>";
+    die();
 
   } else {
-    $_SESSION['user'];
-    header("Location: ./usuarios/user.php");
+
+    echo "<script>location.href='./usuarios/p1_user.php';</script>";
+    die();
   }
   
 

@@ -54,6 +54,7 @@
                     $_SESSION["password"]=$_POST["password"];
 
                     header("Location: ./index.php");
+                    exit(); 
                 }
             } else {
                 echo "Wrong Query";

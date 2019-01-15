@@ -1,1 +1,0 @@
-<?php location("Location: ../login.php") ?>

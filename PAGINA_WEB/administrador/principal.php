@@ -17,10 +17,10 @@
 </head>
 
 <body>
-  <?php 
-  session_start(); 
-  if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
-    ?>
+  <?php
+session_start();
+if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["user"]=='admin') {
+  ?>
   <div class="container">
 
     <!-- Nav pills -->
@@ -37,7 +37,7 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="pill" href="#operaciones">Operaciones</a>
       </li>
-      <?php include_once '../php/salir_sesion.php'; ?>
+      <?php include_once '../php_codigo/salir_sesion.php'; ?>
 
     </ul>
 
@@ -71,23 +71,21 @@
                   <div class="tab-content">
                     <div id="perf" class="container tab-pane active"><br>
 
-                      <?php include_once '../php/perfil.php'; ?>
+                      <?php include_once '../php_codigo/perfil.php'; ?>
 
                     </div>
                     <div id="actu" class="container tab-pane fade"><br>
                       <div class="row">
                         <div class="col-md-12">
 
-                          <?php
-                        
-                        include_once '../php/actualizar_usuario.php'; ?>
+                          <?php include_once '../php_codigo/actualizar_usuario.php'; ?>
 
                         </div>
                       </div>
                     </div>
                     <div id="baja" class="container tab-pane fade"><br>
 
-                      <?php include_once '../php/eliminar_usuario.php'; ?>
+                      <?php include_once '../php_codigo/eliminar_usuario.php'; ?>
 
                     </div>
                   </div>
@@ -104,7 +102,7 @@
 
         </div>
 
-        
+
       </div>
       <div id="manuales" class="container tab-pane fade"><br>
           <h3>Manuales</h3>
@@ -131,15 +129,12 @@
     </div>
   </div>
     <?php
-      } 
-      
-      else {
+} else {
         session_destroy();
         header("Location: ../login.php");
-      }
+    }
 
-
-    ?>
+?>
 </body>
 
 </html>
