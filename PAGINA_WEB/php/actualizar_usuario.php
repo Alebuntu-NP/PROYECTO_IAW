@@ -1,15 +1,10 @@
 <?php if (!isset($_POST["name"])): ?>
 
-
 <?php
         
          $user = $_SESSION['user'];
          $pass = $_SESSION['password'];
 
-    
-
-    
-    echo $pass;
         //CREATING THE CONNECTION
         $connection = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
         $connection->set_charset("utf8");
@@ -28,9 +23,9 @@
 
             //FETCHING OBJECTS FROM THE RESULT SET
             //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
-            while ($obj = $result->fetch_object()) {
+            $obj = $result->fetch_object();
                 //PRINTING EACH ROW
-                
+
                 echo '<form method="post">';
          
                 echo '<div class="form-group row">';
@@ -66,18 +61,19 @@
 
                 echo '</div>';
                 echo '<div class="form-group row">';
-
                 echo '<div class="offset-4 col-8">';
-                echo  '<button name="submit" type="submit" class="btn btn-primary">Actualizar mi perfil</button>';
+                echo  '<button name="registro" type="submit" class="btn btn-primary">Actualizar mi perfil</button>';
                 echo '</div>';
                 echo '</div>';
                 echo '</form>';
-            }
+            
         
             //Free the result. Avoid High Memory Usages
             $result->close();
             unset($obj);
             unset($connection);
+            unset($query);
+
         } //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
         
         
@@ -101,11 +97,15 @@ if ($pass == $_POST['password']) {
 
 //Si no introduces una nueva contraseña entonces , te quedas con la antigua
     $query = "UPDATE usuarios
-set nombre = '$_POST[name]',
-	apellido = '$_POST[lastname]',
-    edad = $_POST[edad],
-    password = md5('$pass')
-     where id = '$user'";
+set nombre = '$_POST[name]',apellido = '$_POST[lastname]',edad = $_POST[edad],password = md5('$pass')where id = '$user'";
+if ($result = $connection->query($query)) {
+
+    header('Location: ./pagina_menu.php');
+} else {
+    echo "Error en consulta";
+    echo $query;
+}
+
 } else {
     
 // Si introduces una nueva contraseña se te cambia
@@ -116,18 +116,21 @@ set nombre = '$_POST[name]',
         password = md5('$_POST[password]')
          where id = '$user'";
     $_SESSION['password']= $_POST['password'];
+
+    if ($result = $connection->query($query)) {
+
+        header('Location: ./pagina_menu.php');
+    } else {
+        echo "Error en consulta";
+        echo $query;
+    }
 }
-if ($result = $connection->query($query)) {
-    header('Location:pagina_menu.php');
-} else {
-    echo "Error en consulta";
-    echo $query;
-}
+
 
 $result->close();
 unset($obj);
 unset($connection);
-
+unset($query)
 ?>
 
 <?php endif?>

@@ -19,11 +19,11 @@
 
             <form method="post">
 
-            <br><h3>Usuario: <input type="text" name="id" maxlength="10" required class="campo"></h3><br><br>
-                <h3> Nombre: <input type="text" name="nom" maxlength="20" required class="campo"></h3><br><br>
-                <h3>Apellidos: <input type="text" name="ap" maxlength="40" required class="campo"></h3><br><br>
-                <h3>Edad: <input type="text" name="edad" maxlength="3" required class="campo"></h3><br><br>
-                <h3>Contraseña: <input type="password" name="pass" maxlength="40" required class="campo"></h3><br><br><br>
+            <br><h3>Usuario: <input type="text" name="id" maxlength="10" required class="campo" value="a"></h3><br><br>
+                <h3> Nombre: <input type="text" name="nom" maxlength="20" required class="campo" value="a"></h3><br><br>
+                <h3>Apellidos: <input type="text" name="ap" maxlength="40" required class="campo" value="a"></h3><br><br>
+                <h3>Edad: <input type="text" name="edad" maxlength="3" required class="campo" value="2"></h3><br><br>
+                <h3>Contraseña: <input type="password" name="pass" maxlength="40" required class="campo"  value="a"></h3><br><br><br>
                 <h3><input type="submit" value="Registrar" id="enviar"></h3>
 
             </form>

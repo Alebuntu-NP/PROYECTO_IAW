@@ -108,7 +108,21 @@
       </div>
       <div id="manuales" class="container tab-pane fade"><br>
           <h3>Manuales</h3>
-          <p>Aqui estaran los sistemas operativos para dichos manuales.</p>
+          <div class="row">
+
+          <div class="col-md-2"> <a href="../pag_sistema_operativo/debian.php"><img src="../css/iconos/icono_debian.png" alt="" class="img-fluid"></a></div>
+          <div class="col-md-2">    <a href="../pag_sistema_operativo/ubuntu.php"><img src="../css/iconos/ubuntu_icono.png" alt="" class="img-fluid"></a>
+</div>
+          <div class="col-md-2">    <a href="../pag_sistema_operativo/window_10.php"><img src="../css/iconos/window_10.png" alt="" class="img-fluid"></a>
+</div>
+          <div class="col-md-2">    <a href="../pag_sistema_operativo/window_server_2008.php"><img src="../css/iconos/window_server_2008.jpg" alt="" class="img-fluid"></a>
+</div>
+          <div class="col-md-2">    <a href="../pag_sistema_operativo/window_server_2012.php"><img src="../css/iconos/window_server2012.png" alt="" class="img-fluid"></a>
+</div>
+          <div class="col-md-2">    <a href="../pag_sistema_operativo/citrix.php"><img src="../css/iconos/citrix.png" alt="" class="img-fluid"></a>      </div>
+</div>
+
+
       </div>
       <div id="operaciones" class="container tab-pane fade"><br>
           <h3>Operaciones</h3>

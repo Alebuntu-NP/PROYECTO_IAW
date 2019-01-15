@@ -19,22 +19,17 @@
             exit();
         }
 
-        //MAKING A SELECT QUERY
-        /* Consultas de selección que devuelven un conjunto de resultados */
-
-
-
         $query = "DELETE from usuarios where id='$user'";
 
         if ($result = $connection->query($query)) {
            
-
-            header('Location: ../login.php');
+            session_destroy();
+            header("Location: http://www.ejemplo.es");
         } 
 
         $result->close();
         unset($connection);
-
+        unset($query);
 
 
 
