@@ -98,7 +98,7 @@
             //caso contario (else) es porque ese user ya esta registrado
 
             echo '<h1>El usuario ya esta registrado, ingresa otro</h1>';
-            header("refresh:3;url=registro2.php");
+            header("refresh:3;url=registro.php");
         }
     }
     $result->close();
