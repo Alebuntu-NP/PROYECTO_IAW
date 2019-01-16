@@ -28,6 +28,7 @@ if ($result = $connection->query("select * from usuarios;")) {
         <th>Id</th>
         <th>Password</th>
         <th>Fecha_alta</th>
+        <th>Correo electronico</th>
        </tr>
     </thead>
 
@@ -45,6 +46,8 @@ if ($result = $connection->query("select * from usuarios;")) {
         echo "<td>".$obj->id."</td>";
         echo "<td>".$obj->password."</td>";
         echo "<td>".$obj->fecha_alta."</td>";
+        echo "<td>".$obj->correo_electronico."</td>";
+
         echo "</tr>";
     }
 

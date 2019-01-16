@@ -33,8 +33,7 @@
 
             //MAKING A SELECT QUERY
             //Password coded with md5 at the database. Look for better options
-            $consulta="select * from usuarios where
-          id='".$_POST["user"]."' and password=md5('".$_POST["password"]."');";
+            $consulta="select * from usuarios where id='$_POST[user]' and password= md5('$_POST[password]')";
 
             //Test if the query was correct
             //SQL Injection Possible
@@ -43,7 +42,8 @@
 
               //No rows returned
                 if ($result->num_rows===0) {
-                  echo'<script type="text/javascript">
+
+                  echo '<script type="text/javascript"> 
                   alert("LOGIN INCORRECTO");
                   window.location.href="index.php";
                   </script>';
@@ -53,7 +53,7 @@
                     $_SESSION["language"]="es";
                     $_SESSION["password"]=$_POST["password"];
 
-                    header("Location: ./index.php");
+                    header("Location: index.php");
                     exit(); 
                 }
             } else {

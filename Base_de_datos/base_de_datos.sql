@@ -15,6 +15,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 DROP DATABASE IF EXISTS exampleDB;
+DROP DATABASE IF EXISTS alebuntu;
 CREATE DATABASE alebuntu;
 USE alebuntu;
 --
@@ -136,6 +137,7 @@ CREATE TABLE `usuarios` (
   `cod_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) NOT NULL,
   `apellido` varchar(40) NOT NULL,
+  `correo_electronico` varchar(40) NOT NULL,
   `edad` int(11) NOT NULL,
   `id` varchar(10) NOT NULL,
   `password` varchar(40) NOT NULL,

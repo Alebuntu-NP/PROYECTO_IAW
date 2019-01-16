@@ -1,29 +1,14 @@
-form {
-    background-color: khaki;
-    width: 70%;
-    border-radius: 10%;
-
+.header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
 }
 
-.campo {
-width: 40%;
-font-size: 80%;
-
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
 }
-input {
-    margin-top: 1%;
-}
-h3 {
-    
-    font-size: 120%;
-    margin-left: 10%;
-
-}
-#enviar {
-
-width: 80%;
-height: 50%;
-border-radius: 100%;
-font-family: 'Times New Roman', Times, serif;
-font-size: 120%;
+label {
+color: white;
+text-shadow: 1px 2px #999;
 }

@@ -29,6 +29,10 @@ if ($result = $connection->query($query)) {
         		echo '<div class="col-8">';
        	 			echo '<h4>'.$obj->id.'</h4>';
                 echo '</div>';
+                echo '<label for="username" class="col-4 col-form-label">Correo electronico</label>';
+        		echo '<div class="col-8">';
+       	 			echo '<h4>'.$obj->correo_electronico.'</h4>';
+        		echo '</div>';
                 echo '<label for="username" class="col-4 col-form-label">Nombre</label>';
         		echo '<div class="col-8">';
        	 			echo '<h4>'.$obj->nombre.'</h4>';
