@@ -1,0 +1,16 @@
+
+body { 
+  background-color:#DDD;
+  padding-top: 10px;
+}
+[class*="col"] { margin-bottom: 20px; }
+img { width: 100%; 
+background-color: transparent;}
+.well {
+  background-color:#CCC;
+  padding: 20px;
+}
+.inline-form input {
+  display: inline-block;
+  width: 100px;
+}

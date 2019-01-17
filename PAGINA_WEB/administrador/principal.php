@@ -14,13 +14,15 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/imagenes_icon.css">
+
 </head>
 
 <body>
   <?php
 session_start();
-if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["user"]=='admin') {
-  ?>
+if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"] == 'admin') {
+    ?>
   <div class="container">
 
     <!-- Nav pills -->
@@ -37,15 +39,16 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["use
       <li class="nav-item">
         <a class="nav-link" data-toggle="pill" href="#operaciones">Operaciones</a>
       </li>
-      <?php include_once '../php_codigo/salir_sesion.php'; ?>
+      <?php include_once '../php_codigo/salir_sesion.php';?>
 
     </ul>
 
     <!-- Tab panes -->
     <div class="tab-content">
       <div id="home" class="container tab-pane active"><br>
-        <h3>HOME</h3>
-        <p>Pagina principal del usuario</p>
+        <h3>Home</h3>
+     
+   
 
       </div>
       <div id="perfil" class="container tab-pane fade"><br>
@@ -71,21 +74,21 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["use
                   <div class="tab-content">
                     <div id="perf" class="container tab-pane active"><br>
 
-                      <?php include_once '../php_codigo/perfil.php'; ?>
+                      <?php include_once '../php_codigo/perfil.php';?>
 
                     </div>
                     <div id="actu" class="container tab-pane fade"><br>
                       <div class="row">
                         <div class="col-md-12">
 
-                          <?php include_once '../php_codigo/actualizar_usuario.php'; ?>
+                          <?php include_once '../php_codigo/actualizar_usuario.php';?>
 
                         </div>
                       </div>
                     </div>
                     <div id="baja" class="container tab-pane fade"><br>
 
-                      <?php include_once '../php_codigo/eliminar_usuario.php'; ?>
+                      <?php include_once '../php_codigo/eliminar_usuario.php';?>
 
                     </div>
                   </div>
@@ -105,22 +108,17 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["use
 
       </div>
       <div id="manuales" class="container tab-pane fade"><br>
-          <h3>Manuales</h3>
+          <h3>Manuales</h3><br>
           <div class="row">
 
-          <div class="col-md-2"> <a href="../pag_sistema_operativo/debian.php"><img src="../css/iconos/icono_debian.png" alt="" class="img-fluid"></a></div>
-          <div class="col-md-2">    <a href="../pag_sistema_operativo/ubuntu.php"><img src="../css/iconos/ubuntu_icono.png" alt="" class="img-fluid"></a>
-</div>
-          <div class="col-md-2">    <a href="../pag_sistema_operativo/window_10.php"><img src="../css/iconos/window_10.png" alt="" class="img-fluid"></a>
-</div>
-          <div class="col-md-2">    <a href="../pag_sistema_operativo/window_server_2008.php"><img src="../css/iconos/window_server_2008.jpg" alt="" class="img-fluid"></a>
-</div>
-          <div class="col-md-2">    <a href="../pag_sistema_operativo/window_server_2012.php"><img src="../css/iconos/window_server2012.png" alt="" class="img-fluid"></a>
-</div>
-          <div class="col-md-2">    <a href="../pag_sistema_operativo/citrix.php"><img src="../css/iconos/citrix.png" alt="" class="img-fluid"></a>      </div>
-</div>
-
-
+            <div class="col-xs-4 col-sm-3 col-md-2"> <a  href="../pag_sistema_operativo/debian.php"><img src="../css/iconos/icono_debian.png" alt="" class="img-fluid"></a></div>
+            <div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/ubuntu.php"><img src="../css/iconos/ubuntu_icono.png" alt="" class="img-fluid"></a></div>
+            <div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/window_10.php"><img src="../css/iconos/window_10.jpg" alt="" class="img-fluid"></a></div>
+            <div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/window_server_2008.php"><img src="../css/iconos/window_server_2008.jpg" alt="" class="img-fluid"></a></div>
+            <div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/window_server_2012.php"><img src="../css/iconos/window_server2012.png" alt="" class="img-fluid"></a></div>
+            <div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/android.php"><img src="../css/iconos/android.png" alt="" class="img-fluid"></a></div>
+          </div>
+          
       </div>
       <div id="operaciones" class="container tab-pane fade"><br>
           <h3>Operaciones</h3>
@@ -130,9 +128,9 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["use
   </div>
     <?php
 } else {
-        session_destroy();
-        header("Location: ../login.php");
-    }
+    session_destroy();
+    header("Location: ../login.php");
+}
 
 ?>
 </body>
