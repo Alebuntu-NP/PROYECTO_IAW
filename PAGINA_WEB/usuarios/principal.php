@@ -21,7 +21,7 @@
     session_start();
     if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"] != 'admin' ) {
       ?>
-    <div class="container">
+    <div class="container mt-3">
 
       <!-- Menus -->
       <ul class="nav nav-pills" role="tablist">
