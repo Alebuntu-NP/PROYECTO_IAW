@@ -23,10 +23,10 @@
 
         <article>
             <section class="container">
-                <h1 class="h2 text-center my-3">Formulario de registro</h1>
+                <h1 class="h2 text-center my-3" class="color">Formulario de registro</h1>
                 <form  method="post"  name="formulario" id="formulario" autocomplete="off">
                     <fieldset>
-                        <legend class="h4 text-center">
+                        <legend class="h4 text-center" class="color">
                             Datos Personales
                         </legend>
                         <div class="form-group">
@@ -90,7 +90,7 @@
         //verificamos si el user exite con un condicional
         if ($result->num_rows == 0) {
             if ($result1 = $connection->query($query1)) {
-                header("refresh:10;url=login.php");
+                header("refresh:3;url=login.php");
                 echo "<h1>Usuario registrado correctamente</h1>";
                 $result1->close();
             }

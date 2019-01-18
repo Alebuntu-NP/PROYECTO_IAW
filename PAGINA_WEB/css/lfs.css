@@ -4,12 +4,26 @@ input {
     color: white;
   
 }
+h3 ,p{
+    text-shadow: 1px 2px #999;
+    color: white;
+}
+#home,#versiones {
+
+   border:4px solid white;
+    border-radius: 10px;
+}
+.vers {
+    border:4px solid white;
+    border-radius: 10px;
+    color: white;
+}
 
 body {
 background-attachment: fixed;
 background-position: center center;
 background-size: cover;
-background-image: url("./fondos/fondo_window_10.jpg");
+background-image: url("./fondos/fondo_lfs.jpg");
 background-repeat: no-repeat;
 -moz-background-size: cover;
 -webkit-background-size: cover;

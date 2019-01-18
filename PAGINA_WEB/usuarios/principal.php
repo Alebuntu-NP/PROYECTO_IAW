@@ -99,13 +99,13 @@
         <div id="manuales" class="container tab-pane fade"><br>
           <h3>Manuales</h3><br>
           <div class="row">
+<div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/ubuntu.php?nomso=ubuntu"><img src="../css/iconos/ubuntu_icono.png" alt="" class="img-fluid"></a></div>
+<div class="col-xs-4 col-sm-3 col-md-2"> <a  href="../pag_sistema_operativo/debian.php?codso=debian"><img src="../css/iconos/icono_debian.png" alt="" class="img-fluid"></a></div>
+<div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/window_server_2008.php?nomso=window 2008"><img src="../css/iconos/window_server_2008.jpg" alt="" class="img-fluid"></a></div>
+<div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/window_server_2012.php?nomso=window 2012 "><img src="../css/iconos/window_server2012.png" alt="" class="img-fluid"></a></div>
+<div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/android.php?nomso=android"><img src="../css/iconos/android.png" alt="" class="img-fluid"></a></div>
+<div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/lfs.php?nomso=lfs"><img src="../css/iconos/lfs.png" alt="" class="img-fluid"></a></div>
 
-<div class="col-xs-4 col-sm-3 col-md-2"> <a  href="../pag_sistema_operativo/debian.php"><img src="../css/iconos/icono_debian.png" alt="" class="img-fluid"></a></div>
-<div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/ubuntu.php"><img src="../css/iconos/ubuntu_icono.png" alt="" class="img-fluid"></a></div>
-<div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/window_10.php"><img src="../css/iconos/window_10.jpg" alt="" class="img-fluid"></a></div>
-<div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/window_server_2008.php"><img src="../css/iconos/window_server_2008.jpg" alt="" class="img-fluid"></a></div>
-<div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/window_server_2012.php"><img src="../css/iconos/window_server2012.png" alt="" class="img-fluid"></a></div>
-<div class="col-xs-4 col-sm-3 col-md-2">    <a href="../pag_sistema_operativo/android.php"><img src="../css/iconos/android.png" alt="" class="img-fluid"></a></div>
 </div>
         </div>
       </div>

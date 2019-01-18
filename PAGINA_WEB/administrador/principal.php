@@ -123,6 +123,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
       <div id="operaciones" class="container tab-pane fade"><br>
           <h3>Operaciones</h3>
           <p>Aqui estaran las operaciones que podra hacer el admin</p>
+          
       </div>
     </div>
   </div>

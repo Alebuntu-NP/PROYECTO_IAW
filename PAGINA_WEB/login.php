@@ -44,7 +44,7 @@
                 if ($result->num_rows===0) {
 
                   echo '<script type="text/javascript"> 
-                  alert("LOGIN INCORRECTO");
+                  alert("No has puesto bien o el usuario o la contraseña");
                   window.location.href="index.php";
                   </script>';
                 } else {

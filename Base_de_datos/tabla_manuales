@@ -1,0 +1,11 @@
+INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `n_pag`, `dificultad`) VALUES ('1', 'Nat', '2018-05-22', '25', 'Fácil');
+INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `n_pag`, `dificultad`) VALUES ('2', 'Bind9', '2018-11-15', '13', 'Fácil');
+INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`) VALUES ('3', 'Kerberos', '2018-11-15', NULL, '14', 'Fácil');
+INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`) VALUES ('4', 'Openldap', '2018-11-15', NULL, '10', 'Media');
+INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`) VALUES ('5', 'Samba', '2018-11-15', NULL, '36', 'Media');
+INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`) VALUES ('6', 'Window server 2008', '2018-05-27', NULL, '63', 'Media');
+INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`) VALUES ('7', 'Window server 2012', '2018-05-28', NULL, '216', 'Media');
+INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `n_pag`, `dificultad`) VALUES ('8', 'LFS 7.5', '2018-09-16', '220', 'Difícil');
+INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `n_pag`, `dificultad`) VALUES ('9', 'LFS 8.3', '2019-01-09', '142', 'Difícil');
+INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `n_pag`, `dificultad`) VALUES ('10', 'Construccion de android', '2018-11-06', '16', 'Media');
+

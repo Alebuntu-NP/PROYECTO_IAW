@@ -1,2 +1,0 @@
-INSERT INTO manuales(nombre,fecha_publicacion,n_pag,dificultad)
-VALUES ( 'LFS 8.3' ,'2019-01-08',150,'media');
