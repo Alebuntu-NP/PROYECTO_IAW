@@ -57,11 +57,12 @@ DROP TABLE IF EXISTS `manuales`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `manuales` (
   `cod_manual` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(20) NOT NULL,
+  `nombre` varchar(40) NOT NULL,
   `fecha_publicacion` date NOT NULL,
   `fecha_revisado` date DEFAULT NULL,
   `n_pag` int(11) DEFAULT NULL,
   `dificultad` varchar(15) DEFAULT NULL,
+  `enlace` varchar(200) NOT NULL,
   PRIMARY KEY (`cod_manual`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -88,7 +89,7 @@ CREATE TABLE `para` (
   PRIMARY KEY (`cod_so`,`cod_manual`),
   KEY `fk_para_1_idx` (`cod_manual`),
   CONSTRAINT `fk_para_1` FOREIGN KEY (`cod_manual`) REFERENCES `manuales` (`cod_manual`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_para_2` FOREIGN KEY (`cod_so`) REFERENCES `so` (`cod_so`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `fk_para_2` FOREIGN KEY (`cod_so`) REFERENCES `sistema_operativo` (`cod_so`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -102,28 +103,28 @@ LOCK TABLES `para` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `so`
+-- Table structure for table `sistema_operativo`
 --
 
-DROP TABLE IF EXISTS `so`;
+DROP TABLE IF EXISTS `sistema_operativo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `so` (
+CREATE TABLE `sistema_operativo` (
   `cod_so` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) NOT NULL,
-  `version` decimal(4,2) DEFAULT NULL,
-  `año_de_lanzamiento` year(4) DEFAULT NULL,
+  `version` varchar(30) NOT NULL,
+  `año_de_lanzamiento` year(4) NOT NULL,
   PRIMARY KEY (`cod_so`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `so`
+-- Dumping data for table `sistema_operativo`
 --
 
-LOCK TABLES `so` WRITE;
-/*!40000 ALTER TABLE `so` DISABLE KEYS */;
-/*!40000 ALTER TABLE `so` ENABLE KEYS */;
+LOCK TABLES `sistema_operativo` WRITE;
+/*!40000 ALTER TABLE `sistema_operativo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sistema_operativo` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

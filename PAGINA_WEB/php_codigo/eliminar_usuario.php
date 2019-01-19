@@ -21,11 +21,10 @@
                                     $query = "DELETE from usuarios where id='$user'";
 
                                     if ($result = $connection->query($query)) {
-                                      
                                         session_destroy();
                                         echo "<script>location.href='../login.php';</script>";
                                         die();
-                                    } 
+                                    }
 
                                     $result->close();
                                     unset($connection);

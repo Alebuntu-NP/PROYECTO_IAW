@@ -24,42 +24,36 @@ if ($result = $connection->query($query)) {
         //PRINTING EACH ROW
  
   
-        	echo '<div class="form-group row">';
-        		echo '<label for="username" class="col-4 col-form-label">Usuario</label>';
-        		echo '<div class="col-8">';
-       	 			echo '<h4>'.$obj->id.'</h4>';
-                echo '</div>';
-                echo '<label for="username" class="col-4 col-form-label">Correo electronico</label>';
-        		echo '<div class="col-8">';
-       	 			echo '<h4>'.$obj->correo_electronico.'</h4>';
-        		echo '</div>';
-                echo '<label for="username" class="col-4 col-form-label">Nombre</label>';
-        		echo '<div class="col-8">';
-       	 			echo '<h4>'.$obj->nombre.'</h4>';
-                echo '</div>';
-                echo '<label for="username" class="col-4 col-form-label">Apellido</label>';
-        		echo '<div class="col-8">';
-       	 			echo '<h4>'.$obj->apellido.'</h4>';
-                echo '</div>';
-                echo '<label for="username" class="col-4 col-form-label">Edad</label>';
-        		echo '<div class="col-8">';
-       	 			echo '<h4>'.$obj->edad.'</h4>';
-                echo '</div>';
-                echo '<label for="username" class="col-4 col-form-label">Fecha de alta</label>';
-        		echo '<div class="col-8">';
-       	 			echo '<h4>'.$obj->fecha_alta.'</h4>';
-        		echo '</div>';
-            echo '</div>';
-            
-       	
-	      
-	}
+        echo '<div class="form-group row">';
+        echo '<label for="username" class="col-4 col-form-label">Usuario</label>';
+        echo '<div class="col-8">';
+        echo '<h4>'.$obj->id.'</h4>';
+        echo '</div>';
+        echo '<label for="username" class="col-4 col-form-label">Correo electronico</label>';
+        echo '<div class="col-8">';
+        echo '<h4>'.$obj->correo_electronico.'</h4>';
+        echo '</div>';
+        echo '<label for="username" class="col-4 col-form-label">Nombre</label>';
+        echo '<div class="col-8">';
+        echo '<h4>'.$obj->nombre.'</h4>';
+        echo '</div>';
+        echo '<label for="username" class="col-4 col-form-label">Apellido</label>';
+        echo '<div class="col-8">';
+        echo '<h4>'.$obj->apellido.'</h4>';
+        echo '</div>';
+        echo '<label for="username" class="col-4 col-form-label">Edad</label>';
+        echo '<div class="col-8">';
+        echo '<h4>'.$obj->edad.'</h4>';
+        echo '</div>';
+        echo '<label for="username" class="col-4 col-form-label">Fecha de alta</label>';
+        echo '<div class="col-8">';
+        echo '<h4>'.$obj->fecha_alta.'</h4>';
+        echo '</div>';
+        echo '</div>';
+    }
 
     //Free the result. Avoid High Memory Usages
     $result->close();
     unset($obj);
     unset($connection);
 } //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
-
-
-?>

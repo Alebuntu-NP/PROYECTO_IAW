@@ -5,7 +5,7 @@
 <?php else: ?>
           <?php
             session_destroy();
-            header("Location: ../index.php");
+            header("Location: ../INICIO/index.php");
           ?>
 <?php endif ?>
    

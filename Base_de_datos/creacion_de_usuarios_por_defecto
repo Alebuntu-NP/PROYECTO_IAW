@@ -1,0 +1,17 @@
+INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
+VALUES ( 'Alejandro' , 'Román Caballero', 23, 'admin','admin@admin.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
+VALUES ( 'a' , 'a', 999, 'a','a@a.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
+VALUES ( 'b' , 'b', 999, 'b','b@b.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
+VALUES ( 'c' , 'c', 999, 'c','c@c.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
+VALUES ( 'd' , 'd', 999, 'd','d@d.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
+VALUES ( 'e' , 'e', 999, 'e','e@e.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
+VALUES ( 'f' , 'f', 999, 'f','f@f.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
+VALUES ( 'g' , 'g', 999, 'g','g@g.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+    

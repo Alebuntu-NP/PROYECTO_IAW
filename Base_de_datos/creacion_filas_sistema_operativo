@@ -1,0 +1,15 @@
+INSERT INTO sistema_operativo (nombre,version,año_de_lanzamiento)
+VALUES ('ubuntu','16.04 Xenial Xerus ',2016);
+INSERT INTO sistema_operativo (nombre,version,año_de_lanzamiento)
+VALUES ('debian','9.4 stretch',2018);
+INSERT INTO sistema_operativo (nombre,version,año_de_lanzamiento)
+VALUES ('window ','server 2008 standar',2008);
+INSERT INTO sistema_operativo (nombre,version,año_de_lanzamiento)
+VALUES ('window','server 2012 standar',2012);
+INSERT INTO sistema_operativo (nombre,version,año_de_lanzamiento)
+VALUES ('lfs','7.5',2014);
+INSERT INTO sistema_operativo (nombre,version,año_de_lanzamiento)
+VALUES ('lfs','8.3',2018);
+INSERT INTO sistema_operativo (nombre,version,año_de_lanzamiento)
+VALUES ('android','4.3 Jelly Bean',2012);
+
