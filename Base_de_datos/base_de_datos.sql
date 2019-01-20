@@ -167,7 +167,7 @@ CREATE TABLE `valora` (
   `cod_usuario` int(11) NOT NULL,
   `cod_manual` int(11) NOT NULL,
   `fecha_valoracion` date NOT NULL,
-  `valoracion` varchar(10) NOT NULL,
+  `valoracion` INT(1) NOT NULL,
   PRIMARY KEY (`cod_usuario`,`cod_manual`),
   KEY `fk_valora_2_idx` (`cod_manual`),
   CONSTRAINT `fk_valora_1` FOREIGN KEY (`cod_usuario`) REFERENCES `usuarios` (`cod_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,

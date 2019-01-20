@@ -24,7 +24,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
 } else {
     session_destroy();
-    header("Location: ../login.php");
+    header("Location: ../INICIO/index.php");
 }
 
 ?>

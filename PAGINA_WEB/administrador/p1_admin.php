@@ -32,7 +32,7 @@ header("refresh:3;url=./principal.php");
 
 } else {
   session_destroy();
-  header("Location: ../login.php");
+  header("Location: ../INICIO/index.php");
 }
 
     

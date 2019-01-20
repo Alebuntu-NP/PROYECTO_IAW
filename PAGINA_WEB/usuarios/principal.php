@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/principal_user.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -14,6 +15,8 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/principal_user.css">
+
 </head>
 
 <body>
@@ -41,8 +44,8 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
     <!-- Contenidos del menu -->
     <div class="tab-content">
       <div id="home" class="container tab-pane active"><br>
-        <h3>HOME</h3>
-        <p>Pagina principal del usuario</p>
+        <h3>Info de la pagina web</h3>
+        <p>Bienvenidos a los manuales de alebuntu donde conseguiras muchas cosas</p>
 
       </div>
       <div id="perfil" class="container tab-pane fade"><br>
@@ -236,7 +239,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
   <?php
 } else {
     session_destroy();
-    header("Location: ../login.php");
+    header("Location: ../INICIO/index.php");
 }
 ?>
 </body>

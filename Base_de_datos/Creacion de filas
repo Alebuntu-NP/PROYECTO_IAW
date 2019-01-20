@@ -21,9 +21,9 @@ VALUES ('1', 'Nat', '2018-05-22', NULL, '25', 'Fácil','https://docs.google.com/
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`)
 VALUES ('2', 'Bind9', '2018-11-15', NULL, '13', 'Fácil','https://docs.google.com/document/d/16vXCG2q-a6Ts1i4aE55JTxO1dIHwyDogcwNpVULO5Rc/edit?usp=sharing');
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`)
-VALUES ('3', 'Kerberos', '2018-11-15', NULL, '14', 'Fácil','');
+VALUES ('3', 'Kerberos', '2018-11-15', NULL, '14', 'Fácil','https://docs.google.com/document/d/1vvy3Pi7yjsRVYkJAyPGSbsbj_IR_7jRgvx1fQMrZoDU/edit?usp=sharing');
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`)
-VALUES ('4', 'Openldap', '2018-11-15', NULL, '10', 'Media','');
+VALUES ('4', 'Openldap', '2018-11-15', NULL, '10', 'Media','https://docs.google.com/document/d/1DthxeqBsW071_Y_n8wUtUtVCaqlYOVbvijeDPrvqsZ8/edit?usp=sharing');
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`)
 VALUES ('5', 'Samba', '2018-11-15', NULL, '36', 'Media','https://docs.google.com/document/d/1NjXAAJqXFrFM5z7ZG9IYor8FmgB6jqisIyYwSGRocaI/edit?usp=sharing');
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`) 

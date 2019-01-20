@@ -46,7 +46,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
     <div class="tab-content">
       <div id="home" class="container tab-pane active" class="col-xs-2 col-sm-2 col-md-4"><br>
         <h3>HOME</h3>
-        <p>Pagina principal del usuario</p>
+        <?php echo "<h3>Pagina principal de la distribucion $_GET[nomso] donde encontrara sus diferentes versiones</h3>"; ?>
 
       </div>
 
@@ -63,7 +63,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
   <?php
 } else {
     session_destroy();
-    header("Location: ../login.php");
+    header("Location: ../INICIO/index.php");
 }
 ?>
 </body>
