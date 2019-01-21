@@ -3,7 +3,7 @@ body {
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
-    background-image: url('./fondos/fondo_principal_user.jpg');
+    background-image: url('./fondos/fondo_admin.jpg');
     background-repeat: no-repeat;
     -moz-background-size: cover;
     -webkit-background-size: cover;
@@ -13,10 +13,6 @@ p,h3 ,h5.section-title.h1 {
     text-shadow: 1px 2px black;
     color: beige;
     font-style: italic;
-    
+
 }
 
-p {
-
-    font-size: 20px;
-}

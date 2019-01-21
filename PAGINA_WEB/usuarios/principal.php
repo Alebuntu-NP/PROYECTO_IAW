@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
+  <title>Pagina principal del usuario</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/principal_user.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
@@ -45,11 +45,16 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
     <div class="tab-content">
       <div id="home" class="container tab-pane active"><br>
         <h3>Info de la pagina web</h3>
-        <p>Bienvenidos a los manuales de alebuntu donde conseguiras muchas cosas</p>
+        <p>Bienvenidos a los manuales de alebuntu donde podras aprender muchas cosas,
+           para ir a mis manuales, seguir los siguientes pasos:
+          pinchar en el sistema operativo , luego elegir la version pinchando en ella 
+          y luego ir al manual que querais ,
+          mucha suerte y espero que os sirvan los manuales.
+        </p>
 
       </div>
       <div id="perfil" class="container tab-pane fade"><br>
-        <div class="col-md-9">
+        <div class="col-md-12">
           <div class="card">
             <div class="card-body">
               <div class="row">
@@ -103,7 +108,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
 
         <link rel="stylesheet" type="text/css" media="screen" href="../css/card.css" />
-        <!-- Sistemas -->
+<!-- Sistemas -->
         <section id="team" class="pb-3">
           <div class="container">
             <h5 class="section-title h1">Sistemas Operativos</h5>
@@ -228,7 +233,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
             </div>
           </div>
         </section>
-        <!-- Team -->
+<!-- Sistemas -->
 
 
       </div>

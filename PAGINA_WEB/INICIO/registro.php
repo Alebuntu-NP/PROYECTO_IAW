@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Registro</title>
+        <title>Pagina del registro</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -31,11 +31,11 @@
                         </legend>
                         <div class="form-group">
                         <label>Usuario</label>
-                        <input type="text" id="id" name="id" class="form-control" placeholder="Escribe tu nombre de usuario" required>
+                        <input type="text" id="id" name="id" class="form-control" placeholder="Escribe tu nombre de usuario" maxlength="15" required>
                         </div>
                         <div class="form-group">
                         <label>Nombre</label>
-                        <input type="text" id="nom" name="nom" class="form-control" placeholder="Escribe tu nombre" required>
+                        <input type="text" id="nom" name="nom" class="form-control" placeholder="Escribe tu nombre" maxlength="24" required>
                         </div>
                         <div class="form-group">
                         <label>Apellidos</label>
@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group">
                         <label>Contraseña</label>
-                        <input type="password" id="pass" name="pass" class="form-control" placeholder="Escribe tu contraseña" required>
+                        <input type="password" id="pass" name="pass" class="form-control" placeholder="Escribe tu contraseña"  minlength="12" maxlength="24" required>
                         </div>
                         <div class="form-group text-left">
                         <input type="submit" name='regist'  value="Registrarse" class="btn btn-primary ">

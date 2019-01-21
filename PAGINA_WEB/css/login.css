@@ -13,3 +13,11 @@
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 }
+
+#titulo {
+	font-size: 100px;
+	text-shadow: 1px 2px black;
+	color: red;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}

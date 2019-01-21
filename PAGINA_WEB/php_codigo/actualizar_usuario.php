@@ -29,7 +29,7 @@
 
                                     echo '<label for="username" class="col-4 col-form-label">Nombre</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="name" name="name"  class="form-control here" type="text" value="'.$obj->nombre.'" required>';
+                                    echo '<input id="name" name="name"  class="form-control here" type="text" value="'.$obj->nombre.'" maxlength="24" required>';
                                     echo '</div>';
                                     echo '</div>';
 
@@ -53,7 +53,7 @@
 
                                     echo '<label for="password" class="col-4 col-form-label">Contraseña</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="password" name="password" placeholder="Nueva contraseña"  class="form-control here" type="password">';
+                                    echo '<input id="password" name="password" placeholder="Nueva contraseña"  class="form-control here" type="password" minlength="12" maxlength="24">';
                                     echo '</div>';
                                     echo '</div>';
                  
@@ -92,7 +92,7 @@
                                 if ($pass == $_POST['password']) {
 
                                 //Si no introduces una nueva contraseña entonces , te quedas con la antigua
-                                    $query1 = "UPDATE usuario set nombre = '$_POST[name]',apellido = '$_POST[lastname]',edad = $_POST[edad],correo_electronico = '$_POST[correo]',password = md5('$pass')where id = '$user'";
+                                    $query1 = "UPDATE usuarios set nombre = '$_POST[name]',apellido = '$_POST[lastname]',edad = $_POST[edad],correo_electronico = '$_POST[correo]',password = md5('$pass')where id = '$user'";
                                     if ($result1 = $connection1->query($query1)) {
                                         header("Location: ./principal.php");
                                     }

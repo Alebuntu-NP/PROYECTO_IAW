@@ -4,7 +4,13 @@
           </form>
 <?php else: ?>
           <?php
-  
+  if ($_SESSION["user"] == 'admin')
+  {
+    header("Location:../administrador/principal.php");
+    exit;
+  }
+    else {
         header("Location:../usuarios/principal.php");
-         exit;          ?>
+        exit;
+    }          ?>
 <?php endif ?>

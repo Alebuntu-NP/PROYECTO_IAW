@@ -22,7 +22,7 @@
 
                                     if ($result = $connection->query($query)) {
                                         session_destroy();
-                                        echo "<script>location.href='../login.php';</script>";
+                                        echo "<script>location.href='../INICIO/login.php';</script>";
                                         die();
                                     }
 

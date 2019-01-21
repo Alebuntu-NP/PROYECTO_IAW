@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
+  <title>Manuales</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Latest compiled and minified CSS -->
@@ -28,7 +28,7 @@
 <body>
   <?php
 session_start();
-if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"] != 'admin') {
+if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
     ?>
   <div class="container mt-4">
 
@@ -46,13 +46,15 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
     <!-- Contenidos del menu -->
     <div class="tab-content">
       <div id="home" class="container tab-pane active"><br>
-        <h3>HOME</h3>
-      </div>
+
+    <?php      echo "<p>Bienvenidos a los manuales de alebuntu donde estan ambientados a un determniado  sistema operativo,
+   en este caso el $_GET[nomb] y a una determinada version que es la $_GET[versin], ahora podeis empezar a seguir mis
+   manuales pinchando en cualquier menu de azul que aparecen en pantalla, posdata no olvideis dejar algun comentario :)</p>"; ?>
+    </div>
       <?php
         include_once '../php_codigo/operaciones_en_manuales.php';
     ?>
   
-
 
     </div>
   </div>

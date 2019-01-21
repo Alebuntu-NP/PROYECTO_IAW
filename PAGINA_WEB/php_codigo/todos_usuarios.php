@@ -18,17 +18,16 @@ if ($result = $connection->query("select * from usuarios;")) {
     ?>
 
     <!-- PRINT THE TABLE AND THE HEADER -->
-    <table>
+    <table class="table">
     <thead>
       <tr>
-        <th>Cod_Usuario</th>
-        <th>Nombre</th>
-        <th>Apellidos</th>
-        <th>Edad</th>
-        <th>Id</th>
-        <th>Password</th>
-        <th>Fecha_alta</th>
-        <th>Correo electronico</th>
+        <th scope="row">Cod_Usuario</th>
+        <th scope="row">Nombre</th>
+        <th scope="row">Apellidos</th>
+        <th scope="row">Edad</th>
+        <th scope="row">Id</th>
+        <th scope="row">Fecha_alta</th>
+        <th scope="row">Correo_electronico</th>
        </tr>
     </thead>
 
@@ -39,12 +38,11 @@ if ($result = $connection->query("select * from usuarios;")) {
     while ($obj = $result->fetch_object()) {
         //PRINTING EACH ROW
         echo "<tr>";
-        echo "<td>".$obj->cod_usuario."</td>";
+        echo "<td><a href='../op_admin/usu.php?codsu=$obj->cod_usuario&nom=$obj->nombre&ap=$obj->apellido&edad=$obj->edad&mote=$obj->id&fechalta=$obj->fecha_alta&correo=$obj->correo_electronico&contra=$obj->password'>".$obj->cod_usuario."</a></td>";
         echo "<td>".$obj->nombre."</td>";
         echo "<td>".$obj->apellido."</td>";
         echo "<td>".$obj->edad."</td>";
         echo "<td>".$obj->id."</td>";
-        echo "<td>".$obj->password."</td>";
         echo "<td>".$obj->fecha_alta."</td>";
         echo "<td>".$obj->correo_electronico."</td>";
 

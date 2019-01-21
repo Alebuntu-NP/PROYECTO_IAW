@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/fondo_inicio.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/ventanas_duracion_corta.css" />
-
-
-</head>
-<body>
 
 <?php
 
@@ -19,8 +6,8 @@ session_start();
 
 if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"] != 'admin') {
 
-    echo "<h1>" . "Bienvenido usuario " . $_SESSION['user'] . "</h1>";
-    header("refresh:3;url=./principal.php");
+
+    header("Location:./principal.php");
 
 } else {
     session_destroy();
@@ -29,5 +16,3 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
 ?>
 
-</body>
-</html>

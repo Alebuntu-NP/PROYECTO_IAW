@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagina principal</title>
+  <title>Pagina del login</title>
   <link rel="stylesheet" type="text/css" media="screen" href="../css/fondo_inicio.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="../css/login.css" />
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -63,8 +63,14 @@
     ?>
 
   <!------ Include the above in your HEAD tag ---------->
+  <div class="container">
 
-  <div class="container" style="margin-top:40px">
+<div class="row">
+
+<h1 id="titulo">MANUALES ALEBUNTU</h1>
+</div>
+    </div>
+  <div class="container" style="margin-top:200px">
     <div class="row">
       <div class="col-sm-6 col-md-4 col-md-offset-4">
         <div class="panel panel-default">
@@ -112,8 +118,9 @@
         </div>
       </div>
     </div>
+    
   </div>
- 
+
 </body>
 
 </html>

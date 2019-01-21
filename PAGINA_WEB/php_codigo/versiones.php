@@ -26,7 +26,7 @@ if ($result = $connection->query($query)) {
     while ($obj = $result->fetch_object()) {
         //PRINTING EACH ROW
     
-        echo "<div class='vers'><a href='../manuales/manuales.php?versin=$obj->version'><h1>".$obj->version."</h1></a></div>";
+        echo "<div class='vers'><a href='../manuales/manuales.php?versin=$obj->version&nomb=$_GET[nomso]'><h1>".$obj->version."</h1></a></div>";
     }
 
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
+  <title>Lfs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
@@ -21,7 +21,7 @@
 <body style="background-image: url('../css/fondos/fondo_lfs.jpg');">
   <?php
 session_start();
-if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"] != 'admin') {
+if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
     ?>
   <div class="container mt-4">
 
@@ -43,7 +43,6 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
     <!-- Contenidos del menu -->
     <div class="tab-content">
       <div id="home" class="container tab-pane active" class="col-xs-2 col-sm-2 col-md-4"><br>
-        <h3>HOME</h3>
         <?php echo "<h3>Pagina principal de la distribucion $_GET[nomso] donde encontrara sus diferentes versiones</h3>"; ?>
 
       </div>
