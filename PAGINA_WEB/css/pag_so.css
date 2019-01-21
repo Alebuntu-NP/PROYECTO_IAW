@@ -15,6 +15,12 @@ h3 ,p{
 
 }
 
+
+li {
+
+    color: white;
+}
+
 body {
 background-attachment: fixed;
 background-position: center center;

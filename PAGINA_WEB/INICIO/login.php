@@ -70,7 +70,7 @@
 <h1 id="titulo">MANUALES ALEBUNTU</h1>
 </div>
     </div>
-  <div class="container" style="margin-top:200px">
+  <div class="container" style="margin-top:100px">
     <div class="row">
       <div class="col-sm-6 col-md-4 col-md-offset-4">
         <div class="panel panel-default">

@@ -29,12 +29,10 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
 
     <!-- Menus -->
     <ul class="nav nav-pills" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
-      </li>
+    
 
       <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#versiones">Versiones</a>
+        <a class="nav-link active" data-toggle="pill" href="#versiones">Versiones</a>
       </li>
       <?php include_once '../php_codigo/atras.php';?>
 
@@ -44,12 +42,9 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
 
     <!-- Contenidos del menu -->
     <div class="tab-content">
-      <div id="home" class="container tab-pane active" class="col-xs-2 col-sm-2 col-md-4"><br>
-        <?php echo "<h3>Pagina principal de la distribucion $_GET[nomso] donde encontrara sus diferentes versiones</h3>"; ?>
 
-      </div>
 
-      <div id="versiones" class="container tab-pane fade"><br>
+      <div id="versiones" class="container tab-pane active"><br>
         <h3>Versiones</h3><br>
         <div class="row">
 

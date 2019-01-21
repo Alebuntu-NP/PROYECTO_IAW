@@ -231,8 +231,8 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
                                                               if ($result = $connection->query($query)) {
 
-                                                                header("Location: ../administrador/principal.php");
-                                                                  exit();
+                                                                echo "<script>location.href='../administrador/principal.php';</script>";
+                                                                die();
                                                               }
 
                                                               $result->close();

@@ -28,15 +28,14 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
     <!-- Nav pills -->
     <ul class="nav nav-pills" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+
+          <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#so">Sistemas Operativos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="pill" href="#perfil">Perfil</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#so">Sistemas Operativos</a>
-      </li>
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="pill" href="#operaciones">Operaciones</a>
       </li>
@@ -46,13 +45,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
     <!-- Tab panes -->
     <div class="tab-content">
-      <div id="home" class="container tab-pane active"><br>
-  <h3>Hola administrador que quieres hacer hoy ver tus manuales , cambiarse el perfil, borrar algun usuario, comentario o alguna valoracion,
-   añadir algun manual o quitarlo , actualizar  dicho manual , lo que quiera por algo eres el administrador XD.</h3>
-     
-   
 
-      </div>
       <div id="perfil" class="container tab-pane fade"><br>
         <div class="col-md-9">
           <div class="card">
@@ -109,7 +102,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
 
       </div>
-      <div id="so" class="container tab-pane fade"><br>
+      <div id="so" class="container tab-pane active"><br>
 
 
 <link rel="stylesheet" type="text/css" media="screen" href="../css/card.css" />
