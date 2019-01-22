@@ -7,7 +7,7 @@ $connection8->set_charset("utf8");
 
 //TESTING IF THE CONNECTION WAS RIGHT
 if ($connection8->connect_errno) {
-printf("Connection failed: %s\n", $connection->connect_error);
+printf("Connection failed: %s\n", $connection8->connect_error);
 exit();
 }
 
@@ -21,17 +21,17 @@ echo '</div>';
 echo '</div>';
 
 
-$consulta_sistemas="select nombre , version from sistema_operativo";
+$consulta_sistemas="select cod_so,nombre , version from sistema_operativo";
 if ($result_sistemas = $connection8->query($consulta_sistemas)) {
     echo '<div class="form-group row">';
 
     echo '<label for="soname" class="col-4 col-form-label">Sistema Operativo</label>';
     echo '<div class="col-8">';
-    echo '<select id="soname"name="soname" class="form-control here"  required>';
+    echo '<select id="soname"name="soname[]" class="form-control here" multiple required>';
 
     while ($obj99 = $result_sistemas->fetch_object()) {
         //PRINTING EACH ROW
-        echo "<option value='$obj99->nombre'>".$obj99->nombre."".$obj99->version."</option>";
+        echo "<option value='$obj99->cod_so'>".$obj99->nombre."".$obj99->version."</option>";
     }
     echo '</select>';
     echo '</div>';
@@ -97,35 +97,44 @@ echo '</form>';
 <?php
 
 
+//CREATING THE CONNECTION
+$connection9 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+$connection9->set_charset("utf8");
+
+//TESTING IF THE CONNECTION WAS RIGHT
+if ($connection9->connect_errno) {
+printf("Connection failed: %s\n", $connection9->connect_error);
+exit();
+}
+
+$query9 = "INSERT INTO manuales (nombre,fecha_publicacion,n_pag,dificultad,enlace) VALUES ('$_POST[manname]','$_POST[fechpub]',$_POST[npag],'$_POST[dificult]','$_POST[enlc]')";
+echo $query9;
+var_dump($_POST);
+echo "HOLA";
+if ($result9 = $connection9->query($query9)) {
+    $query9 = $connection9->insert_id;
+
+    echo "DENTRO DEL IF";
+for ($i=0; $i < sizeof($_POST['soname[$i]']) ; $i++) { 
+        $query10="INSERT INTO para (cod_so,cod_manual) VALUES ($_POST[soname[$i]],$query9)";
+        
+        
+        if ($result10 = $connection10->query($query10)) {
 
 
-$query8 = "INSERT INTO manuales (nombre,fecha_publicacion,n_pag,dificultad,enlace) VALUES ('$_POST[manname]','$_POST[fechpub]',$_POST[npag],'$_POST[dificult]','$_POST[enlc]')";
-if ($result8 = $connection8->query($query8)) {
-    $manuales = "select cod_manual as codma from manuales 
-    order by cod_manual desc
-    limit 1";
-    $sistemas = "select cod_so as codso from sistema_operativo where nombre='$_POST[soname]' and version='$_POST[versname]'";
 
+                
+            # code...
+        } else {
 
-    if ($result77 = $connection8->query($manuales)) {
-        $obj77 = $result77->fetch_object();
-        $uno=$obj77->codma;
-
-        if ($result88 = $connection8->query($sistemas)) {
-            $obj88 = $result88->fetch_object();
-            $dos=$obj88->codso;
-
-            $finish="INSERT INTO para (cod_manual,cod_so,version) VALUES ($uno,$dos,'$_POST[versname]')";
-
-            if ($result100 = $connection8->query($finish)) {
-                echo "<script>location.href='../administrador/dff.php';</script>";
-                die();
-            }
+            echo "ola";
         }
-    }
+
+     
 }
 
 
+echo "ADIOS";
 
 
 /*$result8->close();

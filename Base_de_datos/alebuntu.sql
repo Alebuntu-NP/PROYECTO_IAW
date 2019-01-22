@@ -87,7 +87,6 @@ DROP TABLE IF EXISTS `para`;
 CREATE TABLE `para` (
   `cod_so` int(11) NOT NULL,
   `cod_manual` int(11) NOT NULL,
-  `version` varchar(30) NOT NULL,
   PRIMARY KEY (`cod_so`,`cod_manual`),
   KEY `fk_para_2_idx` (`cod_manual`),
   CONSTRAINT `fk_para_1` FOREIGN KEY (`cod_so`) REFERENCES `sistema_operativo` (`cod_so`) ON DELETE CASCADE ON UPDATE CASCADE,

@@ -33,6 +33,7 @@ if ($result1 = $connection1->query($query)) {
         <th scope="row">Fecha_revisado</th>
         <th scope="row">N_Pag</th>
         <th scope="row">Dificultad</th>
+        <th scope="row">a</th>
 
        </tr>
     </thead>
@@ -52,8 +53,7 @@ while ($obj1 = $result1->fetch_object()) {
     echo "<td>".$obj1->n_pag."</td>";
     echo "<td>".$obj1->dificultad."</td>";
     
-        echo "<td><form method='POST' action='principal.php?codigo1=$obj1->cod_manual'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form></td>";
-        echo "<td><a href='../op_admin/man.php?codma=$obj1->cod_manual&nom=$obj1->nombre&fech_pub=$obj1->fecha_publicacion&fech_rev=$obj1->fecha_revisado&pag=$obj1->n_pag&dif=$obj1->dificultad&enl=$obj1->enlace'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></td>";
+        echo "<td><form method='POST' action='principal.php?codigo1=$obj1->cod_manual'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /><a href='../op_admin/man.php?codma=$obj1->cod_manual&nom=$obj1->nombre&fech_pub=$obj1->fecha_publicacion&fech_rev=$obj1->fecha_revisado&pag=$obj1->n_pag&dif=$obj1->dificultad&enl=$obj1->enlace'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></form></td>";
         echo "</tr>";
     }
 
