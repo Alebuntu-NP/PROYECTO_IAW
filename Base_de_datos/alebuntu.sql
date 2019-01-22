@@ -254,23 +254,23 @@ INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento)
 VALUES ('android','4.3 Jelly Bean',2012);
   
 
-INSERT INTO para(cod_so,cod_manual,version)
-VALUES (2,1,'9.4 stretch');
-INSERT INTO para(cod_so,cod_manual,version)
-VALUES (1,2,'16.04 Xenial Xerus');
-INSERT INTO para(cod_so,cod_manual,version)
-VALUES (1,3,'16.04 Xenial Xerus');
-INSERT INTO para(cod_so,cod_manual,version)
-VALUES (1,4,'16.04 Xenial Xerus');
-INSERT INTO para(cod_so,cod_manual,version)
-VALUES (1,5,'16.04 Xenial Xerus');
-INSERT INTO para(cod_so,cod_manual,version)
-VALUES (3,6,'server 2008 standar');
-INSERT INTO para(cod_so,cod_manual,version)
-VALUES (4,7,'server 2012 standar');
-INSERT INTO para(cod_so,cod_manual,version)
-VALUES (5,8,'7.5');
-INSERT INTO para(cod_so,cod_manual,version)
-VALUES (6,9,'8.3');
-INSERT INTO para(cod_so,cod_manual,version)
-VALUES (7,10,'4.3 Jelly Bean');
+INSERT INTO para(cod_so,cod_manual)
+VALUES (2,1);
+INSERT INTO para(cod_so,cod_manual)
+VALUES (1,2);
+INSERT INTO para(cod_so,cod_manual)
+VALUES (1,3);
+INSERT INTO para(cod_so,cod_manual)
+VALUES (1,4);
+INSERT INTO para(cod_so,cod_manual)
+VALUES (1,5);
+INSERT INTO para(cod_so,cod_manual)
+VALUES (3,6);
+INSERT INTO para(cod_so,cod_manual)
+VALUES (4,7);
+INSERT INTO para(cod_so,cod_manual)
+VALUES (5,8);
+INSERT INTO para(cod_so,cod_manual)
+VALUES (6,9);
+INSERT INTO para(cod_so,cod_manual)
+VALUES (7,10);

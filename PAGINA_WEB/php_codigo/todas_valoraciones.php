@@ -38,8 +38,7 @@ if ($result4 = $connection4->query($query)) {
         <th scope="row">Version</th>
         <th scope="row">Fecha_valoracion</th>
         <th scope="row">Valoracion</th>
-
-
+        <th scope="row">Operacion</th>
        </tr>
     </thead>
 

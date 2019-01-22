@@ -31,7 +31,7 @@ if ($result_sistemas = $connection8->query($consulta_sistemas)) {
 
     while ($obj99 = $result_sistemas->fetch_object()) {
         //PRINTING EACH ROW
-        echo "<option value='$obj99->cod_so'>".$obj99->nombre."".$obj99->version."</option>";
+        echo "<option value='$obj99->cod_so'> ".$obj99->nombre." ".$obj99->version."</option>";
     }
     echo '</select>';
     echo '</div>';
@@ -96,7 +96,7 @@ echo '</form>';
 
 <?php
 
-
+$vector_sistem=$_POST['soname'];
 //CREATING THE CONNECTION
 $connection9 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
 $connection9->set_charset("utf8");
@@ -108,56 +108,41 @@ exit();
 }
 
 $query9 = "INSERT INTO manuales (nombre,fecha_publicacion,n_pag,dificultad,enlace) VALUES ('$_POST[manname]','$_POST[fechpub]',$_POST[npag],'$_POST[dificult]','$_POST[enlc]')";
-echo "HOLA";
+
 if ($result9 = $connection9->query($query9)) {
     $query9 = $connection9->insert_id;
-    echo "DENTRO DEL IF";
-  /*  for ($i=0; $i < sizeof($_POST['$soname[$i]']) ; $i++) { 
 
-    $a=$_POST['soname[$i]'];
-        $query10="INSERT INTO para (cod_so,cod_manual) VALUES ($a,$query9)";
-        
-        
-        if ($result10 = $connection10->query($query10)) {
+   for ($i=0; $i < sizeof($vector_sistem) ; $i++) { 
 
-            echo $_POST['$soname[$i]'];
+    $query10="INSERT INTO para (cod_so,cod_manual) VALUES ($vector_sistem[$i],$query9)";
+    if ($result10 = $connection9->query($query10)) {
 
-
-                
-            # code...
-        } else {
-           echo $_POST['soname'];
-            echo "ola";
-        }
-
-    //}
-    }
-     
-*/     echo $_POST['soname'];
-
-
-echo "ADIOS";
-}else {
-    var_dump($_POST['soname']);
-
-
-echo "ADIOS";
+        echo "<script>location.href='principal.php';</script>";
+        die();
+    } 
 }
-  var_dump($_POST['soname']);
 
 
-echo "ADIOS";
 
+}
+  
 
-/*$result8->close();
+$result8->close();
+$result9->close();
+$result10->close();
+
 $result_sistemas->close();
 unset($obj8);
 unset($obj99);
 unset($connection8);
+unset($connection9);
+
 unset($query8);
+unset($query9);
+unset($query10);
+
 unset($consulta_sistemas);
 
-*/
 ?>
 
 <?php endif?>

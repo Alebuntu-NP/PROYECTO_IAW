@@ -16,7 +16,7 @@ if ($connection2->connect_errno) {
 
 //MAKING A SELECT QUERY
 /* Consultas de selección que devuelven un conjunto de resultados */
-if ($result2 = $connection2->query("select * from sistema_operativo;")) {
+if ($result2 = $connection2->query("select * from sistema_operativo  order by nombre ASC ;")) {
     ?>
 
     <!-- PRINT THE TABLE AND THE HEADER -->

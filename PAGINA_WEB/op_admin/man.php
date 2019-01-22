@@ -66,6 +66,15 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
     echo '<div class="form-group row">';
 
+
+    echo '<label for="so" class="col-4 col-form-label">Sistema Operativo</label>';
+    echo '<div class="col-8">';
+    echo '<input id="so" name="so"  class="form-control here" type="text" value="' . $_GET['nom'] . '"  required>';
+    echo '</div>';
+    echo '</div>';
+
+    echo '<div class="form-group row">';
+
     echo '<label for="fechrevis" class="col-4 col-form-label">Fecha revisado</label>';
     echo '<div class="col-8">';
     echo '<input id="fechrevis" name="fechrevis" class="form-control here" type="date" value="' . $_GET['fech_rev'] . '" >';
