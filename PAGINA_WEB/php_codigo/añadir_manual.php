@@ -108,30 +108,42 @@ exit();
 }
 
 $query9 = "INSERT INTO manuales (nombre,fecha_publicacion,n_pag,dificultad,enlace) VALUES ('$_POST[manname]','$_POST[fechpub]',$_POST[npag],'$_POST[dificult]','$_POST[enlc]')";
-echo $query9;
-var_dump($_POST);
 echo "HOLA";
 if ($result9 = $connection9->query($query9)) {
     $query9 = $connection9->insert_id;
-
     echo "DENTRO DEL IF";
-for ($i=0; $i < sizeof($_POST['soname[$i]']) ; $i++) { 
-        $query10="INSERT INTO para (cod_so,cod_manual) VALUES ($_POST[soname[$i]],$query9)";
+  /*  for ($i=0; $i < sizeof($_POST['$soname[$i]']) ; $i++) { 
+
+    $a=$_POST['soname[$i]'];
+        $query10="INSERT INTO para (cod_so,cod_manual) VALUES ($a,$query9)";
         
         
         if ($result10 = $connection10->query($query10)) {
 
+            echo $_POST['$soname[$i]'];
 
 
                 
             # code...
         } else {
-
+           echo $_POST['soname'];
             echo "ola";
         }
 
+    //}
+    }
      
+*/     echo $_POST['soname'];
+
+
+echo "ADIOS";
+}else {
+    var_dump($_POST['soname']);
+
+
+echo "ADIOS";
 }
+  var_dump($_POST['soname']);
 
 
 echo "ADIOS";
