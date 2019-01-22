@@ -26,169 +26,105 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
     ?>
   <div class="container mt-4">
 
-    <!-- Nav pills -->
-    <ul class="nav nav-pills" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
-      </li>
  
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#operaciones">Operaciones</a>
-      </li>
-      <?php include_once '../php_codigo/atras.php'; ?>
-
-<?php include_once '../php_codigo/salir_sesion.php'; ?>
-    </ul>
 
     <!-- Tab panes -->
     <div class="tab-content">
-      <div id="home" class="container tab-pane active"><br>
-  <h3>Bienvenido al lugar relacionado con las operaciones que pues hacer en la tabla comentarios,
-          aqui podras censurar comentarios o si lo prefieres eliminarlos.</h3>
-     
-   
 
-      </div>
     
-      <div id="operaciones" class="container tab-pane fade"><br>
-          <h3>Operaciones</h3>
-          <p>Aqui estaran las operaciones que podra hacer el admin</p>
+      <div class="container"><br>
+
           <div class="col-md-12">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
 
 
-                  <ul class="nav nav-pills" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active" data-toggle="pill" href="#censur">Censurar</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#borrar">Eliminar</a>
-                    </li>
+                        <ul class="nav nav-pills" role="tablist">
 
-                  </ul>
+                          <?php include_once '../php_codigo/atras.php'; ?>
 
-                  <div class="tab-content">
-                    <div id="censur" class="container tab-pane active"><br>
+                            <?php include_once '../php_codigo/salir_sesion.php'; ?>
+                        </ul>
 
-                    <?php if (!isset($_POST["comm"])): ?>
+                        <div class="tab-content">
+                          <div class="container mt-3"><br>
 
-<?php
+                          <?php if (!isset($_POST["comm"])): ?>
+
+                            <?php
 
 
 
-echo '<form method="post">';
+                              echo '<form method="post">';
 
-echo '<div class="form-group row">';
+                              echo '<div class="form-group row">';
 
-echo '<label for="comm" class="col-4 col-form-label">Comentario</label>';
-echo '<div class="col-8">';
-echo "<input id='comm' name='comm'  class='form-control here' type='text' value='$_GET[com]'  required>";
-echo '</div>';
-echo '</div>';
-
-
-
-echo '<div class="form-group row">';
-echo '<div class="offset-4 col-8">';
-echo '<button name="registro" type="submit" class="btn btn-primary">Censurar el comentario</button>';
-echo '</div>';
-echo '</div>';
-
-echo '</form>';
+                              echo '<label for="comm" class="col-4 col-form-label">Comentario</label>';
+                              echo '<div class="col-8">';
+                              echo "<input id='comm' name='comm'  class='form-control here' type='text' value='$_GET[com]'  required>";
+                              echo '</div>';
+                              echo '</div>';
 
 
 
-?>
+                              echo '<div class="form-group row">';
+                              echo '<div class="offset-4 col-8">';
+                              echo '<button name="registro" type="submit" class="btn btn-primary">Censurar el comentario</button>';
+                              echo '</div>';
+                              echo '</div>';
 
-
-<?php else: ?>
-
-<?php
-
-//CREATING THE CONNECTION
-$connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
-$connection1->set_charset("utf8");
-
-//TESTING IF THE CONNECTION WAS RIGHT
-if ($connection1->connect_errno) {
-printf("Connection failed: %s\n", $connection->connect_error);
-exit();
-}
-
-
-$query1 = "UPDATE comentarios set comentario = '$_POST[comm]' where cod_comentario = $_GET[codcom]";
-if ($result1 = $connection1->query($query1)) {
-header("Location: ../administrador/principal.php");
-
-}
-
-
-$result->close();
-unset($obj);
-unset($connection);
-unset($query)
-?>
-
-<?php endif?>
+                              echo '</form>';
 
 
 
+                            ?>
 
-                    <?php
 
-                      ?>
-                    </div>
-                    <div id="borrar" class="container tab-pane fade"><br>
-                      
-                    <?php if (!isset($_POST["eliminar"])): ?>
-                      <form method="post">
-                        <?php echo "<h4>¿Borrar el comentario $_GET[com]?</h4>"; ?>
-                        <input name="eliminar" type="submit" value="SI ESTAS SEGURO PINCHAME">
+                            <?php else: ?>
 
-                      </form>
-                      <?php else: ?>
+                              <?php
 
-                      <?php
+                              //CREATING THE CONNECTION
+                              $connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+                              $connection1->set_charset("utf8");
 
-                          //CREATING THE CONNECTION
-                          $connection = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
-                          $connection->set_charset("utf8");
-
-                          //TESTING IF THE CONNECTION WAS RIGHT
-                          if ($connection->connect_errno) {
+                              //TESTING IF THE CONNECTION WAS RIGHT
+                              if ($connection1->connect_errno) {
                               printf("Connection failed: %s\n", $connection->connect_error);
                               exit();
-                          }
+                              }
 
-                          $query = "DELETE from comentarios where cod_comentario=$_GET[codcom]";
 
-                          if ($result = $connection->query($query)) {
+                              $query1 = "UPDATE comentarios set comentario = '$_POST[comm]' where cod_comentario = $_GET[codcom]";
+                              if ($result1 = $connection1->query($query1)) {
+                              header("Location: ../administrador/principal.php");
 
-                            echo "<script>location.href='../administrador/principal.php';</script>";
-                            die();
-                          }
+                              }
 
-                          $result->close();
-                          unset($connection);
-                          unset($query);
 
-                          ?>
+                              $result->close();
+                              unset($obj);
+                              unset($connection);
+                              unset($query)
+                              ?>
 
-                      <?php endif?>
-                     
+                            <?php endif?>
+
+
+
+                      </div>
+                  
+
                     </div>
+                    <hr>
+
 
                   </div>
-                  <hr>
 
 
                 </div>
-
-
-              </div>
             </div>
           </div>
 

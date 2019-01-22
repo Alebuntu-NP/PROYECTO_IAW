@@ -21,35 +21,44 @@
 session_start();
 if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
     ?>
-  <div class="container mt-4">
-
-    <!-- Menus -->
-    <ul class="nav nav-pills" role="tablist">
-   
-
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="pill" href="#versiones">Versiones</a>
-      </li>
-      <?php include_once '../php_codigo/atras.php'; ?>
-
-      <?php include_once '../php_codigo/salir_sesion.php'; ?>
-
-    </ul>
-
-    <!-- Contenidos del menu -->
-    <div class="tab-content">
+ <div class="container mt-4">
 
 
-      <div id="versiones" class="container tab-pane active"><br>
-        <h3>Versiones</h3><br>
+<!-- Tab panes -->
+<div class="tab-content">
+
+
+
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
         <div class="row">
+          <div class="col-md-12">
 
-          <?php include_once '../php_codigo/versiones.php'; ?>
 
-        </div>
-      </div>
+            <ul class="nav nav-pills" role="tablist">
+
+              <?php include_once '../php_codigo/atras.php'; ?>
+
+              <?php include_once '../php_codigo/salir_sesion.php'; ?>
+
+            </ul>
+
+            <div class="tab-content">
+              <div class="container mt-4">
+  <div class="row">
+
+      <?php include_once '../php_codigo/versiones.php';?>
+
     </div>
-  </div>
+
+                </div>
+
+
+                </div>
+                <hr>
+             
+            </div>
   <?php
 } else {
         session_destroy();

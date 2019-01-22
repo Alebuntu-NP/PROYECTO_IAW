@@ -29,15 +29,16 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
     <!-- Nav pills -->
     <ul class="nav nav-pills" role="tablist">
 
-          <li class="nav-item">
-        <a class="nav-link active" data-toggle="pill" href="#so">Sistemas Operativos</a>
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#operaciones">Operaciones</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="pill" href="#perfil">Perfil</a>
       </li>
 
+
       <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#operaciones">Operaciones</a>
+        <a class="nav-link" data-toggle="pill" href="#so">Sistemas Operativos</a>
       </li>
       <?php include_once '../php_codigo/salir_sesion.php';?>
 
@@ -45,7 +46,95 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
     <!-- Tab panes -->
     <div class="tab-content">
+    <div id="operaciones" class="container tab-pane active"><br>
 
+          <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+
+
+                  <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="pill" href="#usu">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#manu">Manuales</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#soo">Sistemas Operativos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#coment">Comentarios</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#valor">Valoraciones</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#añadir">Añadir Manual</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#añadir1">Añadir Sistema Operativo</a>
+                    </li>
+
+                  </ul>
+
+                  <div class="tab-content">
+                    <div id="usu" class="container tab-pane active"><br>
+
+                    <?php
+                          include_once '../php_codigo/todos_usuarios.php';
+                      ?>
+                    </div>
+                    <div id="manu" class="container tab-pane fade"><br>
+                      
+
+                        <?php include_once '../php_codigo/todos_manuales.php';?>
+
+                     
+                    </div>
+                    <div id="soo" class="container tab-pane fade"><br>
+
+                      <?php include_once '../php_codigo/todos_los_so.php';?>
+
+                    </div>
+                    <div id="coment" class="container tab-pane fade"><br>
+
+                    <?php
+                          include_once '../php_codigo/todos_comentarios.php';
+                      ?>
+                    </div>
+                    <div id="valor" class="container tab-pane fade"><br>
+
+                    <?php
+                          include_once '../php_codigo/todas_valoraciones.php';
+                      ?>
+                    </div>
+                      <div id="añadir" class="container tab-pane fade"><br>
+   
+                          <?php include_once '../php_codigo/añadir_manual.php'; ?>
+                      </div>
+          
+                      <div id="añadir1" class="container tab-pane fade"><br>
+               
+                          <?php include_once '../php_codigo/añadir_sistema_operativo.php'; ?>
+                      </div>
+       
+                  </div>
+                  <hr>
+
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
       <div id="perfil" class="container tab-pane fade"><br>
         <div class="col-md-9">
           <div class="card">
@@ -102,235 +191,141 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
 
       </div>
-      <div id="so" class="container tab-pane active"><br>
+<div id="so" class="container tab-pane fade"><br>
 
 
-<link rel="stylesheet" type="text/css" media="screen" href="../css/card.css" />
-<!-- Sistemas -->
- <section id="team" class="pb-3">
-  <div class="container">
-    <h5 class="section-title h1">Sistemas Operativos</h5>
-  <div class="row">
-      <!-- Debian -->
+                                                  <link rel="stylesheet" type="text/css" media="screen" href="../css/card.css" />
+                                                  <!-- Sistemas -->
+                                                  <section id="team" class="pb-3">
+                                                    <div class="container">
+                                                      <h5 class="section-title h1">Sistemas Operativos</h5>
+                                                    <div class="row">
+                                                        <!-- Debian -->
 
-        <div class="col-xs-4 col-sm-3 col-md-2">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-              <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p><img class="img-fluid" src="../css/iconos/debian.png" alt="card image"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="backside">
-                <div class="card">
-                  <div class="card-body">
-                  <a  href="../pag_sistema_operativo/debian.php?nomso=debian"><h1>Debian</h1></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <!-- ./Debian -->
-      <!-- Ubuntu -->
+                                                          <div class="col-xs-4 col-sm-3 col-md-2">
+                                                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                                              <div class="mainflip">
+                                                                <div class="frontside">
+                                                                  <div class="card">
+                                                                    <div class="card-body text-center">
+                                                                      <p><img class="img-fluid" src="../css/iconos/debian.png" alt="card image"></p>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="backside">
+                                                                  <div class="card">
+                                                                    <div class="card-body">
+                                                                    <a  href="../pag_sistema_operativo/debian.php?nomso=debian"><h1>Debian</h1></a>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        <!-- ./Debian -->
+                                                        <!-- Ubuntu -->
 
-        <div class="col-xs-4 col-sm-3 col-md-2">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-              <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p><img class="img-fluid" src="../css/iconos/ubuntu.png" alt="card image"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="backside">
-                <div class="card">
-                  <div class="card-body">
-                  <a href="../pag_sistema_operativo/ubuntu.php?nomso=ubuntu"><h1>Ubuntu</h1></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <!-- ./Ubuntu -->
-      <!-- Window -->
+                                                          <div class="col-xs-4 col-sm-3 col-md-2">
+                                                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                                              <div class="mainflip">
+                                                                <div class="frontside">
+                                                                  <div class="card">
+                                                                    <div class="card-body text-center">
+                                                                      <p><img class="img-fluid" src="../css/iconos/ubuntu.png" alt="card image"></p>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="backside">
+                                                                  <div class="card">
+                                                                    <div class="card-body">
+                                                                    <a href="../pag_sistema_operativo/ubuntu.php?nomso=ubuntu"><h1>Ubuntu</h1></a>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        <!-- ./Ubuntu -->
+                                                        <!-- Window -->
 
-                    <div class="col-xs-4 col-sm-3 col-md-2">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-              <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p><img class="img-fluid" src="../css/iconos/window.jpg" alt="card image"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="backside">
-                <div class="card">
-                  <div class="card-body">
-                  <a href="../pag_sistema_operativo/window.php?nomso=window"><h1>Window</h1></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <!-- ./Window -->                        
-      <!-- Lfs -->
+                                                                      <div class="col-xs-4 col-sm-3 col-md-2">
+                                                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                                              <div class="mainflip">
+                                                                <div class="frontside">
+                                                                  <div class="card">
+                                                                    <div class="card-body text-center">
+                                                                      <p><img class="img-fluid" src="../css/iconos/window.jpg" alt="card image"></p>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="backside">
+                                                                  <div class="card">
+                                                                    <div class="card-body">
+                                                                    <a href="../pag_sistema_operativo/window.php?nomso=window"><h1>Window</h1></a>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        <!-- ./Window -->                        
+                                                        <!-- Lfs -->
 
-        <div class="col-xs-4 col-sm-3 col-md-2">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-              <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p><img class="img-fluid" src="../css/iconos/lfs.png" alt="card image"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="backside">
-                <div class="card">
-                  <div class="card-body">
-                  <a href="../pag_sistema_operativo/lfs.php?nomso=lfs"><h1>LFS</h1></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <!-- ./Lfs -->
-      <!-- Android -->
+                                                          <div class="col-xs-4 col-sm-3 col-md-2">
+                                                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                                              <div class="mainflip">
+                                                                <div class="frontside">
+                                                                  <div class="card">
+                                                                    <div class="card-body text-center">
+                                                                      <p><img class="img-fluid" src="../css/iconos/lfs.png" alt="card image"></p>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="backside">
+                                                                  <div class="card">
+                                                                    <div class="card-body">
+                                                                    <a href="../pag_sistema_operativo/lfs.php?nomso=lfs"><h1>LFS</h1></a>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        <!-- ./Lfs -->
+                                                        <!-- Android -->
 
-                    <div class="col-xs-4 col-sm-3 col-md-2">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-              <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p><img class="img-fluid" src="../css/iconos/android.png" alt="card image"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="backside">
-                <div class="card">
-                  <div class="card-body">
-                  <a href="../pag_sistema_operativo/android.php?nomso=android"><h1>Android</h1></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <!-- ./Android -->
+                                                                      <div class="col-xs-4 col-sm-3 col-md-2">
+                                                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                                              <div class="mainflip">
+                                                                <div class="frontside">
+                                                                  <div class="card">
+                                                                    <div class="card-body text-center">
+                                                                      <p><img class="img-fluid" src="../css/iconos/android.png" alt="card image"></p>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="backside">
+                                                                  <div class="card">
+                                                                    <div class="card-body">
+                                                                    <a href="../pag_sistema_operativo/android.php?nomso=android"><h1>Android</h1></a>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        <!-- ./Android -->
 
 
-    </div>
-  </div>
-  </section>
-<!-- Sistemas -->
+                                                      </div>
+                                                    </div>
+                                                    </section>
+                                                  <!-- Sistemas -->
 
 
 </div>
-      <div id="operaciones" class="container tab-pane fade"><br>
-          <h3>Operaciones</h3>
-          <p>Aqui estaran las operaciones que podra hacer el admin</p>
-          <div class="col-md-12">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12">
 
-
-                  <ul class="nav nav-pills" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active" data-toggle="pill" href="#usu">Usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#manu">Manuales</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#soo">Sistemas Operativos</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#coment">Comentarios</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#valor">Valoraciones</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#añadir">Añadir M</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#añadir1">Añadir SO</a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#añadir2">Asignar M con SO</a>
-                    </li>
-                  </ul>
-
-                  <div class="tab-content">
-                    <div id="usu" class="container tab-pane active"><br>
-
-                    <?php
-                          include_once '../php_codigo/todos_usuarios.php';
-                      ?>
-                    </div>
-                    <div id="manu" class="container tab-pane fade"><br>
-                      
-
-                        <?php include_once '../php_codigo/todos_manuales.php';?>
-
-                     
-                    </div>
-                    <div id="soo" class="container tab-pane fade"><br>
-
-                      <?php include_once '../php_codigo/todos_los_so.php';?>
-
-                    </div>
-                    <div id="coment" class="container tab-pane fade"><br>
-
-                    <?php
-                          include_once '../php_codigo/todos_comentarios.php';
-                      ?>
-                    </div>
-                    <div id="valor" class="container tab-pane fade"><br>
-
-                    <?php
-                          include_once '../php_codigo/todas_valoraciones.php';
-                      ?>
-                    </div>
-                      <div id="añadir" class="container tab-pane fade"><br>
-                          <h4>Aqui el administrador puede añadir manuales</h4>
-                          <?php include_once '../php_codigo/añadir_manual.php'; ?>
-                      </div>
-          
-                      <div id="añadir1" class="container tab-pane fade"><br>
-                          <h4>Asignar un manual a un determinado sistema operativo</h4>
-                          <?php include_once '../php_codigo/añadir_sistema_operativo.php'; ?>
-                      </div>
-                      <div id="añadir2" class="container tab-pane fade"><br>
-                          <h4>Asignar un manual a un determinado sistema operativo</h4>
-                          <?php include_once '../php_codigo/asignar.php'; ?>
-                      </div>
-                  </div>
-                  <hr>
-
-
-                </div>
-
-
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
+  
     </div>
   </div>
     <?php

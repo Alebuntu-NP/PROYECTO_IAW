@@ -8,12 +8,12 @@
   if ($_SESSION["user"]=='admin') {
     
   
-    echo "<script>location.href='../administrador/p1_admin.php';</script>";
+    echo "<script>location.href='../administrador/index.php';</script>";
     die();
 
   } else {
 
-    echo "<script>location.href='../usuarios/p1_user.php';</script>";
+    echo "<script>location.href='../usuarios/index.php';</script>";
     die();
   }
   

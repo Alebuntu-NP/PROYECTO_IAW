@@ -1,5 +1,5 @@
 <?php if (!isset($_POST["atras"])) : ?>
-          <form  method="post" class="">
+          <form  method="post">
             <input type="submit" name='atras' value="Volver a mi pagina principal" id="atras" class="btn btn-outline-success">
           </form>
 <?php else: ?>

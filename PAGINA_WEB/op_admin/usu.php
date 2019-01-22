@@ -21,58 +21,37 @@
 
 <body>
   <?php
-session_start();
-if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"] == 'admin') {
-    ?>
+              session_start();
+              if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"] == 'admin') {
+                  ?>
   <div class="container mt-4">
 
-    <!-- Nav pills -->
-    <ul class="nav nav-pills" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
-      </li>
- 
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#operaciones">Operaciones</a>
-      </li>
-      <?php include_once '../php_codigo/atras.php'; ?>
 
-      <?php include_once '../php_codigo/salir_sesion.php'; ?>
-    </ul>
 
-    <!-- Tab panes -->
+                  <!-- Tab panes -->
     <div class="tab-content">
-      <div id="home" class="container tab-pane active"><br>
-  <h3>Bienvenido al lugar relacionado con las operaciones que pues hacer en la tabla usuarios,
-         aqui podremos editar o eliminar el usuario en que pinchamos su id.</h3>
-     
-   
 
-      </div>
-    
-      <div id="operaciones" class="container tab-pane fade"><br>
-          <h3>Operaciones</h3>
-          <p>Aqui estaran las operaciones que podra hacer el admin</p>
-          <div class="col-md-12">
+                  
+
+    <div class="container"><br>
+
+        <div class="col-md-12">
           <div class="card">
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12">
 
 
-                  <ul class="nav nav-pills" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active" data-toggle="pill" href="#editar">Editar</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#borrar">Eliminar</a>
-                    </li>
+                                <ul class="nav nav-pills" role="tablist">
+                            
+                                  <?php include_once '../php_codigo/atras.php'; ?>
+                                  <?php include_once '../php_codigo/salir_sesion.php'; ?>
 
-                  </ul>
+                                </ul>
 
                   <div class="tab-content">
-                    <div id="editar" class="container tab-pane active"><br>
-                        <?php if (!isset($_POST["name"])): ?>
+                    <div class="container"><br>
+                            <?php if (!isset($_POST["name"])): ?>
 
                               <?php
             
@@ -162,7 +141,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
                             <?php else: ?>
 
-                                <?php
+                              <?php
 
                                 //CREATING THE CONNECTION
                                 $connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
@@ -200,58 +179,15 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                                 unset($obj);
                                 unset($connection);
                                 unset($query)
-                                ?>
+                              ?>
 
                             <?php endif?>
                     </div>
-                    <div id="borrar" class="container tab-pane fade"><br>
-                      
-
-                          <?php if (!isset($_POST["eliminar"])): ?>
-                                                    <form method="post">
-                                                <?php   echo "<h4>¿Eliminar el usuario $_GET[nom]?</h4>"; ?>
-                                                      <input name="eliminar" type="submit" value="SI ESTAS SEGURO PINCHAME" >
-
-                                                    </form>
-                          <?php else: ?>
-
-                                                      <?php
-                                                          $user = $_SESSION["user"];
-                                                              //CREATING THE CONNECTION
-                                                              $connection = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
-                                                              $connection->set_charset("utf8");
-
-                                                              //TESTING IF THE CONNECTION WAS RIGHT
-                                                              if ($connection->connect_errno) {
-                                                                  printf("Connection failed: %s\n", $connection->connect_error);
-                                                                  exit();
-                                                              }
-
-                                                              $query = "DELETE from usuarios where cod_usuario=$_GET[codsu]";
-
-                                                              if ($result = $connection->query($query)) {
-
-                                                                echo "<script>location.href='../administrador/principal.php';</script>";
-                                                                die();
-                                                              }
-
-                                                              $result->close();
-                                                              unset($connection);
-                                                              unset($query);
-
-
-
-                                                          ?>
-
-                          <?php endif?> 
-
-                     
-                    </div>
-
+         
                   </div>
                   <hr>
 
-
+                              </div>
                 </div>
 
 
@@ -261,7 +197,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
 
         </div>
-      </div>
+  
     </div>
   </div>
     <?php
