@@ -55,7 +55,7 @@ echo '<div class="form-group row">';
 
 echo '<label for="npag" class="col-4 col-form-label">Numero de paginas</label>';
 echo '<div class="col-8">';
-echo '<input id="npag" name="npag"  class="form-control here" type="number" value="" required>';
+echo '<input id="npag" name="npag"  class="form-control here" type="number" min="1"  value="1" required>';
 echo '</div>';
 echo '</div>';
 

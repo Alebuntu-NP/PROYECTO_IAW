@@ -27,7 +27,7 @@ echo '<div class="form-group row">';
 
 echo '<label for="lanza" class="col-4 col-form-label">Año de lanzamiento</label>';
 echo '<div class="col-8">';
-echo '<input id="lanza" name="lanza"  class="form-control here" type="number" value="" required>';
+echo '<input id="lanza" name="lanza"  class="form-control here" type="date" value="" required>';
 echo '</div>';
 echo '</div>';
 
@@ -65,11 +65,7 @@ $query9 = "INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento) VA
 if ($result9 = $connection9->query($query9)) {
 echo "<script>location.href='../administrador/principal.php';</script>";
 die();
-} else {
-echo $query9;
-
-}
-
+} 
 
 
 

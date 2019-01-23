@@ -28,6 +28,8 @@ if ($result = $connection->query("select * from usuarios order by nombre ASC ;")
         <th scope="row">Id</th>
         <th scope="row">Fecha_alta</th>
         <th scope="row">Correo_electronico</th>
+        <th scope="row">Operacion</th>
+
        </tr>
     </thead>
 
@@ -47,8 +49,7 @@ if ($result = $connection->query("select * from usuarios order by nombre ASC ;")
         echo "<td>".$obj->id."</td>";
         echo "<td>".$obj->fecha_alta."</td>";
         echo "<td>".$obj->correo_electronico."</td>";
-        echo "<td><form method='POST' action='principal.php?codigo=$obj->cod_usuario'><input type='image' name='eliminar' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form></td>";
-        echo "<td><a href='../op_admin/usu.php?codsu=$obj->cod_usuario&nom=$obj->nombre&ap=$obj->apellido&edad=$obj->edad&mote=$obj->id&fechalta=$obj->fecha_alta&correo=$obj->correo_electronico&contra=$obj->password'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></td>";
+        echo "<td><form method='POST' action='principal.php?codigo=$obj->cod_usuario'><input type='image' name='eliminar' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form><a href='../op_admin/usu.php?codsu=$obj->cod_usuario&nom=$obj->nombre&ap=$obj->apellido&edad=$obj->edad&mote=$obj->id&fechalta=$obj->fecha_alta&correo=$obj->correo_electronico&contra=$obj->password'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></td>";
         echo "</tr>"; 
     }
         echo "</table>";

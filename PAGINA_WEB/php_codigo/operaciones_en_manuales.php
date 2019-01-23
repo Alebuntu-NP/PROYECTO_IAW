@@ -25,7 +25,7 @@ if ($result = $connection->query($query)) {
     //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
     while ($obj = $result->fetch_object()) {
         echo '<div id="_' . $obj->cod_man . '" class="container tab-pane fade">';
-        echo '<h1>Para ir al manual pinchar en el enlace que viene a continuacion: <a href="'.$obj->enl.'">www.'.$obj->nomm . '.com</h1></a></h1>';
+        echo '<h1>Para ir al manual pinchar en el enlace que viene a continuacion: <a href="'.$obj->enl.'"  target="_blank">www.'.$obj->nomm . '.com</h1></a></h1>';
         $codma = $obj->cod_man;
         $namei = "texto_$obj->cod_man";
         $nameo = "estrella0_$obj->cod_man";
@@ -124,15 +124,9 @@ if ($result = $connection->query($query)) {
                         <br><br>
 
                         <?php
-                } else {
-                    echo "<h1>Error en la consulta".$añadir_valoracion."</h1>";
-                } 
-            } else {
-                echo "<h1>Error en la consulta".$añadir_comentario."</h1>";
-            }
-        } else {
-            echo "Algo malo en ver usuarios";
-        } ?>
+                }
+            } 
+        }  ?>
 
 
 <?php endif?>

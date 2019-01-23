@@ -26,7 +26,8 @@ if ($result2 = $connection2->query("select * from sistema_operativo  order by no
         <th scope="row">Nombre</th>
         <th scope="row">Version</th>
         <th scope="row">Año_de_lanzamiento</th>
-        
+        <th scope="row">Operacion</th>
+
 
        </tr>
     </thead>
@@ -42,8 +43,8 @@ if ($result2 = $connection2->query("select * from sistema_operativo  order by no
         echo "<td>".$obj2->nombre."</td>";
         echo "<td>".$obj2->version."</td>";
         echo "<td>".$obj2->jahr_de_lanzamiento."</td>";
-        echo "<td><form method='POST' action='principal.php?codigo2=$obj2->cod_so'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form></td>";
-        echo "<td><a href='../op_admin/sis.php?codso=$obj2->cod_so&nom=$obj2->nombre&vers=$obj2->version&lanzamiento=$obj2->jahr_de_lanzamiento'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></td>";
+        echo "<td><form method='POST' action='principal.php?codigo2=$obj2->cod_so'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form><a href='../op_admin/sis.php?codso=$obj2->cod_so&nom=$obj2->nombre&vers=$obj2->version&lanzamiento=$obj2->jahr_de_lanzamiento'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></td>";
+     
         echo "</tr>";
     }
 

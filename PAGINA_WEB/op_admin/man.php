@@ -60,7 +60,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
     echo '<label for="username" class="col-4 col-form-label">Nombre</label>';
     echo '<div class="col-8">';
-    echo '<input id="name" name="name"  class="form-control here" type="text" value="' . $_GET['nom'] . '"  required>';
+    echo '<input id="name" name="name"  class="form-control here" type="text" value="' . $_GET['nombrem'] . '"  required>';
     echo '</div>';
     echo '</div>';
 
@@ -69,7 +69,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
     echo '<label for="so" class="col-4 col-form-label">Sistema Operativo</label>';
     echo '<div class="col-8">';
-    echo '<input id="so" name="so"  class="form-control here" type="text" value="' . $_GET['nom'] . '"  required>';
+    echo '<input id="so" name="so"  class="form-control here" type="text" value="'.$_GET['nom'].' '.  $_GET['versy'].'" disabled  required>';
     echo '</div>';
     echo '</div>';
 
