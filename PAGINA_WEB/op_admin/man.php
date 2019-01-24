@@ -85,7 +85,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
     echo '<label for="npag" class="col-4 col-form-label">Numero de paginas</label>';
     echo '<div class="col-8">';
-    echo '<input id="npag" name="npag"  class="form-control here" type="number" value="' . $_GET['pag'] . '" required>';
+    echo '<input id="npag" name="npag"  class="form-control here" type="number" min="1" value="' . $_GET['pag'] . '" required>';
     echo '</div>';
     echo '</div>';
 
