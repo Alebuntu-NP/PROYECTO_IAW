@@ -152,6 +152,9 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                       <a class="nav-link" data-toggle="pill" href="#actu">Actualizar perfil</a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#mis_comentarios">Mis comentarios</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" data-toggle="pill" href="#baja">Darse de baja</a>
                     </li>
                   </ul>
@@ -170,7 +173,14 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
                         </div>
                       </div>
+                    
                     </div>
+                      <div id="mis_comentarios" class="container tab-pane fade"><br>
+
+<?php include_once '../php_codigo/tus_comentarios.php';?>
+
+
+</div>
                     <div id="baja" class="container tab-pane fade"><br>
 
                       <?php include_once '../php_codigo/eliminar_usuario.php';?>

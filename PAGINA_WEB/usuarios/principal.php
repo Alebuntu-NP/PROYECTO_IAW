@@ -44,135 +44,135 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
     <!-- Contenidos del menu -->
     <div class="tab-content">
-    <div id="so" class="container tab-pane active"><br>
+<div id="so" class="container tab-pane active"><br>
 
 
 <link rel="stylesheet" type="text/css" media="screen" href="../css/card.css" />
 <!-- Sistemas -->
-<section id="team" class="pb-3">
-  <div class="container">
-    <h5 class="section-title h1">Sistemas Operativos</h5>
-    <div class="row">
-      <!-- Debian -->
+  <section id="team" class="pb-3">
+    <div class="container">
+      <h5 class="section-title h1">Sistemas Operativos</h5>
+      <div class="row">
+        <!-- Debian -->
 
-        <div class="col-xs-4 col-sm-3 col-md-2">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-              <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p><img class="img-fluid" src="../css/iconos/debian.png" alt="card image"></p>
+          <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+              <div class="mainflip">
+                <div class="frontside">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <p><img class="img-fluid" src="../css/iconos/debian.png" alt="card image"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="backside">
-                <div class="card">
-                  <div class="card-body">
-                  <a  href="../pag_sistema_operativo/debian.php?nomso=debian"><h1>Debian</h1></a>
+                <div class="backside">
+                  <div class="card">
+                    <div class="card-body">
+                    <a  href="../pag_sistema_operativo/debian.php?nomso=debian"><h1>Debian</h1></a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      <!-- ./Debian -->
-      <!-- Ubuntu -->
+        <!-- ./Debian -->
+        <!-- Ubuntu -->
 
-        <div class="col-xs-4 col-sm-3 col-md-2">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-              <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p><img class="img-fluid" src="../css/iconos/ubuntu.png" alt="card image"></p>
+          <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+              <div class="mainflip">
+                <div class="frontside">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <p><img class="img-fluid" src="../css/iconos/ubuntu.png" alt="card image"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="backside">
-                <div class="card">
-                  <div class="card-body">
-                  <a href="../pag_sistema_operativo/ubuntu.php?nomso=ubuntu"><h1>Ubuntu</h1></a>
+                <div class="backside">
+                  <div class="card">
+                    <div class="card-body">
+                    <a href="../pag_sistema_operativo/ubuntu.php?nomso=ubuntu"><h1>Ubuntu</h1></a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      <!-- ./Ubuntu -->
-      <!-- Window -->
+        <!-- ./Ubuntu -->
+        <!-- Window -->
 
-                    <div class="col-xs-4 col-sm-3 col-md-2">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-              <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p><img class="img-fluid" src="../css/iconos/window.jpg" alt="card image"></p>
+                      <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+              <div class="mainflip">
+                <div class="frontside">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <p><img class="img-fluid" src="../css/iconos/window.jpg" alt="card image"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="backside">
-                <div class="card">
-                  <div class="card-body">
-                  <a href="../pag_sistema_operativo/window.php?nomso=window"><h1>Window</h1></a>
+                <div class="backside">
+                  <div class="card">
+                    <div class="card-body">
+                    <a href="../pag_sistema_operativo/window.php?nomso=window"><h1>Window</h1></a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      <!-- ./Window -->                        
-      <!-- Lfs -->
+        <!-- ./Window -->                        
+        <!-- Lfs -->
 
-        <div class="col-xs-4 col-sm-3 col-md-2">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-              <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p><img class="img-fluid" src="../css/iconos/lfs.png" alt="card image"></p>
+          <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+              <div class="mainflip">
+                <div class="frontside">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <p><img class="img-fluid" src="../css/iconos/lfs.png" alt="card image"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="backside">
-                <div class="card">
-                  <div class="card-body">
-                  <a href="../pag_sistema_operativo/lfs.php?nomso=lfs"><h1>LFS</h1></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <!-- ./Lfs -->
-      <!-- Android -->
-
-                    <div class="col-xs-4 col-sm-3 col-md-2">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-              <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p><img class="img-fluid" src="../css/iconos/android.png" alt="card image"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="backside">
-                <div class="card">
-                  <div class="card-body">
-                  <a href="../pag_sistema_operativo/android.php?nomso=android"><h1>Android</h1></a>
+                <div class="backside">
+                  <div class="card">
+                    <div class="card-body">
+                    <a href="../pag_sistema_operativo/lfs.php?nomso=lfs"><h1>LFS</h1></a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      <!-- ./Android -->
+        <!-- ./Lfs -->
+        <!-- Android -->
+
+                      <div class="col-xs-4 col-sm-3 col-md-2">
+            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+              <div class="mainflip">
+                <div class="frontside">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <p><img class="img-fluid" src="../css/iconos/android.png" alt="card image"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="backside">
+                  <div class="card">
+                    <div class="card-body">
+                    <a href="../pag_sistema_operativo/android.php?nomso=android"><h1>Android</h1></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- ./Android -->
 
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 <!-- Sistemas -->
 
 
@@ -191,6 +191,9 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" data-toggle="pill" href="#actu">Actualizar perfil</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#mis_comentarios">Mis comentarios</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" data-toggle="pill" href="#baja">Darse de baja</a>
@@ -212,6 +215,12 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                         </div>
                       </div>
                     </div>
+                    <div id="mis_comentarios" class="container tab-pane fade"><br>
+
+                        <?php include_once '../php_codigo/tus_comentarios.php';?>
+
+
+                        </div>
                     <div id="baja" class="container tab-pane fade"><br>
 
                       <?php include_once '../php_codigo/eliminar_usuario.php';?>

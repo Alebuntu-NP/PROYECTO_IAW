@@ -34,29 +34,22 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
 
     <!-- Menus -->
     <ul class="nav nav-pills" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
-      </li>
-      <?php include_once '../php_codigo/menus_manual.php';?>
+   
+     
       <?php include_once '../php_codigo/atras.php';?>
       <?php include_once '../php_codigo/salir_sesion.php';?>
 
     </ul>
 
     <!-- Contenidos del menu -->
-    <div class="tab-content">
-      <div id="home" class="container tab-pane active"><br>
+    
 
-    <?php      echo "<p>Bienvenidos a los manuales de alebuntu donde estan ambientados a un determniado  sistema operativo,
-   en este caso el $_GET[nomb] y a una determinada version que es la $_GET[versin], ahora podeis empezar a seguir mis
-   manuales pinchando en cualquier menu de azul que aparecen en pantalla, posdata no olvideis dejar algun comentario :)</p>"; ?>
-    </div>
       <?php
         include_once '../php_codigo/operaciones_en_manuales.php';
     ?>
   
 
-    </div>
+  
   </div>
   <?php
 

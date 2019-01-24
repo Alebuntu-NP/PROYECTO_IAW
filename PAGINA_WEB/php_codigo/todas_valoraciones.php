@@ -22,7 +22,7 @@ join manuales man on val.cod_manual = man.cod_manual
 join para par
 on man.cod_manual = par.cod_manual
 join sistema_operativo so
-on par.cod_so = so.cod_so";
+on par.cod_so = so.cod_so order by fech_val ASC";
 //MAKING A SELECT QUERY
 /* Consultas de selección que devuelven un conjunto de resultados */
 if ($result4 = $connection4->query($query)) {

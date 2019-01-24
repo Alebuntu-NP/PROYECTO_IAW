@@ -53,7 +53,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
               <div class="container mt-4">
   <div class="row">
 
-      <?php include_once '../php_codigo/versiones.php';?>
+  <?php include_once '../php_codigo/versionesmasmanuales.php';?>
 
     </div>
 
