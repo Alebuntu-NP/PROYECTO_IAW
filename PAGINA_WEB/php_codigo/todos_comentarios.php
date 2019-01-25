@@ -96,8 +96,12 @@ if ($result = $connection->query($query)) {
 
   echo "<script>location.href='principal.php';</script>";
   die();
-}
+} else {
 
+    echo $query;
+
+}
+ 
 $result->close();
 unset($connection);
 unset($query);

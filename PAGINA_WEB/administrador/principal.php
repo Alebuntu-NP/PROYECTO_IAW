@@ -105,6 +105,8 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                     <?php
                           include_once '../php_codigo/todos_comentarios.php';
                       ?>
+
+                      
                     </div>
                     <div id="valor" class="container tab-pane fade"><br>
 
