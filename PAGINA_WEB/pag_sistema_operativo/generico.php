@@ -17,9 +17,9 @@
   <link rel="stylesheet" href="../css/pag_so.css">
 
 </head>
+<?php
 
-<body style="background-image: url('../css/fondos/fondo_debian.png');">
-  <?php
+echo "<body background='../css/fondos/$_GET[fondo]'>";
 session_start();
 if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
     ?>

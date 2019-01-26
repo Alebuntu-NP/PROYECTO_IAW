@@ -62,7 +62,7 @@ if ($result3 = $connection3->query($query)) {
 
         echo "<td>".$obj3->fech_pub."</td>";
         echo "<td>".$obj3->comentario."</td>";
-        echo "<td><form method='POST' action='principal.php?codigo3=$obj3->cod_comentario'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form><a href='../op_admin/com.php?codcom=$obj3->cod_comentario&com=$obj3->comentario'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></td>";
+        echo "<td><form method='POST' action='principal.php?codmenta=$obj3->cod_comentario'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form><a href='../op_admin/com.php?codcom=$obj3->cod_comentario&com=$obj3->comentario'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></td>";
         echo "</tr>";
     }
 
@@ -90,7 +90,7 @@ if ($connection->connect_errno) {
     exit();
 }
 
-$query = "DELETE from comentarios where cod_comentario=$_GET[codigo3]";
+$query = "DELETE from comentarios where cod_comentario=$_GET[codcomenta]";
 
 if ($result = $connection->query($query)) {
 

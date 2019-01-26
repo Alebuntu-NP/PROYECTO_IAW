@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Pagina principal del administrador</title>
   <link rel="stylesheet" href="../css/imagenes_icon.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="../css/edicion.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
@@ -16,6 +15,8 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/principal_admin.css" />
+
 
 
 </head>
@@ -73,10 +74,10 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                       <a class="nav-link" data-toggle="pill" href="#valor">Valoraciones</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#añadir">Añadir Manual</a>
+                      <a class="nav-link" data-toggle="pill" href="#añadirman">Añadir Manual</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#añadir1">Añadir Sistema Operativo</a>
+                      <a class="nav-link" data-toggle="pill" href="#añadirso">Añadir Sistema Operativo</a>
                     </li>
 
                   </ul>
@@ -114,12 +115,12 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                           include_once '../php_codigo/todas_valoraciones.php';
                       ?>
                     </div>
-                      <div id="añadir" class="container tab-pane fade"><br>
+                      <div id="añadirman" class="container tab-pane fade"><br>
    
                           <?php include_once '../php_codigo/añadir_manual.php'; ?>
                       </div>
           
-                      <div id="añadir1" class="container tab-pane fade"><br>
+                      <div id="añadirso" class="container tab-pane fade"><br>
                
                           <?php include_once '../php_codigo/añadir_sistema_operativo.php'; ?>
                       </div>
