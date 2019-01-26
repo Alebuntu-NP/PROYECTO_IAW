@@ -59,7 +59,7 @@
             } else {
                 echo "Wrong Query";
             }
-        }
+        } 
     ?>
 
   <!------ Include the above in your HEAD tag ---------->

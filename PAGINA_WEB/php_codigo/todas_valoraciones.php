@@ -15,7 +15,7 @@ if ($connection4->connect_errno) {
     exit();
 }
 
-$query="select id ,man.nombre as nombre,val.fecha_valoracion as fech_val,valoracion, so.nombre as nombreso , so.version as versionso 
+$query="select id ,man.nombre as nombre,val.fecha_valoracion as fech_val,valoracion, so.nombre as nombreso , so.version as versionso ,cod_valora
 from usuarios  usu join valora val 
 on usu.cod_usuario = val.cod_usuario 
 join manuales man on val.cod_manual = man.cod_manual

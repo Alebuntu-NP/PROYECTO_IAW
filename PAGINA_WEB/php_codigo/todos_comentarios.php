@@ -18,7 +18,7 @@ if ($connection3->connect_errno) {
 //MAKING A SELECT QUERY
 /* Consultas de selección que devuelven un conjunto de resultados */
 
-$query="select id ,man.nombre as nombre,com.fecha_publicacion as fech_pub,comentario,so.nombre as nombreso,so.version as versionso
+$query="select id ,man.nombre as nombre,com.fecha_publicacion as fech_pub,comentario,so.nombre as nombreso,so.version as versionso, cod_comentario
 from usuarios  usu join comentarios com 
 on usu.cod_usuario = com.cod_usuario 
 join manuales man 

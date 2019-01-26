@@ -10,6 +10,8 @@ body {
 
 
     -o-background-size: cover;
+
+    
 }
 
 p,h3 ,h5.section-title.h1 {
@@ -17,4 +19,9 @@ p,h3 ,h5.section-title.h1 {
     color: beige;
     font-style: italic;
 
+}
+
+div {
+
+    width: 104%;
 }
