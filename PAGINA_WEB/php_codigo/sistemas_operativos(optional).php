@@ -10,7 +10,9 @@ if ($connection1->connect_errno) {
     printf("Connection failed: %s\n", $connection->connect_error);
     exit();
 }
-$query="select distinct nombre,fondo_del_so from sistema_operativo order by nombre ASC";
+$query="select distinct nombre from sistema_operativo order by nombre ASC";
+
+
 //MAKING A SELECT QUERY
 /* Consultas de selección que devuelven un conjunto de resultados */
 if ($result1 = $connection1->query($query)) {
@@ -21,11 +23,13 @@ if ($result1 = $connection1->query($query)) {
 
     ?>
      
-      
+     <div class="card" style='background-color:black;margin:10px;border-radius:50%;'>
+                    <div class="card-body text-center">
        
-     <?php     echo  "<a  style='color: beige;font-family: Lobster;' href='../pag_sistema_operativo/generico.php?nomso=$obj1->nombre&fondo=$obj1->fondo_del_so'><h1 style=' margin:30px;background-color:darkblue;'>".$obj1->nombre."</h1></a>"; ?>
+     <?php     echo  "<a  style='color: beige;font-family: Lobster;' href='../pag_sistema_operativo/generico.php?nomso=$obj1->nombre&fondo=fondo_por_defecto.jpg'><h1 style=' margin:30px;background-color:transparent;text-shadow: 1px 2px black;'>".$obj1->nombre."</h1></a>"; ?>
    
-   
+    </div>
+    </div>
      <?php
     }
 

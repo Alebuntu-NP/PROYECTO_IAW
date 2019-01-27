@@ -13,6 +13,17 @@ if ($connection->connect_errno) {
     exit();
 }
 
+if (isset($_POST['mans'])) {
+
+    $_POST['mans'];
+} else {
+    $_POST['mans']=$_GET['mans'];
+   
+}
+
+
+
+
 //MAKING A SELECT QUERY
 /* Consultas de selección que devuelven un conjunto de resultados */
 $query = "SELECT man.nombre as nomm ,
@@ -130,18 +141,18 @@ if ($connection->connect_errno) {
                     if ($result3 = $connection->query($añadir_valoracion)) {
                         echo'<script type="text/javascript">
                         alert("Gracias por tu comentario");
-                        window.location.href="../INICIO/index.php";
                         </script>';
-
-
+header("Location: ./manuales.php?mans=$codma");
                     }
                     } else {
                         $añadir_valoracion = "INSERT INTO valora (cod_manual,cod_usuario,fecha_valoracion,valoracion)  VALUES ($codma,$codu,CURDATE(),$_POST[estrella0])";
                         if ($result3 = $connection->query($añadir_valoracion)) {
                             echo'<script type="text/javascript">
                             alert("Gracias por tu comentario y valoracion");
-                            window.location.href="../INICIO/index.php";
+                          
                             </script>';
+                            header("Location: ./manuales.php?mans=$codma");
+
                         }
                     }
 

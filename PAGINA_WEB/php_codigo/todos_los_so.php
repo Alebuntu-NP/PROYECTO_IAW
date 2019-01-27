@@ -20,7 +20,7 @@ if ($result2 = $connection2->query("select * from sistema_operativo  order by no
     ?>
 
     <!-- PRINT THE TABLE AND THE HEADER -->
-    <table class="table">
+    <table class="table table-bordered" style="width:100%;">
     <thead>
       <tr>
         <th scope="row">Nombre</th>

@@ -23,7 +23,7 @@ if ($result1 = $connection1->query($query)) {
     ?>
 
     <!-- PRINT THE TABLE AND THE HEADER -->
-    <table class="table">
+    <table class="table table-bordered" style="width:100%;">
     <thead>
       <tr>
         <th scope="row">Manual</th>

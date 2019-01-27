@@ -33,7 +33,7 @@ if ($result3 = $connection3->query($query)) {
     ?>
 
     <!-- PRINT THE TABLE AND THE HEADER -->
-    <table class="table">
+    <table class="table table-bordered" style="width:100%;">
     <thead>
         <tr>
         <th scope="row">Usuario</th>
