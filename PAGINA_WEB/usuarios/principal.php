@@ -202,18 +202,16 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                   </ul>
 
                   <div class="tab-content">
-                    <div id="perf" class="container tab-pane fade active show"><br>
+                    <div id="perf" class="container tab-pane  active show"><br>
                       <?php include_once '../php_codigo/perfil.php';?>
 
 
                     </div>
                     <div id="actu" class="container tab-pane fade"><br>
-                      <div class="row">
-                        <div class="col-md-12">
+               
                           <?php include_once '../php_codigo/actualizar_usuario.php';?>
 
-                        </div>
-                      </div>
+             
                     </div>
                     <div id="mis_comentarios" class="container tab-pane fade"><br>
 
