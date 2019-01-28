@@ -1,10 +1,14 @@
-<?php if (!isset($_POST["name"])): ?>
+<?php 
+
+
+if (!isset($_POST["name"])): ?>
 
                               <?php
             
                                 $user = $_SESSION['user'];
                                 $pass = $_SESSION['password'];
-
+echo $user;
+echo $pass;
                                 $connection = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
                                 $connection->set_charset("utf8");
             
@@ -27,7 +31,7 @@
                                     echo '</div>';
                                     echo '<div class="form-group row">';
 
-                                    echo '<label for="username" class="col-4 col-form-label">Nombre</label>';
+                                    echo '<label for="name" class="col-4 col-form-label">Nombre</label>';
                                     echo '<div class="col-8">';
                                     echo '<input id="name" name="name"  class="form-control here" type="text" value="'.$obj->nombre.'" maxlength="24" required>';
                                     echo '</div>';
@@ -53,7 +57,7 @@
 
                                     echo '<label for="password" class="col-4 col-form-label">Contraseña</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="password" name="password" placeholder="Nueva contraseña"  class="form-control here" type="password" minlength="12" maxlength="24">';
+                                    echo '<input id="password" name="password" placeholder="Nueva contraseña"  class="form-control here" type="password" minlength="6" maxlength="24">';
                                     echo '</div>';
                                     echo '</div>';
                  
@@ -78,7 +82,6 @@
                             <?php else: ?>
 
                                 <?php
-
                                 //CREATING THE CONNECTION
                                 $connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
                                 $connection1->set_charset("utf8");
@@ -92,26 +95,29 @@
                                 if ($pass == $_POST['password']) {
 
                                 //Si no introduces una nueva contraseña entonces , te quedas con la antigua
-                                    $query1 = "UPDATE usuarios set nombre = '$_POST[name]',apellido = '$_POST[lastname]',edad = $_POST[edad],correo_electronico = '$_POST[correo]',password = md5('$pass')where id = '$user'";
+                                    $query1 = "UPDATE usuarios set nombre = '$_POST[name]',apellido = '$_POST[lastname]',edad = $_POST[edad],correo_electronico = '$_POST[correo]'where id = '$user'";
                                     if ($result1 = $connection1->query($query1)) {
-                                        header("Location: ./principal.php");
+                                        echo "<script>location.href='./principal.php';</script>";
+                                        die();
                                     }
                                 } else {
                                     
                                 // Si introduces una nueva contraseña se te cambia
+                                $_SESSION['password']= $_POST['password'];
+
                                     $query1 = "UPDATE usuarios set nombre = '$_POST[name]',apellido = '$_POST[lastname]',edad = $_POST[edad],correo_electronico = '$_POST[correo]',password = md5('$_POST[password]') where id = '$user'";
-                                    $_SESSION['password']= $_POST['password'];
 
                                     if ($result1 = $connection1->query($query1)) {
-                                        header("Location: ./principal.php");
+                                        echo "<script>location.href='./principal.php';</script>";
+                                        die();
                                     }
                                 }
 
-
-                                $result->close();
-                                unset($obj);
-                                unset($connection);
-                                unset($query)
+                                
+                                $result1->close();
+                                unset($obj1);
+                                unset($connection1);
+                                unset($query1)
                                 ?>
 
                             <?php endif?>

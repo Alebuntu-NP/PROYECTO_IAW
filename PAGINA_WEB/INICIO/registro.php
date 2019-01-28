@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group">
                         <label>Contraseña</label>
-                        <input type="password" id="pass" name="pass" class="form-control" placeholder="Escribe tu contraseña"  minlength="12" maxlength="24" required>
+                        <input type="password" id="pass" name="pass" class="form-control" placeholder="Escribe tu contraseña"  minlength="6" maxlength="24" required>
                         </div>
                         <div class="form-group text-left">
                         <input type="submit" name='regist'  value="Registrarse" class="btn btn-primary ">
