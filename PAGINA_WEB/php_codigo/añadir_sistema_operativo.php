@@ -5,7 +5,7 @@
 
 
 
-echo '<form method="post">';
+echo '<form method="post" enctype="multipart/form-data">';
 
 echo '<div class="form-group row">';
 
@@ -30,8 +30,13 @@ echo '<div class="col-8">';
 echo '<input id="lanza" name="lanza"  class="form-control here" type="number" value="2000" required>';
 echo '</div>';
 echo '</div>';
+echo '<div class="form-group row">';
 
-
+echo '<label for="lanza" class="col-4 col-form-label">Perfil del sistema Operativo</label>';
+echo '<div class="col-8">';
+echo '<input class="form-control" type="file" name="image" required />';
+echo '</div>';
+echo '</div>';
 echo '<div class="form-group row">';
 echo '<div class="offset-4 col-8">';
 echo '<button name="registro" type="submit" class="btn btn-primary">Añadir nuevo sistema operativo</button>';
@@ -49,7 +54,41 @@ echo '</form>';
 <?php else: ?>
 
 <?php
-
+var_dump($_FILES);
+//Temp file. Where the uploaded file is stored temporary
+$tmp_file = $_FILES['image']['tmp_name'];
+//Dir where we are going to store the file
+$target_dir = "/var/www/html/";
+//Full name of the file.
+$target_file = strtolower($target_dir . basename($_FILES['image']['name']));
+//Can we upload the file
+$valid= true;
+//Check if the file already exists
+if (file_exists($target_file)) {
+  echo "Sorry, file already exists.";
+  $valid = false;
+}
+//Check the size of the file. Up to 2Mb
+if ($_FILES['image']['size'] > (2048000)) {
+        $valid = false;
+        echo 'Oops!  Your file\'s size is to large.';
+    }
+//Check the file extension: We need an image not any other different type of file
+$file_extension = pathinfo($target_file, PATHINFO_EXTENSION); // We get the entension
+if ($file_extension!="jpg" && $file_extension!="jpeg" && $file_extension!="png" && $file_extension!="gif") {
+  $valid = false;
+  echo "Only JPG, JPEG, PNG & GIF files are allowed";
+}
+if ($valid) {
+  var_dump($target_file);
+  var_dump($tmp_file);
+  var_dump($_FILES);
+  //Put the file in its place
+  if (!move_uploaded_file($tmp_file, $target_file)) {
+    echo "ERROR";
+  }
+  echo "PRODUCT ADDED";
+}
 //CREATING THE CONNECTION
 $connection9 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
 $connection9->set_charset("utf8");

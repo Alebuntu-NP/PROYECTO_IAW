@@ -53,7 +53,7 @@
                 //Temp file. Where the uploaded file is stored temporary
                 $tmp_file = $_FILES['image']['tmp_name'];
                 //Dir where we are going to store the file
-                $target_dir = "/home/alejandro/";
+                $target_dir = "/var/www/html/";
                 //Full name of the file.
                 $target_file = strtolower($target_dir . basename($_FILES['image']['name']));
                 //Can we upload the file
@@ -64,7 +64,7 @@
                   $valid = false;
                 }
                 //Check the size of the file. Up to 2Mb
-                if ($_FILES['imagen']['size'] > (2048000)) {
+                if ($_FILES['image']['size'] > (2048000)) {
 			            $valid = false;
 			            echo 'Oops!  Your file\'s size is to large.';
 		            }
@@ -76,8 +76,12 @@
                 }
                 if ($valid) {
                   var_dump($target_file);
+                  var_dump($tmp_file);
+                  var_dump($_FILES);
                   //Put the file in its place
-                  move_uploaded_file($tmp_file, $target_file);
+                  if (!move_uploaded_file($tmp_file, $target_file)) {
+                    echo "ERROR";
+                  }
                   echo "PRODUCT ADDED";
                   //Once the file is uploaded we can insert the product record in the product table
                   //NOTE: All the following lines are commented. Uncomment them once you know the real structure of your
