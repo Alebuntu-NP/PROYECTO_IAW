@@ -75,14 +75,6 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
     echo '<div class="form-group row">';
 
-    echo '<label for="fechrevis" class="col-4 col-form-label">Fecha revisado</label>';
-    echo '<div class="col-8">';
-    echo '<input id="fechrevis" name="fechrevis" class="form-control here" type="date" value="' . $_GET['fech_rev'] . '" >';
-    echo '</div>';
-    echo '</div>';
-
-    echo '<div class="form-group row">';
-
     echo '<label for="npag" class="col-4 col-form-label">Numero de paginas</label>';
     echo '<div class="col-8">';
     echo '<input id="npag" name="npag"  class="form-control here" type="number" min="1" value="' . $_GET['pag'] . '" required>';
@@ -128,7 +120,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
         exit();
     }
 
-    $query1 = "UPDATE manuales set nombre = '$_POST[name]',fecha_revisado = '$_POST[fechrevis]',n_pag = $_POST[npag],dificultad = '$_POST[dificult]', enlace = '$_POST[enlc]' where cod_manual = $_GET[codma]";
+    $query1 = "UPDATE manuales set nombre = '$_POST[name]',fecha_revisado = CURDATE(),n_pag = $_POST[npag],dificultad = '$_POST[dificult]', enlace = '$_POST[enlc]' where cod_manual = $_GET[codma]";
     if ($result1 = $connection1->query($query1)) {
         header("Location: ../administrador/principal.php");
 
