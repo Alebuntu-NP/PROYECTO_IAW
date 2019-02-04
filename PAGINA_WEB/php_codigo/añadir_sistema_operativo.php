@@ -32,9 +32,16 @@ echo '</div>';
 echo '</div>';
 echo '<div class="form-group row">';
 
-echo '<label for="lanza" class="col-4 col-form-label">Perfil del sistema Operativo</label>';
+echo '<label for="perfil_so" class="col-4 col-form-label">Perfil del sistema Operativo</label>';
 echo '<div class="col-8">';
-echo '<input class="form-control" type="file" name="image" required />';
+echo '<input class="form-control" type="file" name="perfil_so" required />';
+echo '</div>';
+echo '</div>';
+echo '<div class="form-group row">';
+
+echo '<label for="fondo_so" class="col-4 col-form-label">Fondo del sistema Operativo</label>';
+echo '<div class="col-8">';
+echo '<input class="form-control" type="file" name="fondo_so" required />';
 echo '</div>';
 echo '</div>';
 echo '<div class="form-group row">';
@@ -54,13 +61,24 @@ echo '</form>';
 <?php else: ?>
 
 <?php
-var_dump($_FILES);
+
+
+foreach ($_FILES as $k => $value) {
+
+
+
 //Temp file. Where the uploaded file is stored temporary
-$tmp_file = $_FILES['image']['tmp_name'];
+$tmp_file = $value['tmp_name'];
 //Dir where we are going to store the file
-$target_dir = "/var/www/html/";
+if ($k == 'fondo_so') {
+$target_dir = "../css/fondos/";
+}
+
+else {
+  $target_dir = "../css/iconos/";
+}
 //Full name of the file.
-$target_file = strtolower($target_dir . basename($_FILES['image']['name']));
+$target_file = strtolower($target_dir . basename($value['name']));
 //Can we upload the file
 $valid= true;
 //Check if the file already exists
@@ -69,7 +87,7 @@ if (file_exists($target_file)) {
   $valid = false;
 }
 //Check the size of the file. Up to 2Mb
-if ($_FILES['image']['size'] > (2048000)) {
+if ($value['size'] > (2048000)) {
         $valid = false;
         echo 'Oops!  Your file\'s size is to large.';
     }
@@ -89,6 +107,9 @@ if ($valid) {
   }
   echo "PRODUCT ADDED";
 }
+
+}
+/*
 //CREATING THE CONNECTION
 $connection9 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
 $connection9->set_charset("utf8");
@@ -100,7 +121,7 @@ exit();
 }
 
 
-$query9 = "INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento) VALUES ('$_POST[nameso]','$_POST[versio]',$_POST[lanza])";
+$query9 = "INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so) VALUES ('$_POST[nameso]','$_POST[versio]',$_POST[lanza],'$target_file')";
 if ($result9 = $connection9->query($query9)) {
 echo "<script>location.href='../administrador/principal.php';</script>";
 die();
@@ -112,6 +133,6 @@ $result9->close();
 unset($obj9);
 unset($connection9);
 unset($query9)
-?>
+ */?>
 
 <?php endif?>

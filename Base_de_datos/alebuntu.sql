@@ -115,6 +115,8 @@ CREATE TABLE `sistema_operativo` (
   `nombre` varchar(30) NOT NULL,
   `version` varchar(30) NOT NULL,
   `jahr_de_lanzamiento` year(4) NOT NULL,
+  `perfil_so` varchar(300) NOT NULL,
+  `fondo_so` varchar(300) NOT NULL,
   PRIMARY KEY (`cod_so`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -238,19 +240,19 @@ INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, 
 VALUES ('10', 'Construccion de android',  '2018-11-06',NULL,  '16',  'Media','https://docs.google.com/document/d/1Mf1zh3Lz9deXt-t90VzyVYOi6Q-qj5RhMSKgF9q5V40/edit?usp=sharing');
 
 
-INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento)
+INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
 VALUES ('ubuntu','16.04 Xenial Xerus',2016);
-INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento)
+INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
 VALUES ('debian','9.4 stretch',2018);
-INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento)
+INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
 VALUES ('window ','server 2008 standar',2008);
-INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento)
+INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
 VALUES ('window','server 2012 standar',2012);
-INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento)
+INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
 VALUES ('lfs','7.5',2014);
-INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento)
+INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
 VALUES ('lfs','8.3',2018);
-INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento)
+INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
 VALUES ('android','4.3 Jelly Bean',2012);
   
 

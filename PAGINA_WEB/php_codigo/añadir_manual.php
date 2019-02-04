@@ -117,31 +117,20 @@ if ($result9 = $connection9->query($query9)) {
     $query10="INSERT INTO para (cod_so,cod_manual) VALUES ($vector_sistem[$i],$query9)";
     if ($result10 = $connection9->query($query10)) {
 
-        echo "<script>location.href='principal.php';</script>";
-        die();
+     
     } 
+
+
+
 }
 
 
-
+echo "<script>location.href='principal.php';</script>";
+die();
 }
   
 
-$result8->close();
-$result9->close();
-$result10->close();
 
-$result_sistemas->close();
-unset($obj8);
-unset($obj99);
-unset($connection8);
-unset($connection9);
-
-unset($query8);
-unset($query9);
-unset($query10);
-
-unset($consulta_sistemas);
 
 ?>
 

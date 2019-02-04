@@ -92,7 +92,6 @@
             if ($result1 = $connection->query($query1)) {
                 header("refresh:3;url=login.php");
                 echo "<h1>Usuario registrado correctamente</h1>";
-                $result1->close();
             }
         } else {
             //caso contario (else) es porque ese user ya esta registrado
@@ -101,8 +100,7 @@
             header("refresh:3;url=registro.php");
         }
     }
-    $result->close();
-    unset($connection);
+  
 
 
 
