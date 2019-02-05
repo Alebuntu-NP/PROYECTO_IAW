@@ -16,6 +16,7 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../css/imagenes_icon.css">
   <link rel="stylesheet" type="text/css" media="screen" href="../css/principal_admin.css" />
+  <link rel="stylesheet" href="../css/imagenes_de_fondo_y_imagen.css">
 
 </head>
 
@@ -57,7 +58,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
 
 
-                                                        echo '<form method="post">';
+                                                        echo '<form method="post" enctype="multipart/form-data">';
 
                                                         echo '<div class="form-group row">';
 
@@ -83,21 +84,37 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                                                         echo '</div>';
                                                         echo '</div>';
 
+                                                    //CREATING THE CONNECTION
+                                                    $connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+                                                    $connection1->set_charset("utf8");
 
-                                                        echo '<div class="form-group row">';
-                                                        echo '<label for="perfil_so" class="col-4 col-form-label">Perfil del sistema Operativo</label>';
-                                                        echo '<div class="col-8">';
-                                                        echo '<input class="form-control" type="file" name="perfil_so" required />';
-                                                        echo '</div>';
-                                                        echo '</div>';
-                                                        echo '<div class="form-group row">';
+                                                    //TESTING IF THE CONNECTION WAS RIGHT
+                                                    if ($connection1->connect_errno) {
+                                                    printf("Connection failed: %s\n", $connection->connect_error);
+                                                    exit();
+                                                    }
 
-                                                        echo '<label for="fondo_so" class="col-4 col-form-label">Fondo del sistema Operativo</label>';
-                                                        echo '<div class="col-8">';
-                                                        echo '<input class="form-control" type="file" name="fondo_so" required />';
-                                                        echo '</div>';
-                                                        echo '</div>';
+  
+                                                      $query1 = "select perfil_so as foto_perfil , fondo_so as fondo_pantalla from sistema_operativo where cod_so = $_GET[codso] ";
+                                                         if ($result1 = $connection1->query($query1)) {
+                                                          while ($obj1 = $result1->fetch_object()) {
 
+                                                          echo '<div class="form-group row">';
+                                                          echo '<label for="perfil_so" class="col-4 col-form-label">Perfil del sistema Operativo</label>';
+                                                          echo '<div class="col-8">';
+                                                          echo "<input class='form-control' type='file' name='perfil_so'  /><img class='img-thumbnail' src='$obj1->foto_perfil'/>";
+                                                          echo '</div>';
+                                                          echo '</div>';
+                                                          echo '<div class="form-group row">';
+  
+                                                          echo '<label for="fondo_so" class="col-4 col-form-label">Fondo del sistema Operativo</label>';
+                                                          echo '<div class="col-8">';
+                                                          echo "<input class='form-control' type='file' name='fondo_so' /><img class='img-thumbnail' src='$obj1->fondo_pantalla' />";
+                                                          echo '</div>';
+                                                          echo '</div>';
+                                                          }
+                                                      }
+                                                       
                                                         echo '<div class="form-group row">';
                                                         echo '<div class="offset-4 col-8">';
                                                         echo '<button name="registro" type="submit" class="btn btn-primary">Actualizar datos del sistema operativo ' . $_GET['nom'] . '</button>';
@@ -124,10 +141,10 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                               //Temp file. Where the uploaded file is stored temporary
                         $tmp_file = $value['tmp_name'];
                         //Dir where we are going to store the file
-                        $target_dir = "../css/fondos/";
+                        $target_dir1 = "../css/fondos/";
                         
                         //Full name of the file.
-                        $target_file1 = strtolower($target_dir . basename($value['name']));
+                        $target_file1 = strtolower($target_dir1 . basename($value['name']));
                         //Can we upload the file
                         $valid= true;
                         //Check if the file already exists
@@ -163,9 +180,9 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                               //Temp file. Where the uploaded file is stored temporary
                         $tmp_file = $value['tmp_name'];
                         //Dir where we are going to store the file
-                          $target_dir = "../css/iconos/";
+                          $target_dir2 = "../css/iconos/";
                           //Full name of the file.
-                        $target_file2 = strtolower($target_dir . basename($value['name']));
+                        $target_file2 = strtolower($target_dir2 . basename($value['name']));
                         //Can we upload the file
                         $valid= true;
                         //Check if the file already exists
@@ -180,7 +197,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                             }
                         //Check the file extension: We need an image not any other different type of file
                         $file_extension = pathinfo($target_file2, PATHINFO_EXTENSION); // We get the entension
-                        if ($file_extension!="jpg" && $file_extension!="jpeg" && $file_extension!="png" && $file_extension!="gif") {
+                        if ($file_extension!="jpg" && $file_extension!="jpeg" && $file_extension!="png" && $file_extension!="gif" ) {
                           $valid = false;
                           echo "Only JPG, JPEG, PNG & GIF files are allowed";
                         }
@@ -197,8 +214,8 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                         }
                         
                         
-                        }
-/*
+        }
+
                                                     //CREATING THE CONNECTION
                                                     $connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
                                                     $connection1->set_charset("utf8");
@@ -210,19 +227,66 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                                                     }
 
 
-                                                    $query1 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' , perfil_so = '$target_file2' , fondo_so = '$target_file1' where cod_so = $_GET[codso] ";
-                                                echo $query1;
-                                                    //   if ($result1 = $connection1->query($query1)) {
-                                                //    header("Location: ../administrador/principal.php");
-                                                   //     echo  $target_file2;
-                                                    //}
+                                                 $query1 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' , perfil_so = '$target_file1' , fondo_so = '$target_file2' where cod_so = $_GET[codso] ";
 
+                                                 $query2 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' where cod_so = $_GET[codso] ";
+                                                 $query3 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' , perfil_so = '$target_file2'  where cod_so = $_GET[codso] ";
+                                                 $query4 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' , fondo_so = '$target_file1' where cod_so = $_GET[codso] ";
+                                                 $query5 = "SELECT fondo_so , perfil_so from sistema_operativo where cod_so = $_GET[codso] ";
 
-                                                    //$result1->close();
+if ($result2 = $connection1->query($query5)) {
+  echo $query5;
+  while (  $obj = $result2->fetch_object()) {
 
-                                                    //unset($connection1);
-                                                    //unset($query1)
-  */                    ?>
+    echo $obj->perfil_so;
+
+     if ($target_file1 == "../css/fondos/" && $target_file2 == "../css/iconos/") {
+                                                
+                                                  if ($result1 = $connection1->query($query2)) {
+                                                        echo $query2;
+                                                        //header("Location: ../administrador/principal.php");
+                                                        //die();
+                                                      }                                 
+                                                    
+     }
+                                                  
+     elseif ("$obj->perfil_so" == "$target_file2") {
+
+                                                      if ($result1 = $connection1->query($query4)) {
+
+                                                          //  header("Location: ../administrador/principal.php");
+                                                        //die();
+                                                            echo $query4;
+                                                      }    
+     } 
+
+    elseif ("$obj->fondo_so" == "$target_file1") {
+
+                                                                                                  
+                       if ($result1 = $connection1->query($query3)) {
+                                                        echo $query3;
+                                                                                                            //header("Location: ../administrador/principal.php");
+                                                                                                            //die();
+                       }    
+
+    } 
+    elseif ($obj->fondo_so != $target_file1 && $obj->perfil_so != $target_file2) {
+                                        
+     if ($result1 = $connection1->query($query1)) {
+
+                                                        echo $query1;
+                                                                                                                //header("Location: ../administrador/principal.php");
+                                                                                                                //die();
+                                                        
+     }     
+
+                                                                                                              
+    } 
+                                                    
+                                                  }    
+                                              }
+                                            
+                 ?>
 
                     <?php endif?>
 
@@ -245,7 +309,11 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
     </div>
   </div>
   <?php
-} else {
+} 
+
+
+
+else {
     session_destroy();
     header("Location: ../INICIO/index.php");
 }
