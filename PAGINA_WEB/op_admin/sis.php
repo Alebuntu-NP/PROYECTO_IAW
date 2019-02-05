@@ -137,11 +137,11 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
 
                     
-                        if ($k == 'fondo_so') {
+                        if ($k == 'perfil_so') {
                               //Temp file. Where the uploaded file is stored temporary
                         $tmp_file = $value['tmp_name'];
                         //Dir where we are going to store the file
-                        $target_dir1 = "../css/fondos/";
+                        $target_dir1 = "../css/iconos/";
                         
                         //Full name of the file.
                         $target_file1 = strtolower($target_dir1 . basename($value['name']));
@@ -180,7 +180,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                               //Temp file. Where the uploaded file is stored temporary
                         $tmp_file = $value['tmp_name'];
                         //Dir where we are going to store the file
-                          $target_dir2 = "../css/iconos/";
+                          $target_dir2 = "../css/fondos/";
                           //Full name of the file.
                         $target_file2 = strtolower($target_dir2 . basename($value['name']));
                         //Can we upload the file
@@ -197,7 +197,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                             }
                         //Check the file extension: We need an image not any other different type of file
                         $file_extension = pathinfo($target_file2, PATHINFO_EXTENSION); // We get the entension
-                        if ($file_extension!="jpg" && $file_extension!="jpeg" && $file_extension!="png" && $file_extension!="gif" ) {
+                        if ($file_extension!="jpg" && $file_extension!="jpeg" && $file_extension!="png" && $file_extension!="gif") {
                           $valid = false;
                           echo "Only JPG, JPEG, PNG & GIF files are allowed";
                         }
@@ -216,7 +216,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                         
         }
 
-                                                    //CREATING THE CONNECTION
+       //CREATING THE CONNECTION
                                                     $connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
                                                     $connection1->set_charset("utf8");
 
@@ -230,60 +230,72 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                                                  $query1 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' , perfil_so = '$target_file1' , fondo_so = '$target_file2' where cod_so = $_GET[codso] ";
 
                                                  $query2 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' where cod_so = $_GET[codso] ";
-                                                 $query3 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' , perfil_so = '$target_file2'  where cod_so = $_GET[codso] ";
-                                                 $query4 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' , fondo_so = '$target_file1' where cod_so = $_GET[codso] ";
+                                                 $query3 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' , perfil_so = '$target_file1'  where cod_so = $_GET[codso] ";
+                                                 $query4 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' , fondo_so = '$target_file2' where cod_so = $_GET[codso] ";
                                                  $query5 = "SELECT fondo_so , perfil_so from sistema_operativo where cod_so = $_GET[codso] ";
 
-if ($result2 = $connection1->query($query5)) {
-  echo $query5;
-  while (  $obj = $result2->fetch_object()) {
+if ($result1 = $connection1->query($query5)) {
+  $obj = $result1->fetch_object();
 
-    echo $obj->perfil_so;
+  
+  echo $obj->perfil_so;
+echo $target_file1;
+echo $target_file2;
+echo $target_dir2;
+ 
+if ($target_file2 != $target_dir2 && $target_file1 != $target_dir1) {
 
-     if ($target_file1 == "../css/fondos/" && $target_file2 == "../css/iconos/") {
-                                                
-                                                  if ($result1 = $connection1->query($query2)) {
-                                                        echo $query2;
-                                                        //header("Location: ../administrador/principal.php");
-                                                        //die();
-                                                      }                                 
-                                                    
-     }
-                                                  
-     elseif ("$obj->perfil_so" == "$target_file2") {
 
-                                                      if ($result1 = $connection1->query($query4)) {
+  if ($result2 = $connection1->query($query1)) {
+    echo $query1;
+    header("Location: ../administrador/principal.php");
+    die();
+  }       
 
-                                                          //  header("Location: ../administrador/principal.php");
-                                                        //die();
-                                                            echo $query4;
-                                                      }    
-     } 
+}
 
-    elseif ("$obj->fondo_so" == "$target_file1") {
 
-                                                                                                  
-                       if ($result1 = $connection1->query($query3)) {
-                                                        echo $query3;
-                                                                                                            //header("Location: ../administrador/principal.php");
-                                                                                                            //die();
-                       }    
+elseif ($target_file2 == $target_dir2 && $target_file1 != $target_dir1) {
 
-    } 
-    elseif ($obj->fondo_so != $target_file1 && $obj->perfil_so != $target_file2) {
-                                        
-     if ($result1 = $connection1->query($query1)) {
 
-                                                        echo $query1;
-                                                                                                                //header("Location: ../administrador/principal.php");
-                                                                                                                //die();
-                                                        
-     }     
+  if ($result2 = $connection1->query($query3)) {
+    echo $query3;
+    header("Location: ../administrador/principal.php");
+    die();
+  }       
 
-                                                                                                              
-    } 
-                                                    
-                                                  }    
+}
+
+elseif ($target_file1 == $target_dir1 && $target_file2 != $target_dir2) {
+
+
+  if ($result2 = $connection1->query($query4)) {
+    echo $query4;
+    header("Location: ../administrador/principal.php");
+    die();
+  }       
+
+}
+
+else  {
+
+
+  if ($result2 = $connection1->query($query2)) {
+    echo $query2;
+    header("Location: ../administrador/principal.php");
+    die();
+  }       
+
+}
+
+
+
+
+
+
+
+
+                                
                                               }
                                             
                  ?>
