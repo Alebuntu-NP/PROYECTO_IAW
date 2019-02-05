@@ -18,8 +18,10 @@
 
 </head>
 <?php
+echo "<body background=$_GET[fondo]>";
 
-echo "<body background='../css/fondos/$_GET[fondo]'>";
+
+
 session_start();
 if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
     ?>

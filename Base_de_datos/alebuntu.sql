@@ -241,19 +241,19 @@ VALUES ('10', 'Construccion de android',  '2018-11-06',NULL,  '16',  'Media','ht
 
 
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('ubuntu','16.04 Xenial Xerus',2016);
+VALUES ('ubuntu','16.04 Xenial Xerus',2016,'../css/iconos/ubuntu.png','../css/fondos/fondo_ubuntu.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('debian','9.4 stretch',2018);
+VALUES ('debian','9.4 stretch',2018,'../css/iconos/debian.png','../css/fondos/fondo_debian.png');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('window ','server 2008 standar',2008);
+VALUES ('window ','server 2008 standar',2008,'../css/iconos/window.jpg','../css/fondos/fondo_window_10.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('window','server 2012 standar',2012);
+VALUES ('window','server 2012 standar',2012,'../css/iconos/window.jpg','../css/fondos/fondo_window_10.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('lfs','7.5',2014);
+VALUES ('lfs','7.5',2014,'../css/iconos/lfs.png','../css/fondos/fondo_lfs.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('lfs','8.3',2018);
+VALUES ('lfs','8.3',2018,'../css/iconos/lfs.png','../css/fondos/fondo_lfs.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('android','4.3 Jelly Bean',2012);
+VALUES ('android','4.3 Jelly Bean',2012,'../css/iconos/android.png','../css/fondos/fondo_android.jpg');
   
 
 INSERT INTO para(cod_so,cod_manual)

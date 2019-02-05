@@ -10,7 +10,7 @@ if ($connection1->connect_errno) {
     printf("Connection failed: %s\n", $connection->connect_error);
     exit();
 }
-$query="select distinct nombre from sistema_operativo order by nombre ASC";
+$query="select distinct nombre , fondo_so ,perfil_so from sistema_operativo order by nombre ASC";
 
 
 //MAKING A SELECT QUERY
@@ -23,10 +23,11 @@ if ($result1 = $connection1->query($query)) {
 
     ?>
      
-     <div class="card" style='background-image:url("../css/fondos/card.jpg");margin:10px;border-radius:1%;'>
+     <div class="card" style='background-color:black;margin:10px;border-radius:1%;'>
                     <div class="card-body text-center">
+                    <?php              echo "<img class='img-thumbnail' style='width:256px;height:256px;' src='$obj1->perfil_so' alt=''>";
        
-     <?php     echo  "<a  style='color: beige;font-family: Lobster;' href='../pag_sistema_operativo/generico.php?nomso=$obj1->nombre&fondo=fondo_por_defecto.jpg'><h1 style=' margin:30px;background-color:transparent;text-shadow: 1px 2px black;'>".$obj1->nombre."</h1></a>"; ?>
+   echo  "<a  style='color: beige;font-family: Lobster;' href='../pag_sistema_operativo/generico.php?nomso=$obj1->nombre&fondo=$obj1->fondo_so'><h1 style=' margin:30px;background-color:transparent;text-shadow: 1px 2px black;'>".$obj1->nombre."</h1></a>"; ?>
    
     </div>
     </div>

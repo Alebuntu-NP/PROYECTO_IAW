@@ -67,22 +67,19 @@ foreach ($_FILES as $k => $value) {
 
 
 
-//Temp file. Where the uploaded file is stored temporary
-$tmp_file = $value['tmp_name'];
-//Dir where we are going to store the file
 if ($k == 'fondo_so') {
-$target_dir = "../css/fondos/";
-}
 
-else {
-  $target_dir = "../css/iconos/";
-}
+      //Temp file. Where the uploaded file is stored temporary
+      $tmp_file = $value['tmp_name'];
+      //Dir where we are going to store the file
+$target_dir = "../css/fondos/";
+
 //Full name of the file.
-$target_file = strtolower($target_dir . basename($value['name']));
+$target_file1 = strtolower($target_dir . basename($value['name']));
 //Can we upload the file
 $valid= true;
 //Check if the file already exists
-if (file_exists($target_file)) {
+if (file_exists($target_file1)) {
   echo "Sorry, file already exists.";
   $valid = false;
 }
@@ -92,24 +89,65 @@ if ($value['size'] > (2048000)) {
         echo 'Oops!  Your file\'s size is to large.';
     }
 //Check the file extension: We need an image not any other different type of file
-$file_extension = pathinfo($target_file, PATHINFO_EXTENSION); // We get the entension
+$file_extension = pathinfo($target_file1, PATHINFO_EXTENSION); // We get the entension
 if ($file_extension!="jpg" && $file_extension!="jpeg" && $file_extension!="png" && $file_extension!="gif") {
   $valid = false;
   echo "Only JPG, JPEG, PNG & GIF files are allowed";
 }
 if ($valid) {
-  var_dump($target_file);
-  var_dump($tmp_file);
-  var_dump($_FILES);
+//echo $target_file1;
+  //var_dump($tmp_file);
+  //var_dump($_FILES);
   //Put the file in its place
-  if (!move_uploaded_file($tmp_file, $target_file)) {
+  if (!move_uploaded_file($tmp_file, $target_file1)) {
     echo "ERROR";
   }
   echo "PRODUCT ADDED";
 }
 
 }
-/*
+
+else {
+      //Temp file. Where the uploaded file is stored temporary
+      $tmp_file = $value['tmp_name'];
+      //Dir where we are going to store the file
+  $target_dir = "../css/iconos/";
+  //Full name of the file.
+$target_file2 = strtolower($target_dir . basename($value['name']));
+//Can we upload the file
+$valid= true;
+//Check if the file already exists
+if (file_exists($target_file2)) {
+  echo "Sorry, file already exists.";
+  $valid = false;
+}
+//Check the size of the file. Up to 2Mb
+if ($value['size'] > (2048000)) {
+        $valid = false;
+        echo 'Oops!  Your file\'s size is to large.';
+    }
+//Check the file extension: We need an image not any other different type of file
+$file_extension = pathinfo($target_file2, PATHINFO_EXTENSION); // We get the entension
+if ($file_extension!="jpg" && $file_extension!="jpeg" && $file_extension!="png" && $file_extension!="gif") {
+  $valid = false;
+  echo "Only JPG, JPEG, PNG & GIF files are allowed";
+}
+if ($valid) {
+  //echo $target_file2;
+  //var_dump($tmp_file);
+  //var_dump($_FILES);
+  //Put the file in its place
+  if (!move_uploaded_file($tmp_file, $target_file2)) {
+    echo "ERROR";
+  }
+  echo "PRODUCT ADDED";
+}
+}
+
+
+}
+
+
 //CREATING THE CONNECTION
 $connection9 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
 $connection9->set_charset("utf8");
@@ -121,7 +159,7 @@ exit();
 }
 
 
-$query9 = "INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so) VALUES ('$_POST[nameso]','$_POST[versio]',$_POST[lanza],'$target_file')";
+$query9 = "INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so) VALUES ('$_POST[nameso]','$_POST[versio]',$_POST[lanza],'$target_file2','$target_file1')";
 if ($result9 = $connection9->query($query9)) {
 echo "<script>location.href='../administrador/principal.php';</script>";
 die();
@@ -133,6 +171,6 @@ $result9->close();
 unset($obj9);
 unset($connection9);
 unset($query9)
- */?>
+ ?>
 
 <?php endif?>

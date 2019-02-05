@@ -85,6 +85,20 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
 
                                                         echo '<div class="form-group row">';
+                                                        echo '<label for="perfil_so" class="col-4 col-form-label">Perfil del sistema Operativo</label>';
+                                                        echo '<div class="col-8">';
+                                                        echo '<input class="form-control" type="file" name="perfil_so" required />';
+                                                        echo '</div>';
+                                                        echo '</div>';
+                                                        echo '<div class="form-group row">';
+
+                                                        echo '<label for="fondo_so" class="col-4 col-form-label">Fondo del sistema Operativo</label>';
+                                                        echo '<div class="col-8">';
+                                                        echo '<input class="form-control" type="file" name="fondo_so" required />';
+                                                        echo '</div>';
+                                                        echo '</div>';
+
+                                                        echo '<div class="form-group row">';
                                                         echo '<div class="offset-4 col-8">';
                                                         echo '<button name="registro" type="submit" class="btn btn-primary">Actualizar datos del sistema operativo ' . $_GET['nom'] . '</button>';
                                                         echo '</div>';
@@ -101,6 +115,90 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
                       <?php
 
+          foreach ($_FILES as $k => $value) {
+
+
+
+                    
+                        if ($k == 'fondo_so') {
+                              //Temp file. Where the uploaded file is stored temporary
+                        $tmp_file = $value['tmp_name'];
+                        //Dir where we are going to store the file
+                        $target_dir = "../css/fondos/";
+                        
+                        //Full name of the file.
+                        $target_file1 = strtolower($target_dir . basename($value['name']));
+                        //Can we upload the file
+                        $valid= true;
+                        //Check if the file already exists
+                        if (file_exists($target_file1)) {
+                          echo "Sorry, file already exists.";
+                          $valid = false;
+                        }
+                        //Check the size of the file. Up to 2Mb
+                        if ($value['size'] > (2048000)) {
+                                $valid = false;
+                                echo 'Oops!  Your file\'s size is to large.';
+                            }
+                        //Check the file extension: We need an image not any other different type of file
+                        $file_extension = pathinfo($target_file1, PATHINFO_EXTENSION); // We get the entension
+                        if ($file_extension!="jpg" && $file_extension!="jpeg" && $file_extension!="png" && $file_extension!="gif") {
+                          $valid = false;
+                          echo "Only JPG, JPEG, PNG & GIF files are allowed";
+                        }
+                        if ($valid) {
+                        //echo $target_file1;
+                          //var_dump($tmp_file);
+                          //var_dump($_FILES);
+                          //Put the file in its place
+                          if (!move_uploaded_file($tmp_file, $target_file1)) {
+                            echo "ERROR";
+                          }
+                          echo "PRODUCT ADDED";
+                        }
+                        
+                        }
+                        
+                        else {
+                              //Temp file. Where the uploaded file is stored temporary
+                        $tmp_file = $value['tmp_name'];
+                        //Dir where we are going to store the file
+                          $target_dir = "../css/iconos/";
+                          //Full name of the file.
+                        $target_file2 = strtolower($target_dir . basename($value['name']));
+                        //Can we upload the file
+                        $valid= true;
+                        //Check if the file already exists
+                        if (file_exists($target_file2)) {
+                          echo "Sorry, file already exists.";
+                          $valid = false;
+                        }
+                        //Check the size of the file. Up to 2Mb
+                        if ($value['size'] > (2048000)) {
+                                $valid = false;
+                                echo 'Oops!  Your file\'s size is to large.';
+                            }
+                        //Check the file extension: We need an image not any other different type of file
+                        $file_extension = pathinfo($target_file2, PATHINFO_EXTENSION); // We get the entension
+                        if ($file_extension!="jpg" && $file_extension!="jpeg" && $file_extension!="png" && $file_extension!="gif") {
+                          $valid = false;
+                          echo "Only JPG, JPEG, PNG & GIF files are allowed";
+                        }
+                        if ($valid) {
+                          echo $target_file2;
+                          //var_dump($tmp_file);
+                          //var_dump($_FILES);
+                          //Put the file in its place
+                          if (!move_uploaded_file($tmp_file, $target_file2)) {
+                            echo "ERROR";
+                          }
+                          echo "PRODUCT ADDED";
+                        }
+                        }
+                        
+                        
+                        }
+/*
                                                     //CREATING THE CONNECTION
                                                     $connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
                                                     $connection1->set_charset("utf8");
@@ -112,18 +210,19 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                                                     }
 
 
-                                                    $query1 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' where cod_so = $_GET[codso]";
-                                                    if ($result1 = $connection1->query($query1)) {
-                                                    header("Location: ../administrador/principal.php");
+                                                    $query1 = "UPDATE sistema_operativo set nombre = '$_POST[name]',jahr_de_lanzamiento= $_POST[lanz], version = '$_POST[versi]' , perfil_so = '$target_file2' , fondo_so = '$target_file1' where cod_so = $_GET[codso] ";
+                                                echo $query1;
+                                                    //   if ($result1 = $connection1->query($query1)) {
+                                                //    header("Location: ../administrador/principal.php");
+                                                   //     echo  $target_file2;
+                                                    //}
 
-                                                    }
 
+                                                    //$result1->close();
 
-                                                    $result->close();
-                                                    unset($obj);
-                                                    unset($connection);
-                                                    unset($query)
-                      ?>
+                                                    //unset($connection1);
+                                                    //unset($query1)
+  */                    ?>
 
                     <?php endif?>
 
