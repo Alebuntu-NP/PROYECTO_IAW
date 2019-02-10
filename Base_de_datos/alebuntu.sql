@@ -229,9 +229,9 @@ VALUES ('4', 'Openldap', '2018-11-15', NULL, '10', 'Media','https://docs.google.
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`)
 VALUES ('5', 'Samba', '2018-11-15', NULL, '36', 'Media','https://docs.google.com/document/d/1NjXAAJqXFrFM5z7ZG9IYor8FmgB6jqisIyYwSGRocaI/edit?usp=sharing');
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`) 
-VALUES ('6', 'Window server 2008', '2018-05-27', NULL, '63', 'Media','https://docs.google.com/document/d/1tpBxtoYnWE-HhfEYeJmWVbNJoHxjvG1pmuAqo4Q9UH8/edit?usp=sharing');
+VALUES ('6', 'Windows Server 2008 R2', '2018-05-27', NULL, '63', 'Media','https://docs.google.com/document/d/1tpBxtoYnWE-HhfEYeJmWVbNJoHxjvG1pmuAqo4Q9UH8/edit?usp=sharing');
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`) 
-VALUES ('7', 'Window server 2012', '2018-05-28', NULL, '216', 'Media','https://drive.google.com/file/d/1-NNLE9uUzpxkO80F0CcdpwCk88lIWOvx/view?usp=sharing');
+VALUES ('7', 'Windows Server 2012 R2', '2018-05-28', NULL, '216', 'Media','https://drive.google.com/file/d/1-NNLE9uUzpxkO80F0CcdpwCk88lIWOvx/view?usp=sharing');
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`) 
 VALUES ('8', 'LFS 7.5', '2018-09-16', NULL, '220', 'Difícil' , 'https://drive.google.com/file/d/1lp7ZppcicdV7CIMZo3AHuLAHqclhUE8B/view?usp=sharing');
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`) 
@@ -241,19 +241,19 @@ VALUES ('10', 'Construccion de android',  '2018-11-06',NULL,  '16',  'Media','ht
 
 
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('ubuntu','16.04 Xenial Xerus',2016,'../css/iconos/ubuntu.png','../css/fondos/fondo_ubuntu.jpg');
+VALUES ('Ubuntu','16.04 Xenial Xerus',2016,'../css/iconos/ubuntu.png','../css/fondos/fondo_ubuntu.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('debian','9.4 stretch',2018,'../css/iconos/debian.png','../css/fondos/fondo_debian.png');
+VALUES ('Debian','9.4 Stretch',2018,'../css/iconos/debian.png','../css/fondos/fondo_debian.png');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('window ','server 2008 standar',2008,'../css/iconos/window.jpg','../css/fondos/fondo_window_10.jpg');
+VALUES ('Windows ','Server 2008 Standar',2008,'../css/iconos/window.jpg','../css/fondos/fondo_window_10.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('window','server 2012 standar',2012,'../css/iconos/window.jpg','../css/fondos/fondo_window_10.jpg');
+VALUES ('Windows','Server 2012 Standar',2012,'../css/iconos/window.jpg','../css/fondos/fondo_window_10.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('lfs','7.5',2014,'../css/iconos/lfs.png','../css/fondos/fondo_lfs.jpg');
+VALUES ('LFS','7.5',2014,'../css/iconos/lfs.png','../css/fondos/fondo_lfs.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('lfs','8.3',2018,'../css/iconos/lfs.png','../css/fondos/fondo_lfs.jpg');
+VALUES ('LFS','8.3',2018,'../css/iconos/lfs.png','../css/fondos/fondo_lfs.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('android','4.3 Jelly Bean',2012,'../css/iconos/android.png','../css/fondos/fondo_android.jpg');
+VALUES ('Android','4.3 Jelly Bean',2012,'../css/iconos/android.png','../css/fondos/fondo_android.jpg');
   
 
 INSERT INTO para(cod_so,cod_manual)

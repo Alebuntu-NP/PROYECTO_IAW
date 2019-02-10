@@ -215,7 +215,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
     <h5 class="section-title h1" style='background-color:black;border-radius:15px;'>Sistemas Operativos</h5>
    
 
-    <?php include_once '../php_codigo/sistemas_operativos(optional).php'; ?>
+    <?php include_once '../php_codigo/sistemas_operativos.php'; ?>
 
 
 

@@ -53,7 +53,7 @@ join sistema_operativo so on par.cod_so = so.cod_so where par.cod_manual = $_POS
                   <h4><i class="fa fa-paper-plane-o"></i>Si quieres comenta sobre este manual:</h4>
                   <form role="form"  method="post" action='./manuales.php' >
                                 <div class="form-group">
-                                    <?php echo "<textarea class='form-control'  name='textocom' rows='5' cols='50' minlength='10' maxlength='200' required></textarea>"; ?>
+                                    <?php echo "<textarea class='form-control'  name='textocom' rows='5' cols='50' required></textarea>"; ?>
                                     
                                     <link rel="stylesheet" href="../css/estrellas.css">
                             <p class="clasificacion">
@@ -76,16 +76,18 @@ join sistema_operativo so on par.cod_so = so.cod_so where par.cod_manual = $_POS
 
         $codma = $obj->cod_man;
         $mostrar_comentarios = "SELECT commt.comentario as com,commt.fecha_publicacion 
-        as fech_pub,usu.id as mote
+        as fech_pub,usu.id as mote , val.valoracion as valor
         from comentarios commt
         join usuarios usu
         on commt.cod_usuario = usu.cod_usuario
-        where commt.cod_manual=$codma";
+        join valora val
+        on usu.cod_usuario = val.cod_usuario
+        where commt.cod_manual=$codma order by fech_pub desc";
 
         if ($result4 = $connection->query($mostrar_comentarios)) {
             while ($obj2 = $result4->fetch_object()) {
                 ?>
-                          <?php echo "<p>USUARIO:$obj2->mote  FECHA: $obj2->fech_pub  </p>" ; ?>
+                          <?php echo "<p>USUARIO: $obj2->mote <-----------> FECHA: $obj2->fech_pub <-----------> PUNTUACION: $obj2->valor / 5 </p>" ; ?>
 
                                 <div class="card-text">
                                     <div class="card bg-light">
@@ -139,18 +141,13 @@ if ($connection->connect_errno) {
                 if (empty($_POST['estrella0'])) {
                     $añadir_valoracion = "INSERT INTO valora (cod_manual,cod_usuario,fecha_valoracion,valoracion)  VALUES ($codma,$codu,CURDATE(),0)";
                     if ($result3 = $connection->query($añadir_valoracion)) {
-                        echo'<script type="text/javascript">
-                        alert("Gracias por tu comentario");
-                        </script>';
+  
 header("Location: ./manuales.php?mans=$codma");
                     }
                     } else {
                         $añadir_valoracion = "INSERT INTO valora (cod_manual,cod_usuario,fecha_valoracion,valoracion)  VALUES ($codma,$codu,CURDATE(),$_POST[estrella0])";
                         if ($result3 = $connection->query($añadir_valoracion)) {
-                            echo'<script type="text/javascript">
-                            alert("Gracias por tu comentario y valoracion");
-                          
-                            </script>';
+                   
                             header("Location: ./manuales.php?mans=$codma");
 
                         }

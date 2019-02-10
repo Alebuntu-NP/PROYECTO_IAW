@@ -8,7 +8,6 @@
 echo '<form method="post" enctype="multipart/form-data">';
 
 echo '<div class="form-group row">';
-
 echo '<label for="nameso" class="col-4 col-form-label">Nombre</label>';
 echo '<div class="col-8">';
 echo '<input id="nameso" name="nameso"  class="form-control here" type="text" value=""  required>';
@@ -16,7 +15,6 @@ echo '</div>';
 echo '</div>';
 
 echo '<div class="form-group row">';
-
 echo '<label for="versio" class="col-4 col-form-label">Version</label>';
 echo '<div class="col-8">';
 echo '<input id="versio" name="versio" class="form-control here" type="text" value="" required>';
@@ -24,26 +22,28 @@ echo '</div>';
 echo '</div>';
 
 echo '<div class="form-group row">';
-
 echo '<label for="lanza" class="col-4 col-form-label">Año de lanzamiento</label>';
 echo '<div class="col-8">';
 echo '<input id="lanza" name="lanza"  class="form-control here" type="number" value="2000" required>';
 echo '</div>';
 echo '</div>';
-echo '<div class="form-group row">';
 
+
+echo '<div class="form-group row" >';
 echo '<label for="perfil_so" class="col-4 col-form-label">Perfil del sistema Operativo</label>';
 echo '<div class="col-8">';
-echo '<input class="form-control" type="file" name="perfil_so" required />';
+echo '<input class="form" type="file" name="perfil_so" required />';
 echo '</div>';
 echo '</div>';
-echo '<div class="form-group row">';
 
+
+echo '<div class="form-group row">';
 echo '<label for="fondo_so" class="col-4 col-form-label">Fondo del sistema Operativo</label>';
 echo '<div class="col-8">';
-echo '<input class="form-control" type="file" name="fondo_so" required />';
+echo '<input class="form" type="file" name="fondo_so" required />';
 echo '</div>';
 echo '</div>';
+
 echo '<div class="form-group row">';
 echo '<div class="offset-4 col-8">';
 echo '<button name="registro" type="submit" class="btn btn-primary">Añadir nuevo sistema operativo</button>';

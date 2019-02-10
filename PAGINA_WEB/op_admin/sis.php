@@ -102,14 +102,21 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                                                           echo '<div class="form-group row">';
                                                           echo '<label for="perfil_so" class="col-4 col-form-label">Perfil del sistema Operativo</label>';
                                                           echo '<div class="col-8">';
-                                                          echo "<input class='form-control' type='file' name='perfil_so'  /><img class='img-thumbnail' src='$obj1->foto_perfil'/>";
+                                                          
+
+                                                          echo "<input class='form' type='file' name='perfil_so'  />
+                                                          <hr>
+                                                          <img class='img-thumbnail' src='$obj1->foto_perfil'/>";
                                                           echo '</div>';
                                                           echo '</div>';
                                                           echo '<div class="form-group row">';
   
                                                           echo '<label for="fondo_so" class="col-4 col-form-label">Fondo del sistema Operativo</label>';
                                                           echo '<div class="col-8">';
-                                                          echo "<input class='form-control' type='file' name='fondo_so' /><img class='img-thumbnail' src='$obj1->fondo_pantalla' />";
+                                                          echo "<input class='form' type='file' name='fondo_so' />
+                                                          <hr>
+                                                          
+                                                          <img class='img-thumbnail' src='$obj1->fondo_pantalla' />";
                                                           echo '</div>';
                                                           echo '</div>';
                                                           }
