@@ -3,7 +3,7 @@
 <?php
 
 //CREATING THE CONNECTION
-$connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+$connection1 = new mysqli($db_host, $db_user, $db_password, $db_name);
 $connection1->set_charset("utf8");
 
 //TESTING IF THE CONNECTION WAS RIGHT
@@ -70,7 +70,7 @@ echo "</table>";
     <?php
 
 //CREATING THE CONNECTION
-$connection = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+$connection = new mysqli($db_host, $db_user, $db_password, $db_name);
 $connection->set_charset("utf8");
 
 //TESTING IF THE CONNECTION WAS RIGHT

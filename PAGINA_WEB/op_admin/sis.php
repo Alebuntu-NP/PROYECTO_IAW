@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../css/imagenes_icon.css">
   <link rel="stylesheet" type="text/css" media="screen" href="../css/principal_admin.css" />
   <link rel="stylesheet" href="../css/imagenes_de_fondo_y_imagen.css">
+  <?php include_once '../var.php'; ?>
 
 </head>
 
@@ -85,7 +86,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                                                         echo '</div>';
 
                                                     //CREATING THE CONNECTION
-                                                    $connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+                                                    $connection1 = new mysqli($db_host, $db_user, $db_password, $db_name);
                                                     $connection1->set_charset("utf8");
 
                                                     //TESTING IF THE CONNECTION WAS RIGHT
@@ -224,7 +225,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
         }
 
        //CREATING THE CONNECTION
-                                                    $connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+                                                    $connection1 = new mysqli($db_host, $db_user, $db_password, $db_name);
                                                     $connection1->set_charset("utf8");
 
                                                     //TESTING IF THE CONNECTION WAS RIGHT

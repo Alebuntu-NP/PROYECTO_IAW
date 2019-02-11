@@ -2,7 +2,7 @@
 
 
 //CREATING THE CONNECTION
-$connection3 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+$connection3 = new mysqli($db_host, $db_user, $db_password, $db_name);
 $connection3->set_charset("utf8");
 
 //TESTING IF THE CONNECTION WAS RIGHT

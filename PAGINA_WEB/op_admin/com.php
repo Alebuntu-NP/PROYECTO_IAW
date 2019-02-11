@@ -16,6 +16,7 @@
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/imagenes_icon.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/principal_admin.css" />
+    <?php include_once '../var.php'; ?>
 
 </head>
 
@@ -87,7 +88,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                               <?php
 
                               //CREATING THE CONNECTION
-                              $connection1 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+                              $connection1 = new mysqli($db_host, $db_user, $db_password, $db_name);
                               $connection1->set_charset("utf8");
 
                               //TESTING IF THE CONNECTION WAS RIGHT

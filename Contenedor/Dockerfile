@@ -1,6 +1,6 @@
 FROM iestriana/lamp
 MAINTAINER Alejandro Roman Caballero
-ENV contra=2Asirtriana.
+ENV contra=2asirtriana
 RUN echo "START VERY GOOD BROTHER"
 RUN apt-get -y update
 ADD inicioservicio.sh /usr/bin/
@@ -8,7 +8,7 @@ RUN apt-get install -y git
 WORKDIR /var/www/html/
 RUN rm -rf index.html
 RUN echo "<?php header('Location: ./PROYECTO_IAW_ROMAN_CABALLERO/index.php')?>" > index.php
-RUN echo "Clonacion de repositorio o";
+RUN echo "Clonacion de repositorio ola";
 RUN git clone https://github.com/Alejandro314/PROYECTO_IAW_ROMAN_CABALLERO.git
 RUN chown -R www-data:www-data /var/www/html/PROYECTO_IAW_ROMAN_CABALLERO/
 EXPOSE 80/udp

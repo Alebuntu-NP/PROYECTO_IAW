@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="../css/fondo_inicio.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="../css/ventanas_duracion_corta.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="../css/registro.css" />
+        <?php include_once '../var.php'; ?>
 
 
 
@@ -71,7 +72,7 @@
 
 
         //CREATING THE CONNECTION
-    $connection = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+    $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
     $connection->set_charset("utf8");
 
     //TESTING IF THE CONNECTION WAS RIGHT

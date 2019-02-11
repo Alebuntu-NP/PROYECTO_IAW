@@ -2,7 +2,7 @@
 
 <?php
 //CREATING THE CONNECTION
-$connection8 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+$connection8 = new mysqli($db_host, $db_user, $db_password, $db_name);
 $connection8->set_charset("utf8");
 
 //TESTING IF THE CONNECTION WAS RIGHT
@@ -96,7 +96,7 @@ echo '</form>';
 
 $vector_sistem=$_POST['soname'];
 //CREATING THE CONNECTION
-$connection9 = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+$connection9 = new mysqli($db_host, $db_user, $db_password, $db_name);
 $connection9->set_charset("utf8");
 
 //TESTING IF THE CONNECTION WAS RIGHT

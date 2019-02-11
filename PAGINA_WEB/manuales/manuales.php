@@ -22,6 +22,7 @@
 
 
 
+  <?php include_once '../var.php'; ?>
 
 </head>
 
