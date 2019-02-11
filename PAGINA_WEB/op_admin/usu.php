@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/principal_admin.css" />
 
 </head>
+<?php include_once '../var.php'; ?>
 
 <body>
   <?php
@@ -58,7 +59,7 @@
                                 $user = $_GET['mote'];
                                 $pass = $_GET['contra'];
 
-                                $connection = new mysqli("localhost", "root", "$contra", "alebuntu");
+                                $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
                                 $connection->set_charset("utf8");
             
                                 if ($connection->connect_errno) {
