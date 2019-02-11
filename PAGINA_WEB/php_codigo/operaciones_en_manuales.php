@@ -39,7 +39,9 @@ join sistema_operativo so on par.cod_so = so.cod_so where par.cod_manual = $_POS
     //FETCHING OBJECTS FROM THE RESULT SET
     //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
         $obj = $result->fetch_object();
-        echo '<div id="_' . $obj->cod_man . '" class="container tab-pane active">';
+        $codma = $obj->cod_man;
+
+        echo '<div id="_' . $codma . '" class="container tab-pane active">';
         echo '<h1>Para ir al manual pinchar en el enlace que viene a continuacion: <a href="'.$obj->enl.'"  target="_blank">www.'.$obj->nomm . '.com</h1></a></h1>';
 
 
@@ -56,6 +58,14 @@ join sistema_operativo so on par.cod_so = so.cod_so where par.cod_manual = $_POS
                                     <?php echo "<textarea class='form-control'  name='textocom' rows='5' cols='50' required></textarea>"; ?>
                                     
                                     <link rel="stylesheet" href="../css/estrellas.css">
+                                    <?php
+                            $media_valoraciones="SELECT  ROUND(avg(valoracion), 1) as media from valora where cod_manual=$codma";
+        if ($result12 = $connection->query($media_valoraciones)) {
+            $obj12 = $result12->fetch_object();
+            echo "<p id='media'>Media de los valoraciones de los usuarios: $obj12->media</p>";
+        }
+?>
+         
                             <p class="clasificacion">
                                         <?php
                                             echo "<input id='estrella5' type='radio' name='estrella0' value='5'><label for='estrella5'>★</label>";
@@ -64,7 +74,7 @@ join sistema_operativo so on par.cod_so = so.cod_so where par.cod_manual = $_POS
                                             echo "<input id='estrella2' type='radio' name='estrella0' value='2'><label for='estrella2'>★</label>";
                                             echo "<input id='estrella1' type='radio' name='estrella0' value='1'><label for='estrella1'>★</label>"; 
                                         ?>
-                            </p>
+                                            </p> 
                         </div>
                <?php echo "<button type='submit' name='say' value='$_POST[mans]' class='btn btn-primary'><i class='fa fa-reply'></i>Comentar</button>" ?>
                   </form>
@@ -74,20 +84,18 @@ join sistema_operativo so on par.cod_so = so.cod_so where par.cod_manual = $_POS
         }
 <?php echo " <h2>Comentarios</h2>";
 
-        $codma = $obj->cod_man;
         $mostrar_comentarios = "SELECT commt.comentario as com,commt.fecha_publicacion 
-        as fech_pub,usu.id as mote , val.valoracion as valor
+        as fech_pub,usu.id as mote
         from comentarios commt
         join usuarios usu
         on commt.cod_usuario = usu.cod_usuario
-        join valora val
-        on usu.cod_usuario = val.cod_usuario
         where commt.cod_manual=$codma order by fech_pub desc";
 
+  
         if ($result4 = $connection->query($mostrar_comentarios)) {
             while ($obj2 = $result4->fetch_object()) {
                 ?>
-                          <?php echo "<p>USUARIO: $obj2->mote <-----------> FECHA: $obj2->fech_pub <-----------> PUNTUACION: $obj2->valor / 5 </p>" ; ?>
+                          <?php echo "<p>USUARIO: $obj2->mote <-----------> FECHA: $obj2->fech_pub</p>" ; ?>
 
                                 <div class="card-text">
                                     <div class="card bg-light">

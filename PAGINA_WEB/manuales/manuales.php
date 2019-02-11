@@ -45,6 +45,8 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"])) {
     
 
       <?php
+
+     
         include_once '../php_codigo/operaciones_en_manuales.php';
     ?>
   
