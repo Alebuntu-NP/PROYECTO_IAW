@@ -1,5 +1,6 @@
 FROM iestriana/lamp
 MAINTAINER Alejandro Roman Caballero
+ENV contra=2Asirtriana.
 RUN echo "START VERY GOOD BROTHER"
 RUN apt-get -y update
 ADD inicioservicio.sh /usr/bin/

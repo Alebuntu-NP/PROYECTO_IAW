@@ -2,10 +2,10 @@ grant all on *.* to 'root'@'localhost' identified by '2Asirtriana.' WITH GRANT O
 grant all on *.* to 'root'@'%' identified by '2Asirtriana.' WITH GRANT OPTION;
 grant all on *.* to 'root'@'127.0.0.1' identified by '2Asirtriana.' WITH GRANT OPTION;
 grant all on *.* to 'root'@'::1' identified by '2Asirtriana.' WITH GRANT OPTION;
-GRANT ALL ON alebuntu.* TO 'root'@'localhost' IDENTIFIED BY "2Asirtriana." WITH GRANT OPTION;
-GRANT ALL ON alebuntu.* TO 'root'@'%' IDENTIFIED BY "2Asirtriana." WITH GRANT OPTION;
-GRANT ALL ON alebuntu.* TO 'root'@'127.0.0.1' IDENTIFIED BY "2Asirtriana." WITH GRANT OPTION;
-GRANT ALL ON alebuntu.* TO 'root'@'::1' IDENTIFIED BY "2Asirtriana." WITH GRANT OPTION;
+GRANT ALL ON alebuntu.* TO 'root'@'localhost' IDENTIFIED BY '2Asirtriana.' WITH GRANT OPTION;
+GRANT ALL ON alebuntu.* TO 'root'@'%' IDENTIFIED BY '2Asirtriana.' WITH GRANT OPTION;
+GRANT ALL ON alebuntu.* TO 'root'@'127.0.0.1' IDENTIFIED BY '2Asirtriana.' WITH GRANT OPTION;
+GRANT ALL ON alebuntu.* TO 'root'@'::1' IDENTIFIED BY '2Asirtriana.' WITH GRANT OPTION;
 flush privileges;
 CREATE USER 'usuario'@'localhost' IDENTIFIED BY '2asirtriana';
 CREATE USER 'usuario'@'127.0.0.1' IDENTIFIED BY '2asirtriana';

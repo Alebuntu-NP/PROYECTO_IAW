@@ -58,7 +58,7 @@
                                 $user = $_GET['mote'];
                                 $pass = $_GET['contra'];
 
-                                $connection = new mysqli("localhost", "usuario", "2asirtriana", "alebuntu");
+                                $connection = new mysqli("localhost", "root", "$contra", "alebuntu");
                                 $connection->set_charset("utf8");
             
                                 if ($connection->connect_errno) {
