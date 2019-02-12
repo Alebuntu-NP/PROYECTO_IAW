@@ -10,7 +10,7 @@ if ($connection1->connect_errno) {
     printf("Connection failed: %s\n", $connection->connect_error);
     exit();
 }
-$query="select distinct nombre , fondo_so ,perfil_so from sistema_operativo order by nombre ASC";
+$query="select distinct nombre , fondo_so ,perfil_so from sistema_operativo group by nombre order by nombre ASC";
 
 
 //MAKING A SELECT QUERY

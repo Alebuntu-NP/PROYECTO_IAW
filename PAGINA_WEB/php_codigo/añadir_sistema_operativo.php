@@ -158,14 +158,31 @@ printf("Connection failed: %s\n", $connection->connect_error);
 exit();
 }
 
+$query_vecto= "select * from sistema_operativo";
 
-$query9 = "INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so) VALUES ('$_POST[nameso]','$_POST[versio]',$_POST[lanza],'$target_file2','$target_file1')";
-if ($result9 = $connection9->query($query9)) {
-echo "<script>location.href='../administrador/menu_so.php';</script>";
-die();
-} 
+if ($result_vecto = $connection9->query($query_vecto)) {
+  while ($obj_vecto = $result_vecto->fetch_object()) {
+  
+$so[]=$obj_vecto->nombre."";
+$version[]=$obj_vecto->version."";
 
+  }
 
+}
+if (in_array($_POST['nameso'], $so)) {
+
+$message= "Ya existe ese sistema operativo";
+echo "<script type='text/javascript'>alert('$message');</script>";
+
+  echo "<script>location.href='../administrador/menu_so.php';</script>";
+  die();
+} else {
+   $query9 = "INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so) VALUES ('$_POST[nameso]','$_POST[versio]',$_POST[lanza],'$target_file2','$target_file1')";
+   if ($result9 = $connection9->query($query9)) {
+     echo "<script>location.href='../administrador/menu_so.php';</script>";
+      die();
+  }
+}
 
 $result9->close();
 unset($obj9);
