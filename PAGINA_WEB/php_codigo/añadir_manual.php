@@ -11,7 +11,7 @@ printf("Connection failed: %s\n", $connection8->connect_error);
 exit();
 }
 
-echo '<form method="post">';
+echo '<form method="post" action="menu_manual.php">';
 
 echo '<div class="form-group row">';
 echo '<label for="manname" class="col-4 col-form-label">Nombre del manual</label>';

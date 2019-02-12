@@ -56,7 +56,7 @@ while ($obj4 = $result4->fetch_object()) {
     echo "<td>".$obj4->versionso."</td>";
     echo "<td>".$obj4->fech_val."</td>";
     echo "<td>".$obj4->valoracion."</td>";
-        echo "<td><form method='POST' action='principal.php?codigo4=$obj4->cod_valora'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form></td>";
+        echo "<td><form method='POST' action='menu_val.php?codigo4=$obj4->cod_valora'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form></td>";
         echo "</tr>";
     }
 

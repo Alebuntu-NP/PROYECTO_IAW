@@ -20,7 +20,7 @@ if (!isset($_POST["name"])): ?>
                                 if ($result = $connection->query($query)) {
                                     $obj = $result->fetch_object();
 
-                                    echo '<form method="post">';
+                                    echo '<form method="post" action="./my_perfil.php">';
                                     echo '<div class="form-group row">';
 
                                     echo '<label for="correo" class="col-4 col-form-label">Correo electronico</label>';

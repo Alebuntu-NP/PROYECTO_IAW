@@ -5,7 +5,7 @@
 
 
 
-echo '<form method="post" enctype="multipart/form-data">';
+echo '<form method="post" enctype="multipart/form-data" action="../administrador/menu_so.php">';
 
 echo '<div class="form-group row">';
 echo '<label for="nameso" class="col-4 col-form-label">Nombre</label>';
