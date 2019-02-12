@@ -100,7 +100,7 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
                               $query1 = "UPDATE comentarios set comentario = '$_POST[comm]' where cod_comentario = $_GET[codcom]";
                               if ($result1 = $connection1->query($query1)) {
-                              header("Location: ../administrador/principal.php");
+                              header("Location: ../administrador/menu_com.php");
 
                               }
 

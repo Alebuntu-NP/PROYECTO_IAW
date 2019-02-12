@@ -83,7 +83,7 @@ $query = "DELETE from manuales where cod_manual=$_GET[codigo1]";
 
 if ($result = $connection->query($query)) {
 
-  echo "<script>location.href='principal.php';</script>";
+  echo "<script>location.href='menu_manual.php';</script>";
   die();
 }
 

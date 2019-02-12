@@ -7,8 +7,7 @@ if (!isset($_POST["name"])): ?>
             
                                 $user = $_SESSION['user'];
                                 $pass = $_SESSION['password'];
-echo $user;
-echo $pass;
+
                                 $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
                                 $connection->set_charset("utf8");
             
@@ -97,7 +96,7 @@ echo $pass;
                                 //Si no introduces una nueva contraseña entonces , te quedas con la antigua
                                     $query1 = "UPDATE usuarios set nombre = '$_POST[name]',apellido = '$_POST[lastname]',edad = $_POST[edad],correo_electronico = '$_POST[correo]'where id = '$user'";
                                     if ($result1 = $connection1->query($query1)) {
-                                        echo "<script>location.href='./principal.php';</script>";
+                                        echo "<script>location.href='./my_perfil.php';</script>";
                                         die();
                                     }
                                 } else {
@@ -108,7 +107,7 @@ echo $pass;
                                     $query1 = "UPDATE usuarios set nombre = '$_POST[name]',apellido = '$_POST[lastname]',edad = $_POST[edad],correo_electronico = '$_POST[correo]',password = md5('$_POST[password]') where id = '$user'";
 
                                     if ($result1 = $connection1->query($query1)) {
-                                        echo "<script>location.href='./principal.php';</script>";
+                                        echo "<script>location.href='./my_perfil.php';</script>";
                                         die();
                                     }
                                 }

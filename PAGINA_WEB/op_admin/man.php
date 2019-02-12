@@ -123,7 +123,8 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
 
     $query1 = "UPDATE manuales set nombre = '$_POST[name]',fecha_revisado = CURDATE(),n_pag = $_POST[npag],dificultad = '$_POST[dificult]', enlace = '$_POST[enlc]' where cod_manual = $_GET[codma]";
     if ($result1 = $connection1->query($query1)) {
-        header("Location: ../administrador/principal.php");
+        header("Location: ../administrador/menu_manual.php");
+        die();
 
     }
 

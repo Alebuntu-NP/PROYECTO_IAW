@@ -161,7 +161,7 @@ exit();
 
 $query9 = "INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so) VALUES ('$_POST[nameso]','$_POST[versio]',$_POST[lanza],'$target_file2','$target_file1')";
 if ($result9 = $connection9->query($query9)) {
-echo "<script>location.href='../administrador/principal.php';</script>";
+echo "<script>location.href='../administrador/menu_so.php';</script>";
 die();
 } 
 

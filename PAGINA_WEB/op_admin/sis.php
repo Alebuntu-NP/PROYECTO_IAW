@@ -256,7 +256,7 @@ if ($target_file2 != $target_dir2 && $target_file1 != $target_dir1) {
 
   if ($result2 = $connection1->query($query1)) {
     echo $query1;
-    header("Location: ../administrador/principal.php");
+    header("Location: ../administrador/menu_so.php");
     die();
   }       
 
@@ -268,7 +268,7 @@ elseif ($target_file2 == $target_dir2 && $target_file1 != $target_dir1) {
 
   if ($result2 = $connection1->query($query3)) {
     echo $query3;
-    header("Location: ../administrador/principal.php");
+    header("Location: ../administrador/menu_so.php");
     die();
   }       
 
@@ -279,7 +279,7 @@ elseif ($target_file1 == $target_dir1 && $target_file2 != $target_dir2) {
 
   if ($result2 = $connection1->query($query4)) {
     echo $query4;
-    header("Location: ../administrador/principal.php");
+    header("Location: ../administrador/menu_so.php");
     die();
   }       
 
@@ -290,7 +290,7 @@ else  {
 
   if ($result2 = $connection1->query($query2)) {
     echo $query2;
-    header("Location: ../administrador/principal.php");
+    header("Location: ../administrador/menu_so.php");
     die();
   }       
 

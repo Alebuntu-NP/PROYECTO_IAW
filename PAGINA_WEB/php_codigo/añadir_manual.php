@@ -125,7 +125,7 @@ if ($result9 = $connection9->query($query9)) {
 }
 
 
-echo "<script>location.href='principal.php';</script>";
+echo "<script>location.href='menu_manual.php';</script>";
 die();
 }
  

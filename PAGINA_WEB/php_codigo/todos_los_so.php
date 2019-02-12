@@ -75,7 +75,7 @@ $query = "DELETE from sistema_operativo where cod_so=$_GET[codigo2]";
 
 if ($result = $connection->query($query)) {
 
-  echo "<script>location.href='principal.php';</script>";
+  echo "<script>location.href='menu_so.php';</script>";
   die();
 }
 

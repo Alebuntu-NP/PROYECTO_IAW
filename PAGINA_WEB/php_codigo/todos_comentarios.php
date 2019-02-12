@@ -18,7 +18,7 @@ if ($connection3->connect_errno) {
 //MAKING A SELECT QUERY
 /* Consultas de selección que devuelven un conjunto de resultados */
 
-$query="select id ,man.nombre as nombre,com.fecha_publicacion as fech_pub,comentario,so.nombre as nombreso,so.version as versionso, cod_comentario
+$query="select id ,man.nombre as nombre,com.fecha_publicacion as fech_pub,comentario,so.nombre as nombreso,so.version as versionso, cod_comentario as cod_com
 from usuarios  usu join comentarios com 
 on usu.cod_usuario = com.cod_usuario 
 join manuales man 
@@ -59,10 +59,9 @@ if ($result3 = $connection3->query($query)) {
         echo "<td>".$obj3->nombre."</td>";
         echo "<td>".$obj3->nombreso."</td>";
         echo "<td>".$obj3->versionso."</td>";
-
         echo "<td>".$obj3->fech_pub."</td>";
         echo "<td>".$obj3->comentario."</td>";
-        echo "<td><form method='POST' action='principal.php?codmenta=$obj3->cod_comentario'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form><a href='../op_admin/com.php?codcom=$obj3->cod_comentario&com=$obj3->comentario'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></td>";
+        echo "<td><form method='POST' action='principal.php?codigo3=$obj3->cod_com'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form><a href='../op_admin/com.php?codcom=$obj3->cod_comentario&com=$obj3->comentario'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></td>";
         echo "</tr>";
     }
 
@@ -90,11 +89,11 @@ if ($connection->connect_errno) {
     exit();
 }
 
-$query = "DELETE from comentarios where cod_comentario=$_GET[codcomenta]";
+$query = "DELETE from comentarios where cod_comentario=$_GET[codigo3]";
 
 if ($result = $connection->query($query)) {
 
-  echo "<script>location.href='principal.php';</script>";
+  echo "<script>location.href='menu_com.php';</script>";
   die();
 } else {
 

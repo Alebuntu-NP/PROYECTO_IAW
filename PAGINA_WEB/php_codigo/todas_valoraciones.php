@@ -18,7 +18,8 @@ if ($connection4->connect_errno) {
 $query="select id ,man.nombre as nombre,val.fecha_valoracion as fech_val,valoracion, so.nombre as nombreso , so.version as versionso ,cod_valora
 from usuarios  usu join valora val 
 on usu.cod_usuario = val.cod_usuario 
-join manuales man on val.cod_manual = man.cod_manual
+join manuales man 
+on val.cod_manual = man.cod_manual
 join para par
 on man.cod_manual = par.cod_manual
 join sistema_operativo so
@@ -87,7 +88,7 @@ $query = "DELETE from valora where cod_valora=$_GET[codigo4]";
 
 if ($result = $connection->query($query)) {
 
-  echo "<script>location.href='principal.php';</script>";
+  echo "<script>location.href='menu_val.php';</script>";
   die();
 }
 
