@@ -25,6 +25,7 @@
 session_start();
 if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"] == 'admin') {
     ?>
+
   <div class="container mt-4">
 
 
@@ -54,55 +55,117 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                     <?php if (!isset($_POST["name"])): ?>
 
                     <?php
+    //CREATING THE CONNECTION
+    $connection1 = new mysqli($db_host, $db_user, $db_password, $db_name);
+    $connection1->set_charset("utf8");
 
-    echo '<form method="post">';
+    //TESTING IF THE CONNECTION WAS RIGHT
+    if ($connection1->connect_errno) {
+        printf("Connection failed: %s\n", $connection->connect_error);
+        exit();
+    }
+    $query1="select man.*,man.nombre as manual ,
+    man.n_pag as paginas ,
+    man.dificultad as dificult,
+    man.enlace as enl
+    from manuales man 
+    join para par 
+    on man.cod_manual = par.cod_manual 
+    join sistema_operativo so 
+    on par.cod_so = so.cod_so
+    where man.cod_manual=$_GET[codma]
+    group by man.nombre
+    order by manual ASC;";
+    if ($result1 = $connection1->query($query1)) {
+      $obj = $result1->fetch_object();
+      echo '<form method="post">';
 
     echo '<div class="form-group row">';
 
     echo '<label for="username" class="col-4 col-form-label">Nombre</label>';
     echo '<div class="col-8">';
-    echo '<input id="name" name="name"  class="form-control here" type="text" value="' . $_GET['nombrem'] . '"  required>';
+    echo '<input id="name" name="name"  class="form-control here" type="text" value="' . $obj->nombre . '"  required>';
     echo '</div>';
     echo '</div>';
 
+
+
+
+$mis_sistemas="select man.nombre as manual , so.nombre  as nomsi ,so.version as version  
+    from manuales man 
+    join para par 
+    on man.cod_manual = par.cod_manual 
+    join sistema_operativo so 
+    on par.cod_so = so.cod_so
+    where man.cod_manual=$_GET[codma]
+    order by manual ASC";
+    if ($result_mis_sistemas = $connection1->query($mis_sistemas)) {
+
+      while ($obj100 = $result_mis_sistemas->fetch_object()) {
+$so[]=$obj100->nomsi."";
+$versi[]=$obj100->version."";
+      }
+
+  }
+
+$consulta_sistemas="select cod_so,nombre , version from sistema_operativo";
+if ($result_sistemas = $connection1->query($consulta_sistemas)) {
     echo '<div class="form-group row">';
 
-
-    echo '<label for="so" class="col-4 col-form-label">Sistema Operativo</label>';
+    echo '<label for="soname" class="col-4 col-form-label">Sistema Operativo</label>';
     echo '<div class="col-8">';
-    echo '<input id="so" name="so"  class="form-control here" type="text" value="'.$_GET['nom'].' '.  $_GET['versy'].'" disabled  required>';
+    echo '<select id="soname"name="soname[]" class="form-control here" multiple required>';
+
+    while ($obj99 = $result_sistemas->fetch_object()) {
+        //PRINTING EACH ROW
+        if (in_array($obj99->nombre, $so) && in_array($obj99->version, $versi)) {
+        echo "<option selected value='$obj99->cod_so'> ".$obj99->nombre." ".$obj99->version."</option>";
+        }
+        else {
+
+          echo "<option value='$obj99->cod_so'> ".$obj99->nombre." ".$obj99->version."</option>";
+
+
+        }
+      }
+    echo '</select>';
     echo '</div>';
+    
     echo '</div>';
+}
+
+
 
     echo '<div class="form-group row">';
 
     echo '<label for="npag" class="col-4 col-form-label">Numero de paginas</label>';
     echo '<div class="col-8">';
-    echo '<input id="npag" name="npag"  class="form-control here" type="number" min="1" value="' . $_GET['pag'] . '" required>';
+    echo '<input id="npag" name="npag"  class="form-control here" type="number" min="1" value="' . $obj->paginas . '" required>';
     echo '</div>';
     echo '</div>';
 
     echo '<div class="form-group row">';
     echo '<label for="dificult" class="col-4 col-form-label">Dificultad</label>';
     echo '<div class="col-8">';
-    echo '<input id="dificult" name="dificult"  class="form-control here" type="text" value="' . $_GET['dif'] . '"  required>';
+    echo '<input id="dificult" name="dificult"  class="form-control here" type="text" value="' . $obj->dificult . '"  required>';
     echo '</div>';
     echo '</div>';
 
     echo '<div class="form-group row">';
     echo '<label for="enlc" class="col-4 col-form-label">Enlace</label>';
     echo '<div class="col-8">';
-    echo '<input id="enlc" name="enlc"  class="form-control here" type="text" value="' . $_GET['enl'] . '"  required>';
+    echo '<input id="enlc" name="enlc"  class="form-control here" type="text" value="' . $obj->enl. '"  required>';
     echo '</div>';
     echo '</div>';
 
     echo '<div class="form-group row">';
     echo '<div class="offset-4 col-8">';
-    echo '<button name="registro" type="submit" class="btn btn-primary">Actualizar datos del manual ' . $_GET['nom'] . '</button>';
+    echo '<button name="registro" type="submit" class="btn btn-primary">Actualizar datos del manual ' . $obj->nombre . '</button>';
     echo '</div>';
     echo '</div>';
 
     echo '</form>';
+  }
 
     ?>
 

@@ -61,7 +61,7 @@ if ($result3 = $connection3->query($query)) {
         echo "<td>".$obj3->versionso."</td>";
         echo "<td>".$obj3->fech_pub."</td>";
         echo "<td>".$obj3->comentario."</td>";
-        echo "<td><form method='POST' action='menu_com.php?codigo3=$obj3->cod_com'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form><a href='../op_admin/com.php?codcom=$obj3->cod_comentario&com=$obj3->comentario'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></td>";
+        echo "<td><form method='POST' action='menu_com.php?codigo3=$obj3->cod_com'><input type='image' name='eliminar2' src='../css/iconos/eliminar.png' style='width:40px' alt='Submit' class='img-thumbnail' /></form><a href='../op_admin/com.php?codcom=$obj3->cod_com&com=$obj3->comentario'><img src='../css/iconos/editar.png'  style='width:40px' class='img-thumbnail' /></a></td>";
         echo "</tr>";
     }
 
