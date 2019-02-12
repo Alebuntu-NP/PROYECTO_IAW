@@ -9,7 +9,7 @@ WORKDIR /var/www/html/
 RUN rm -rf index.html
 RUN echo "<?php header('Location: ./PROYECTO_IAW_ROMAN_CABALLERO/index.php')?>" > index.php
 #Clonacion del repositorio
-RUN echo "Clonacion de repositorio ola";
+RUN echo "Clonacion de repositorio";
 RUN git clone https://github.com/Alejandro314/PROYECTO_IAW_ROMAN_CABALLERO.git
 RUN chown -R www-data:www-data /var/www/html/PROYECTO_IAW_ROMAN_CABALLERO/
 EXPOSE 80/udp
