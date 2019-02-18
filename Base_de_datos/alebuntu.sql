@@ -1,3 +1,4 @@
+
 DROP DATABASE IF EXISTS exampleDB;
 DROP DATABASE IF EXISTS alebuntu;
 CREATE DATABASE  IF NOT EXISTS `alebuntu` /*!40100 DEFAULT CHARACTER SET latin1 */;
@@ -201,21 +202,7 @@ UNLOCK TABLES;
 -- Dump completed on 2019-01-20 18:00:49
 
 INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
-VALUES ( 'Alejandro' , 'Román Caballero', 23, 'admin','admin@admin.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
-INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
-VALUES ( 'a' , 'a', 999, 'a','a@a.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
-INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
-VALUES ( 'b' , 'b', 999, 'b','b@b.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
-INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
-VALUES ( 'c' , 'c', 999, 'c','c@c.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
-INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
-VALUES ( 'd' , 'd', 999, 'd','d@d.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
-INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
-VALUES ( 'e' , 'e', 999, 'e','e@e.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
-INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
-VALUES ( 'f' , 'f', 999, 'f','f@f.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
-INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
-VALUES ( 'g' , 'g', 999, 'g','g@g.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+VALUES ( 'Admin' , 'Admin', 999, 'admin','admin@admin.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
 
 
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`)
@@ -237,7 +224,7 @@ VALUES ('8', 'LFS 7.5', '2018-09-16', NULL, '220', 'Difícil' , 'https://drive.g
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`) 
 VALUES ('9', 'LFS 8.3', '2019-01-09', NULL, '142', 'Difícil','https://docs.google.com/document/d/1ZQyY_Ci7lGLfoVuRl2ZjkxJL_IqPkH_oxsHty5jZidE/edit?usp=sharing');
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`) 
-VALUES ('10', 'Construccion de android',  '2018-11-06',NULL,  '16',  'Media','https://docs.google.com/document/d/1Mf1zh3Lz9deXt-t90VzyVYOi6Q-qj5RhMSKgF9q5V40/edit?usp=sharing');
+VALUES ('10', 'Construccion de android',  '2018-11-06',NULL,  '16',  'Media','https://docs.google.com/document/d/1-6m8nTwm_LECWCrs_hAykSv9-LGqJqGyzEUpUl5LlCU/edit?usp=sharing');
 
 
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
@@ -245,9 +232,9 @@ VALUES ('Ubuntu','16.04 Xenial Xerus',2016,'../css/iconos/ubuntu.png','../css/fo
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
 VALUES ('Debian','9.4 Stretch',2018,'../css/iconos/debian.png','../css/fondos/fondo_debian.png');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('Windows ','Server 2008 Standar',2008,'../css/iconos/window.jpg','../css/fondos/fondo_window_10.jpg');
+VALUES ('Windows ','Server 2008 Standard',2008,'../css/iconos/window.jpg','../css/fondos/fondo_window_10.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
-VALUES ('Windows','Server 2012 Standar',2012,'../css/iconos/window.jpg','../css/fondos/fondo_window_10.jpg');
+VALUES ('Windows','Server 2012 Standard',2012,'../css/iconos/window.jpg','../css/fondos/fondo_window_10.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)
 VALUES ('LFS','7.5',2014,'../css/iconos/lfs.png','../css/fondos/fondo_lfs.jpg');
 INSERT INTO sistema_operativo (nombre,version,jahr_de_lanzamiento,perfil_so,fondo_so)

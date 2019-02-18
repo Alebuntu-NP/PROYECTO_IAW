@@ -3,6 +3,7 @@ MAINTAINER Alejandro Roman Caballero
 ENV contra=2asirtriana
 RUN echo "START"
 RUN apt-get -y update
+ADD 000-default.conf /etc/apache2/sites-available/
 ADD inicioservicio.sh /usr/bin/
 RUN apt-get install -y git
 WORKDIR /var/www/html/
