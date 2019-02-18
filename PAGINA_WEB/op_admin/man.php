@@ -102,6 +102,7 @@ $mis_sistemas="select man.nombre as manual , so.nombre  as nomsi ,so.version as 
     if ($result_mis_sistemas = $connection1->query($mis_sistemas)) {
 
       while ($obj100 = $result_mis_sistemas->fetch_object()) {
+        
 $so[]=$obj100->nomsi."";
 $versi[]=$obj100->version."";
       }
@@ -114,7 +115,7 @@ if ($result_sistemas = $connection1->query($consulta_sistemas)) {
 
     echo '<label for="soname" class="col-4 col-form-label">Sistema Operativo</label>';
     echo '<div class="col-8">';
-    echo '<select id="soname"name="soname[]" class="form-control here" multiple required>';
+    echo '<select id="soname" name="soname[]" class="form-control here" multiple required>';
 
     while ($obj99 = $result_sistemas->fetch_object()) {
         //PRINTING EACH ROW
@@ -173,7 +174,9 @@ if ($result_sistemas = $connection1->query($consulta_sistemas)) {
                     <?php else: ?>
 
                     <?php
-
+$vector_sistem=$_POST['soname'];
+var_dump($vector_sistem);
+echo $_GET['codma'];
     //CREATING THE CONNECTION
     $connection1 = new mysqli($db_host, $db_user, $db_password, $db_name);
     $connection1->set_charset("utf8");
@@ -183,18 +186,30 @@ if ($result_sistemas = $connection1->query($consulta_sistemas)) {
         printf("Connection failed: %s\n", $connection->connect_error);
         exit();
     }
-
     $query1 = "UPDATE manuales set nombre = '$_POST[name]',fecha_revisado = CURDATE(),n_pag = $_POST[npag],dificultad = '$_POST[dificult]', enlace = '$_POST[enlc]' where cod_manual = $_GET[codma]";
     if ($result1 = $connection1->query($query1)) {
-        header("Location: ../administrador/menu_manual.php");
-        die();
+      $query2="DELETE from para where cod_manual=$_GET[codma]";
+      if ($result2 = $connection1->query($query2)) {
 
+ 
+      for ($i=0; $i < sizeof($vector_sistem) ; $i++) { 
+       echo  $vector_sistem[$i]." ";
+       
+       $query10="INSERT INTO para (cod_so,cod_manual) VALUES ($vector_sistem[$i],$_GET[codma])";
+       if ($result10 = $connection1->query($query10)) {
+   
+        
+       } 
+   
+   
+   }
+      
+     header("Location: ../administrador/menu_manual.php");
+      die();
+  }
     }
 
-    $result->close();
-    unset($obj);
-    unset($connection);
-    unset($query)
+    
     ?>
 
                     <?php endif?>
