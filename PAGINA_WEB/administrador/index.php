@@ -2,7 +2,7 @@
 <?php
     session_start();
 
-    if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["user"]=='admin') {
+    if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["grupo"]=='Admin') {
        ?>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

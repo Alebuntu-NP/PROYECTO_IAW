@@ -147,6 +147,8 @@ CREATE TABLE `usuarios` (
   `id` varchar(15) NOT NULL,
   `password` varchar(34) NOT NULL,
   `fecha_alta` varchar(45) NOT NULL,
+  `grupo` varchar(20) NOT NULL,
+  
   PRIMARY KEY (`cod_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -201,8 +203,8 @@ UNLOCK TABLES;
 
 -- Dump completed on 2019-01-20 18:00:49
 
-INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta)
-VALUES ( 'Admin' , 'Admin', 999, 'admin','admin@admin.com','7ed1ca45414f40612d0c469e24453e40',CURDATE());
+INSERT INTO usuarios ( nombre , apellido, edad, id ,correo_electronico, password,fecha_alta,grupo)
+VALUES ( 'Admin' , 'Admin', 999, 'admin','admin@admin.com','7ed1ca45414f40612d0c469e24453e40',CURDATE(),'Admin');
 
 
 INSERT INTO `alebuntu`.`manuales` (`cod_manual`, `nombre`, `fecha_publicacion`, `fecha_revisado`, `n_pag`, `dificultad`,`enlace`)

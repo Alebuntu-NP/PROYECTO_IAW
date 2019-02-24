@@ -25,8 +25,8 @@
 <body>
   <?php
 session_start();
-if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"] == 'admin') {
-    ?>
+if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["grupo"]=='Admin') {
+  ?>
   <div class="container mt-4">
 
     <!-- Nav pills -->
@@ -80,7 +80,9 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                     <li class="nav-item">
                       <a class="nav-link" data-toggle="pill" href="#añadirso">Añadir Sistema Operativo</a>
                     </li>
-
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#añadirusu">Añadir Usuario</a>
+                    </li>
                   </ul>
 
                   <div class="tab-content">
@@ -125,6 +127,10 @@ if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"
                
                           <?php include_once '../php_codigo/añadir_sistema_operativo.php'; ?>
                       </div>
+                      <div id="añadirusu" class="container tab-pane fade"><br>
+                      <?php include_once '../php_codigo/añadir_usuario.php'; ?>
+
+                     </div>
        
                   </div>
                   <hr>

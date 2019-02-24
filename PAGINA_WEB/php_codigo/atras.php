@@ -4,7 +4,7 @@
           </form>
 <?php else: ?>
           <?php
-  if ($_SESSION["user"] == 'admin')
+  if ($_SESSION["grupo"] == 'Admin')
   {
     header("Location:../administrador/principal.php");
     exit;

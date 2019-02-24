@@ -93,7 +93,7 @@
     /* Consultas de selección que devuelven un conjunto de resultados */
 
     $query = "SELECT id from usuarios where id = '$_POST[id]' ";
-    $query1 = "INSERT INTO usuarios (id,nombre,apellido,edad,correo_electronico,password,fecha_alta) values ('$_POST[id]','$_POST[nom]','$_POST[ap]',$_POST[edad],'$_POST[correo]',md5('$_POST[pass]'),CURDATE())";
+    $query1 = "INSERT INTO usuarios (id,nombre,apellido,edad,correo_electronico,password,fecha_alta,grupo) values ('$_POST[id]','$_POST[nom]','$_POST[ap]',$_POST[edad],'$_POST[correo]',md5('$_POST[pass]'),CURDATE(),'Usuario')";
 
     if ($result = $connection->query($query)) {
         //verificamos si el user exite con un condicional

@@ -23,8 +23,8 @@
 <body>
   <?php
               session_start();
-              if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"] == 'admin') {
-                  ?>
+              if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["grupo"]=='Admin') {
+                ?>
   <div class="container mt-4">
 
 
@@ -77,7 +77,7 @@
 
                                     echo '<div class="form-group row">';
 
-                                    echo '<label for="mote" class="col-4 col-form-label">Id</label>';
+                                    echo '<label for="mote" class="col-4 col-form-label">Usuario</label>';
                                     echo '<div class="col-8">';
                                     echo '<input id="mote" name="mote" class="form-control here" type="text" value="'.$_GET['mote'].'" required>';
                                     echo '</div>';

@@ -66,7 +66,7 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["gru
                       <a class="nav-link" data-toggle="pill" href="#manu">Manuales</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" data-toggle="pill" href="#soo">Sistemas Operativos</a>
+                      <a class="nav-link" data-toggle="pill" href="#soo">Sistemas Operativos</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" data-toggle="pill" href="#coment">Comentarios</a>
@@ -81,7 +81,7 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["gru
                       <a class="nav-link" data-toggle="pill" href="#añadirso">Añadir Sistema Operativo</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="pill" href="#añadirusu">Añadir Usuario</a>
+                      <a class="nav-link active" data-toggle="pill" href="#añadirusu">Añadir Usuario</a>
                     </li>
                   </ul>
 
@@ -99,7 +99,7 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["gru
 
                      
                     </div>
-                    <div id="soo" class="container tab-pane active"><br>
+                    <div id="soo" class="container tab-pane fade"><br>
 
                       <?php include_once '../php_codigo/todos_los_so.php';?>
 
@@ -127,8 +127,11 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["gru
                
                           <?php include_once '../php_codigo/añadir_sistema_operativo.php'; ?>
                       </div>
-                      <div id="añadirusu" class="container tab-pane fade"><br>
-                      <?php include_once '../php_codigo/añadir_usuario.php'; ?>
+                      <div id="añadirusu" class="container tab-pane active"><br>
+                      
+                      <?php
+                      echo "<h1 style='color:red'>Usuario ya existe introduzca otro</h1>"; 
+                      include_once '../php_codigo/añadir_usuario.php'; ?>
 
                      </div>
                   </div>

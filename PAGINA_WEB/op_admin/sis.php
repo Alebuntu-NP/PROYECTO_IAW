@@ -24,8 +24,8 @@
 <body>
   <?php
 session_start();
-if (isset($_SESSION["user"]) && isset($_SESSION["password"]) && $_SESSION["user"] == 'admin') {
-    ?>
+if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["grupo"]=='Admin') {
+  ?>
   <div class="container mt-4">
 
 

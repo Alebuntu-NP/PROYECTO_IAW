@@ -59,7 +59,7 @@
                     $_SESSION["password"]=$_POST["password"];
 
                     header("Location: index.php");
-                    exit(); 
+               
                 }
             } else {
                 echo "Wrong Query";
@@ -83,7 +83,7 @@
             <strong> Entra para continuar</strong>
           </div>
           <div class="panel-body">
-            <form role="form" action="login.php" method="POST">
+            <form role="form"  method="POST">
               <fieldset>
                 <div class="row">
                   <div class="center-block">

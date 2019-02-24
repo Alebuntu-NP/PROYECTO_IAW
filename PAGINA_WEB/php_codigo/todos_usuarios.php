@@ -15,7 +15,7 @@ if ($connection->connect_errno) {
 
 //MAKING A SELECT QUERY
 /* Consultas de selección que devuelven un conjunto de resultados */
-if ($result = $connection->query("select * from usuarios order by nombre ASC ;")) {
+if ($result = $connection->query("select * from usuarios order by fecha_alta ASC ;")) {
     ?>
 
     <!-- PRINT THE TABLE AND THE HEADER -->
