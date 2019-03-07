@@ -44,19 +44,19 @@
                         </div>
                         <div class="form-group">
                         <label>Nombre</label>
-                        <input type="text" id="nom" name="nom" class="form-control" placeholder="Escribe tu nombre" maxlength="24" required>
+                        <input type="text" id="nom" name="nom" class="form-control" placeholder="Escribe tu nombre" maxlength="20" required>
                         </div>
                         <div class="form-group">
                         <label>Apellidos</label>
-                        <input type="text" id="ap" name="ap" class="form-control" placeholder="Escribe tus apellidos" required>
+                        <input type="text" id="ap" name="ap" class="form-control" placeholder="Escribe tus apellidos" maxlength="35" required>
                         </div>
                         <div class="form-group">
                         <label>Edad</label>
-                        <input type="number" id="edad" name="edad" class="form-control" placeholder="Escribe tu edad" required>
+                        <input type="number" id="edad" name="edad" class="form-control" placeholder="Escribe tu edad" min="1" max="999" required>
                         </div>
                         <div class="form-group">
                         <label>Correo electronico</label>
-                        <input type="email" id="correo" name="correo" class="form-control" placeholder="Escriba su correo electronico" required>
+                        <input type="email" id="correo" name="correo" class="form-control" placeholder="Escriba su correo electronico" maxlength="45" required>
                         </div>
                         <div class="form-group">
                         <label>Contraseña</label>

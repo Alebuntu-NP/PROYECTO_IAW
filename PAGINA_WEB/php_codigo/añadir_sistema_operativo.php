@@ -10,14 +10,14 @@ echo '<form method="post" enctype="multipart/form-data" action="../administrador
 echo '<div class="form-group row">';
 echo '<label for="nameso" class="col-4 col-form-label">Nombre</label>';
 echo '<div class="col-8">';
-echo '<input id="nameso" name="nameso"  class="form-control here" type="text" value=""  required>';
+echo '<input id="nameso" name="nameso"  class="form-control here" type="text"  maxlength="30" value=""  required>';
 echo '</div>';
 echo '</div>';
 
 echo '<div class="form-group row">';
 echo '<label for="versio" class="col-4 col-form-label">Version</label>';
 echo '<div class="col-8">';
-echo '<input id="versio" name="versio" class="form-control here" type="text" value="" required>';
+echo '<input id="versio" name="versio" class="form-control here" type="text"  maxlength="30" value="" required>';
 echo '</div>';
 echo '</div>';
 

@@ -25,7 +25,7 @@ if (!isset($_POST["name"])): ?>
 
                                     echo '<label for="correo" class="col-4 col-form-label">Correo electronico</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="correo" name="correo" placeholder="Nueva correo electronico"  class="form-control here" type="email" value="'.$obj->correo_electronico.'">';
+                                    echo '<input id="correo" name="correo" placeholder="Nueva correo electronico"  class="form-control here" type="email" maxlength="45" value="'.$obj->correo_electronico.'">';
                                     echo '</div>';
                                     echo '</div>';
                                     echo '<div class="form-group row">';
@@ -40,7 +40,7 @@ if (!isset($_POST["name"])): ?>
 
                                     echo '<label for="lastname" class="col-4 col-form-label">Apellido</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="lastname" name="lastname" class="form-control here" type="text" value="'.$obj->apellido.'" required>';
+                                    echo '<input id="lastname" name="lastname" class="form-control here" type="text" maxlength="35" value="'.$obj->apellido.'" required>';
                                     echo '</div>';
                                     echo '</div>';
 
@@ -48,7 +48,7 @@ if (!isset($_POST["name"])): ?>
 
                                     echo '<label for="edad" class="col-4 col-form-label">Edad</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="edad" name="edad"  class="form-control here" type="number" value="'.$obj->edad.'" required>';
+                                    echo '<input id="edad" name="edad"  class="form-control here" type="number" min="1" max="999" value="'.$obj->edad.'" required>';
                                     echo '</div>';
                                     echo '</div>';
 

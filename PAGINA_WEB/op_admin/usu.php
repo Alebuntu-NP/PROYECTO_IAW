@@ -79,7 +79,7 @@
 
                                     echo '<label for="mote" class="col-4 col-form-label">Usuario</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="mote" name="mote" class="form-control here" type="text" value="'.$_GET['mote'].'" required>';
+                                    echo '<input id="mote" name="mote" class="form-control here" type="text" maxlength="15" value="'.$_GET['mote'].'" required>';
                                     echo '</div>';
                                     echo '</div>';
 
@@ -87,14 +87,14 @@
 
                                     echo '<label for="correo" class="col-4 col-form-label">Correo electronico</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="correo" name="correo" placeholder="Nueva correo electronico"  class="form-control here" type="email" value="'.$_GET['correo'].'">';
+                                    echo '<input id="correo" name="correo" placeholder="Nueva correo electronico" maxlength="45" class="form-control here" type="email" value="'.$_GET['correo'].'">';
                                     echo '</div>';
                                     echo '</div>';
                                     echo '<div class="form-group row">';
 
                                     echo '<label for="username" class="col-4 col-form-label">Nombre</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="name" name="name"  class="form-control here" type="text" value="'.$_GET['nom'].'" required>';
+                                    echo '<input id="name" name="name"  class="form-control here" type="text" maxlength="20" value="'.$_GET['nom'].'" required>';
                                     echo '</div>';
                                     echo '</div>';
 
@@ -102,7 +102,7 @@
 
                                     echo '<label for="lastname" class="col-4 col-form-label">Apellido</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="lastname" name="lastname" class="form-control here" type="text" value="'.$_GET['ap'].'" required>';
+                                    echo '<input id="lastname" name="lastname" class="form-control here" type="text" maxlength="35" value="'.$_GET['ap'].'" required>';
                                     echo '</div>';
                                     echo '</div>';
 
@@ -110,7 +110,7 @@
 
                                     echo '<label for="edad" class="col-4 col-form-label">Edad</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="edad" name="edad"  class="form-control here" type="number" value="'.$_GET['edad'].'" required>';
+                                    echo '<input id="edad" name="edad"  class="form-control here" type="number" min="1" max="999" value="'.$_GET['edad'].'" required>';
                                     echo '</div>';
                                     echo '</div>';
 
@@ -118,7 +118,7 @@
 
                                     echo '<label for="password" class="col-4 col-form-label">Contraseña</label>';
                                     echo '<div class="col-8">';
-                                    echo '<input id="password" name="password" placeholder="Nueva contraseña"  class="form-control here" type="password">';
+                                    echo '<input id="password" name="password" placeholder="Nueva contraseña" minlength="6" maxlength="24"  class="form-control here" type="password">';
                                     echo '</div>';
                                     echo '</div>';
                  

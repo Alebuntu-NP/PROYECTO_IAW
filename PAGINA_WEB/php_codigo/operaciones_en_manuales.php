@@ -55,7 +55,7 @@ join sistema_operativo so on par.cod_so = so.cod_so where par.cod_manual = $_POS
                   <h4><i class="fa fa-paper-plane-o"></i>Si quieres comenta sobre este manual:</h4>
                   <form role="form"  method="post" action='./manuales.php' >
                                 <div class="form-group">
-                                    <?php echo "<textarea class='form-control'  name='textocom' rows='5' cols='50' required></textarea>"; ?>
+                                    <?php echo "<textarea class='form-control'  name='textocom' rows='5' cols='50'  maxlength='200' required></textarea>"; ?>
                                     
                                     <link rel="stylesheet" href="../css/estrellas.css">
                                     <?php

@@ -16,7 +16,7 @@ echo '<form method="post" action="menu_manual.php">';
 echo '<div class="form-group row">';
 echo '<label for="manname" class="col-4 col-form-label">Nombre del manual</label>';
 echo '<div class="col-8">';
-echo '<input id="manname" name="manname"  class="form-control here" type="text" value=""  required>';
+echo '<input id="manname" name="manname"  class="form-control here" type="text" maxlength="40" value=""  required>';
 echo '</div>';
 echo '</div>';
 
@@ -48,7 +48,7 @@ echo '<div class="form-group row">';
 
 echo '<label for="npag" class="col-4 col-form-label">Numero de paginas</label>';
 echo '<div class="col-8">';
-echo '<input id="npag" name="npag"  class="form-control here" type="number" min="1"  value="1" required>';
+echo '<input id="npag" name="npag"  class="form-control here" type="number" min="1" max="999999" value="1" required>';
 echo '</div>';
 echo '</div>';
 
@@ -75,7 +75,7 @@ echo '</div>';
 echo '<div class="form-group row">';
 echo '<label for="enlc" class="col-4 col-form-label">Enlace</label>';
 echo '<div class="col-8">';
-echo '<input id="enlc" name="enlc"  class="form-control here" type="text" value=""  required>';
+echo '<input id="enlc" name="enlc"  class="form-control here" type="text" maxlength="200" value=""  required>';
 echo '</div>';
 echo '</div>';
 

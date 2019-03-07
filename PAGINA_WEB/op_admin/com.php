@@ -64,7 +64,7 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["gru
 
                               echo '<label for="comm" class="col-4 col-form-label">Comentario</label>';
                               echo '<div class="col-8">';
-                              echo "<input id='comm' name='comm'  class='form-control here' type='text' value='$_GET[com]'  required>";
+                              echo "<input id='comm' name='comm'  class='form-control here' type='text' value='$_GET[com]' maxlength='200' required>";
                               echo '</div>';
                               echo '</div>';
 

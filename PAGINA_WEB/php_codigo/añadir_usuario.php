@@ -24,7 +24,7 @@ echo '<div class="form-group row">';
 
 echo '<label for="ap" class="col-4 col-form-label">Apellidos</label>';
 echo '<div class="col-8">';
-echo '<input type="text" id="ap" name="ap" class="form-control" placeholder="Escribe tus apellidos" required>';
+echo '<input type="text" id="ap" name="ap" class="form-control" placeholder="Escribe tus apellidos"  maxlength="35" required>';
 echo '</div>';
 echo '</div>';
 
@@ -32,7 +32,7 @@ echo '<div class="form-group row">';
 
 echo '<label for="edad" class="col-4 col-form-label">Edad</label>';
 echo '<div class="col-8">';
-echo '<input type="number" id="edad" name="edad" class="form-control" placeholder="Escribe tu edad" required>';
+echo '<input type="number" id="edad" name="edad" min="1" max="999" class="form-control" placeholder="Escribe tu edad" required>';
 echo '</div>';
 echo '</div>';
 
@@ -40,7 +40,7 @@ echo '<div class="form-group row">';
 
 echo '<label for="correo" class="col-4 col-form-label">Correo electronico</label>';
 echo '<div class="col-8">';
-echo '<input type="email" id="correo" name="correo" class="form-control" placeholder="Escriba su correo electronico" required>';
+echo '<input type="email" id="correo" name="correo"  maxlength="45" class="form-control" placeholder="Escriba su correo electronico" required>';
 echo '</div>';
 echo '</div>';
 

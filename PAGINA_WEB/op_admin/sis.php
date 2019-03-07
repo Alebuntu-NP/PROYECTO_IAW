@@ -65,7 +65,7 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["gru
 
                                                         echo '<label for="username" class="col-4 col-form-label">Nombre</label>';
                                                         echo '<div class="col-8">';
-                                                        echo '<input id="name" name="name"  class="form-control here" type="text" value="' . $_GET['nom'] . '"  required>';
+                                                        echo '<input id="name" name="name"  class="form-control here" type="text" maxlength="30" value="' . $_GET['nom'] . '"  required>';
                                                         echo '</div>';
                                                         echo '</div>';
 
@@ -73,7 +73,7 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["gru
 
                                                         echo '<label for="versi" class="col-4 col-form-label">Version</label>';
                                                         echo '<div class="col-8">';
-                                                        echo '<input id="versi" name="versi" class="form-control here" type="text" value="' . $_GET['vers'] . '" >';
+                                                        echo '<input id="versi" name="versi" class="form-control here" type="text" maxlength="30" value="' . $_GET['vers'] . '" >';
                                                         echo '</div>';
                                                         echo '</div>';
 
@@ -81,7 +81,7 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["gru
 
                                                         echo '<label for="lanz" class="col-4 col-form-label">Año de lanzamiento</label>';
                                                         echo '<div class="col-8">';
-                                                        echo '<input id="lanz" name="lanz"  class="form-control here" type="number" value="'.$_GET['lanzamiento'].'" required>';
+                                                        echo '<input id="lanz" name="lanz"  class="form-control here" type="number"  value="'.$_GET['lanzamiento'].'" required>';
                                                         echo '</div>';
                                                         echo '</div>';
 
@@ -105,7 +105,7 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["gru
                                                           echo '<div class="col-8">';
                                                           
 
-                                                          echo "<input class='form' type='file' name='perfil_so'  />
+                                                          echo "<input class='form' type='file'  name='perfil_so'  />
                                                           <hr>
                                                           <img class='img-thumbnail' src='$obj1->foto_perfil'/>";
                                                           echo '</div>';

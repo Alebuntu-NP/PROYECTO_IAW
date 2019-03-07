@@ -84,7 +84,7 @@ if ( isset($_SESSION["user"]) && isset($_SESSION["password"])  && $_SESSION["gru
 
     echo '<label for="username" class="col-4 col-form-label">Nombre</label>';
     echo '<div class="col-8">';
-    echo '<input id="name" name="name"  class="form-control here" type="text" value="' . $obj->nombre . '"  required>';
+    echo '<input id="name" name="name"  class="form-control here" type="text" value="' . $obj->nombre . '" maxlength="40" required>';
     echo '</div>';
     echo '</div>';
 
@@ -141,21 +141,21 @@ if ($result_sistemas = $connection1->query($consulta_sistemas)) {
 
     echo '<label for="npag" class="col-4 col-form-label">Numero de paginas</label>';
     echo '<div class="col-8">';
-    echo '<input id="npag" name="npag"  class="form-control here" type="number" min="1" value="' . $obj->paginas . '" required>';
+    echo '<input id="npag" name="npag"  class="form-control here" type="number" min="1" max="999" value="' . $obj->paginas . '" required>';
     echo '</div>';
     echo '</div>';
 
     echo '<div class="form-group row">';
     echo '<label for="dificult" class="col-4 col-form-label">Dificultad</label>';
     echo '<div class="col-8">';
-    echo '<input id="dificult" name="dificult"  class="form-control here" type="text" value="' . $obj->dificult . '"  required>';
+    echo '<input id="dificult" name="dificult"  class="form-control here" type="text" value="' . $obj->dificult . '" maxlength="15" required>';
     echo '</div>';
     echo '</div>';
 
     echo '<div class="form-group row">';
     echo '<label for="enlc" class="col-4 col-form-label">Enlace</label>';
     echo '<div class="col-8">';
-    echo '<input id="enlc" name="enlc"  class="form-control here" type="text" value="' . $obj->enl. '"  required>';
+    echo '<input id="enlc" name="enlc"  class="form-control here" type="text" value="' . $obj->enl. '" maxlength="200" required>';
     echo '</div>';
     echo '</div>';
 
