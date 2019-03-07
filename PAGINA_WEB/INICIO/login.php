@@ -98,7 +98,7 @@
                         <span class="input-group-addon">
                           <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <input class="form-control" placeholder="Usuario" name="user" type="text" autofocus>
+                        <input class="form-control" placeholder="Usuario" name="user" type="text" maxlength="15" autofocus required>
                       </div>
                     </div>
                     <div class="form-group">
@@ -106,7 +106,7 @@
                         <span class="input-group-addon">
                           <i class="glyphicon glyphicon-lock"></i>
                         </span>
-                        <input class="form-control" placeholder="Contraseña" name="password" type="password" value="">
+                        <input class="form-control" placeholder="Contraseña" name="password" type="password" maxlength="24" value="" required>
                       </div>
                     </div>
                     <div class="form-group">

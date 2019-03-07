@@ -24,30 +24,26 @@ $query2="select *  from usuarios where id ='$user'";
   if ($result2 = $connection2->query($query2)) {
     $obj2 = $result2->fetch_object();
 
-  if (isset($obj2->id) && isset($obj2->password) ) {
+  if (isset($obj2->id) && isset($obj2->password) && in_array(array('#'), $obj2->id)) {
+     
+ 
+          if ($obj2->grupo=='Admin') {
+              $_SESSION["grupo"]='Admin';
 
-  if ($obj2->grupo=='Admin') {
-    $_SESSION["grupo"]='Admin';
-
-    echo "<script>location.href='../administrador/index.php';</script>";
-    die();
-
-  } 
-  elseif ($obj2->grupo=='Usuario') {
-    $_SESSION["grupo"]='Usuario';
+              echo "<script>location.href='../administrador/index.php';</script>";
+              die();
+          } elseif ($obj2->grupo=='Usuario') {
+              $_SESSION["grupo"]='Usuario';
 
 
-    echo "<script>location.href='../usuarios/index.php';</script>";
-    die();
-  }
+              echo "<script>location.href='../usuarios/index.php';</script>";
+              die();
+          }
+      } else {
+          echo "<script>location.href='./login.php';</script>";
+          die();
+      }
   
-
-  } else {
-
-    echo "<script>location.href='./login.php';</script>";
-    die();
-  
-  }
 }
         
 

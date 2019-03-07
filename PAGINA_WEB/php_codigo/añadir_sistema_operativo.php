@@ -171,7 +171,8 @@ $version[]=$obj_vecto->version."";
 }
 if (in_array($_POST['nameso'], $so)) {
 
-$message= "Ya existe ese sistema operativo";
+$message= "Ya existe ese sistema operativo por lo tanto
+no se ha insertado ninguno nuevo";
 echo "<script type='text/javascript'>alert('$message');</script>";
 
   echo "<script>location.href='../administrador/menu_so.php';</script>";
