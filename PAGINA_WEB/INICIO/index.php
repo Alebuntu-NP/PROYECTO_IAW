@@ -24,7 +24,7 @@ $query2="select *  from usuarios where id ='$user'";
   if ($result2 = $connection2->query($query2)) {
     $obj2 = $result2->fetch_object();
 
-  if (isset($obj2->id) && isset($obj2->password) && in_array(array('#'), $obj2->id)) {
+  if (isset($obj2->id) && isset($obj2->password) && !in_array(array('#'), $obj2->id)) {
      
  
           if ($obj2->grupo=='Admin') {
