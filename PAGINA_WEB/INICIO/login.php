@@ -49,7 +49,7 @@
                 if ($result->num_rows===0) {
 
                   echo '<script type="text/javascript"> 
-                  alert("No has puesto bien o el usuario o la contraseña");
+                  alert("<h1>No has puesto bien o el usuario o la contraseña</h1>");
                   window.location.href="index.php";
                   </script>';
                 } else {
